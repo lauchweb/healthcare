@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Learn about Healthcare Mauritius, a healthcare hub connecting people with healthcare providers and services across Mauritius."
+    content="Learn about Healthcare Mauritius, a healthcare hub bringing healthcare information and services together in one place for Mauritius."
   >
 
   <style>
@@ -32,6 +32,7 @@
 
     body {
       min-height: 100vh;
+
       color: var(--black);
 
       font-family:
@@ -99,13 +100,16 @@
           transparent 0.7px
         );
 
-      background-size: 9px 9px, 13px 13px;
+      background-size:
+        9px 9px,
+        13px 13px;
 
       border-bottom: 1px solid rgba(0, 0, 0, 0.045);
     }
 
     .nav {
       width: min(1200px, calc(100% - 48px));
+
       min-height: 82px;
 
       margin: 0 auto;
@@ -119,9 +123,11 @@
 
     .logo {
       color: var(--red);
+
       text-decoration: none;
 
       font-size: 1.55rem;
+
       font-weight: 700;
 
       letter-spacing: -0.045em;
@@ -129,6 +135,7 @@
 
     .menu {
       display: flex;
+
       align-items: center;
 
       gap: 18px;
@@ -140,9 +147,11 @@
       position: relative;
 
       color: var(--black);
+
       text-decoration: none;
 
       font-size: 0.91rem;
+
       font-weight: 500;
 
       transition: color 180ms ease;
@@ -158,9 +167,11 @@
       position: absolute;
 
       left: 0;
+
       bottom: -6px;
 
       width: 0;
+
       height: 1.5px;
 
       background: var(--red);
@@ -176,9 +187,16 @@
       color: var(--black);
 
       font-size: 0.82rem;
+
       line-height: 1;
 
       user-select: none;
+    }
+
+    /* Red separator before Safety */
+
+    .menu-dot-safety {
+      color: var(--red);
     }
 
     /* =========================
@@ -191,32 +209,40 @@
       width: 100%;
 
       display: flex;
+
       flex-direction: column;
 
       align-items: center;
-      justify-content: center;
 
-      padding: 80px 24px;
+      padding: 72px 24px 80px;
+    }
+
+    .about-content {
+      width: min(900px, 100%);
     }
 
     /* =========================
        ABOUT BOX
     ========================== */
 
-    .about-container {
-      width: min(820px, 100%);
+    .about-box {
+      position: relative;
 
-      background-color: rgba(251, 251, 249, 0.72);
+      width: 100%;
+
+      padding: 48px 48px 44px;
+
+      background-color: var(--card-white);
 
       background-image:
         radial-gradient(
           circle at 30% 25%,
-          rgba(0, 0, 0, 0.010) 0.65px,
+          rgba(0, 0, 0, 0.013) 0.65px,
           transparent 0.75px
         ),
         radial-gradient(
           circle at 70% 75%,
-          rgba(0, 0, 0, 0.009) 0.65px,
+          rgba(0, 0, 0, 0.011) 0.65px,
           transparent 0.75px
         );
 
@@ -224,37 +250,59 @@
         10px 10px,
         14px 14px;
 
-      border-radius: 16px;
+      border: 1.5px solid var(--red);
 
-      padding: 55px 60px;
+      border-radius: 14px;
 
       box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.025);
+        0 5px 20px rgba(0, 0, 0, 0.025);
     }
 
-    .about-container h1 {
+    .about-box::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 5px;
+
+      border: 1px solid var(--red);
+
+      border-radius: 10px;
+
+      pointer-events: none;
+    }
+
+    .about-text {
+      position: relative;
+
+      z-index: 1;
+    }
+
+    .about-text h1 {
       color: var(--red);
 
       font-size: clamp(2rem, 5vw, 3rem);
+
       font-weight: 700;
 
       letter-spacing: -0.045em;
 
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
-    .about-container p {
-      max-width: 680px;
+    .about-text p {
+      color: #333333;
 
-      font-size: 1.05rem;
+      font-size: 0.96rem;
+
       line-height: 1.8;
 
-      color: #242424;
+      max-width: 760px;
 
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
-    .about-container p:last-of-type {
+    .about-text p:last-child {
       margin-bottom: 0;
     }
 
@@ -263,25 +311,24 @@
     ========================== */
 
     .back-home {
-      width: min(820px, 100%);
+      width: min(900px, 100%);
 
-      align-self: center;
-
-      margin-top: 32px;
-
-      padding-left: 60px;
+      margin-top: 34px;
 
       display: flex;
+
       align-items: center;
     }
 
     .back-home-link {
       display: inline-flex;
+
       align-items: center;
 
       padding: 11px 18px;
 
       background: var(--red);
+
       color: #ffffff;
 
       border-radius: 9px;
@@ -289,6 +336,7 @@
       text-decoration: none;
 
       font-size: 0.88rem;
+
       font-weight: 600;
 
       box-shadow:
@@ -311,6 +359,7 @@
 
     .back-home-link:focus-visible {
       outline: 3px solid rgba(201, 40, 50, 0.25);
+
       outline-offset: 4px;
     }
 
@@ -320,8 +369,8 @@
 
     footer {
       width: 100%;
+
       background: transparent;
-      border-top: none;
     }
 
     .footer-inner {
@@ -332,7 +381,9 @@
       margin: 0 auto;
 
       display: flex;
+
       align-items: flex-end;
+
       justify-content: space-between;
 
       padding: 24px 0;
@@ -342,6 +393,7 @@
       color: var(--black);
 
       font-size: 0.78rem;
+
       font-weight: 500;
     }
 
@@ -349,7 +401,6 @@
       display: flex;
 
       align-items: center;
-      justify-content: flex-end;
     }
 
     .footer-links {
@@ -360,11 +411,13 @@
       gap: 8px;
 
       font-size: 0.78rem;
+
       font-weight: 600;
     }
 
     .footer-links a {
       color: var(--black);
+
       text-decoration: none;
 
       transition: color 180ms ease;
@@ -376,6 +429,7 @@
 
     .footer-separator {
       color: var(--black);
+
       opacity: 0.7;
     }
 
@@ -391,6 +445,7 @@
         padding: 22px 0;
 
         align-items: flex-start;
+
         flex-direction: column;
 
         gap: 20px;
@@ -409,25 +464,15 @@
       }
 
       main {
-        padding: 60px 20px;
+        padding: 60px 20px 70px;
       }
 
-      .about-container {
-        padding: 45px 40px;
+      .about-box {
+        padding: 40px 36px;
       }
 
       .back-home {
-        width: min(820px, 100%);
-
-        align-self: center;
-
-        padding-left: 40px;
-
-        margin-top: 32px;
-      }
-
-      .footer-inner {
-        min-height: 125px;
+        margin-top: 38px;
       }
     }
 
@@ -451,32 +496,33 @@
       }
 
       main {
-        padding: 45px 16px;
+        padding: 45px 16px 60px;
       }
 
-      .about-container {
-        padding: 35px 25px;
+      .about-box {
+        padding: 32px 25px;
 
-        border-radius: 13px;
+        border-radius: 12px;
       }
 
-      .about-container h1 {
-        margin-bottom: 22px;
+      .about-box::after {
+        inset: 4px;
+
+        border-radius: 8px;
       }
 
-      .about-container p {
-        font-size: 0.98rem;
+      .about-text h1 {
+        margin-bottom: 20px;
+      }
+
+      .about-text p {
+        font-size: 0.91rem;
+
         line-height: 1.7;
       }
 
       .back-home {
-        width: 100%;
-
-        align-self: center;
-
-        margin-top: 28px;
-
-        padding-left: 25px;
+        margin-top: 42px;
       }
 
       .back-home-link {
@@ -492,19 +538,18 @@
 
         padding: 24px 0;
       }
-
-      .footer-right {
-        align-items: flex-start;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header>
+
     <nav
       class="nav"
       aria-label="Main navigation"
@@ -520,7 +565,9 @@
       <ul class="menu">
 
         <li>
-          <a href="info.html">Info</a>
+          <a href="info.html">
+            Info
+          </a>
         </li>
 
         <li
@@ -531,11 +578,28 @@
         </li>
 
         <li>
-          <a href="about.html">About</a>
+          <a href="about.html">
+            About
+          </a>
         </li>
 
         <li
           class="menu-dot"
+          aria-hidden="true"
+        >
+          ·
+        </li>
+
+        <li>
+          <a href="jobs.html">
+            Jobs
+          </a>
+        </li>
+
+        <!-- Red dot before Safety -->
+
+        <li
+          class="menu-dot menu-dot-safety"
           aria-hidden="true"
         >
           ·
@@ -569,39 +633,54 @@
         </li>
 
       </ul>
+
     </nav>
+
   </header>
 
 
-  <!-- ABOUT CONTENT -->
+  <!-- =========================
+       MAIN
+  ========================== -->
 
   <main>
 
-    <article class="about-container">
+    <div class="about-content">
 
-      <h1>About</h1>
+      <section class="about-box">
 
-      <p>
-        Healthcare Mauritius brings healthcare services and providers
-        together in one place, helping people find the healthcare
-        resources they need across Mauritius.
-      </p>
+        <div class="about-text">
 
-      <p>
-        From doctors, hospitals and clinics to pharmacies, laboratories,
-        insurance, dental services and Sport &amp; Fitness providers,
-        Healthcare Mauritius is designed to make discovering healthcare
-        services simpler and more accessible.
-      </p>
+          <h1>About</h1>
 
-      <p>
-        Our goal is to create a clear and useful place where people can
-        navigate the healthcare landscape in Mauritius with greater ease.
-      </p>
+          <p>
+            Healthcare Mauritius is a healthcare hub created to bring
+            healthcare needs together in one place.
+          </p>
 
-    </article>
+          <p>
+            The platform brings together information about healthcare
+            providers and services across Mauritius, helping people
+            find and explore the healthcare resources they need.
+          </p>
+
+          <p>
+            Our aim is to make healthcare information easier to
+            discover, navigate and understand, while creating a
+            useful space for the healthcare community in Mauritius.
+          </p>
+
+        </div>
+
+      </section>
+
+    </div>
+
+
+    <!-- Back to Home -->
 
     <div class="back-home">
+
       <a
         href="index.html"
         class="back-home-link"
@@ -609,12 +688,15 @@
       >
         &larr;&nbsp; Back to Home
       </a>
+
     </div>
 
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
@@ -628,9 +710,13 @@
 
         <div class="footer-links">
 
-          <a href="policy.html">Policy</a>
+          <a href="policy.html">
+            Policy
+          </a>
 
-          <span class="footer-separator">|</span>
+          <span class="footer-separator">
+            |
+          </span>
 
           <a href="mailto:info@healthcare.mu">
             Contact
