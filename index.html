@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Healthcare Mauritius brings healthcare providers and services together in one place, helping you find doctors, clinics, hospitals, pharmacies, insurance, laboratories and more across Mauritius."
+    content="Healthcare Mauritius brings healthcare providers and services together in one place, helping you find doctors, clinics, hospitals, pharmacies, insurance, laboratories, dental, nutrition, optical and more across Mauritius."
   >
 
   <style>
@@ -187,8 +187,6 @@
       user-select: none;
     }
 
-    /* Red separator before Safety */
-
     .menu-dot-safety {
       color: var(--red);
     }
@@ -210,7 +208,7 @@
     }
 
     .home-content {
-      width: min(900px, 100%);
+      width: min(1050px, 100%);
     }
 
     /* =========================
@@ -220,7 +218,7 @@
     .healthcare-grid {
       display: grid;
 
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(5, 1fr);
 
       gap: 22px;
 
@@ -236,15 +234,16 @@
 
       width: 100%;
 
-      aspect-ratio: 1.65 / 1;
+      aspect-ratio: 1.35 / 1;
 
-      min-height: 135px;
+      min-height: 130px;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
-      padding: 25px;
+      padding: 24px;
 
       background-color: var(--card-white);
 
@@ -280,8 +279,6 @@
         box-shadow 180ms ease;
     }
 
-    /* Second fine red border */
-
     .healthcare-card::after {
       content: "";
 
@@ -303,7 +300,7 @@
 
       text-align: center;
 
-      font-size: 1rem;
+      font-size: 0.95rem;
 
       font-weight: 600;
     }
@@ -339,6 +336,7 @@
       margin: 0 auto;
 
       display: flex;
+
       align-items: flex-end;
       justify-content: space-between;
 
@@ -355,11 +353,13 @@
 
     .footer-right {
       display: flex;
+
       align-items: center;
     }
 
     .footer-links {
       display: flex;
+
       align-items: center;
 
       gap: 8px;
@@ -390,6 +390,14 @@
     /* =========================
        TABLET
     ========================== */
+
+    @media (max-width: 1000px) {
+
+      .healthcare-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+    }
 
     @media (max-width: 800px) {
 
@@ -422,6 +430,8 @@
       }
 
       .healthcare-grid {
+        grid-template-columns: repeat(3, 1fr);
+
         gap: 18px;
       }
 
@@ -570,7 +580,7 @@
 
         <li>
           <a
-            href="https://example.com/safety"
+            href="https://healthcare.mu"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -587,7 +597,7 @@
 
         <li>
           <a
-            href="https://example.com/emergency"
+            href="https://healthcare.mu"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -612,17 +622,12 @@
 
       <div class="healthcare-grid">
 
-        <!-- Doctor -->
-
         <a
           href="doctor.html"
           class="healthcare-card"
         >
           <span>Doctor</span>
         </a>
-
-
-        <!-- Hospital -->
 
         <a
           href="hospital.html"
@@ -631,18 +636,12 @@
           <span>Hospital</span>
         </a>
 
-
-        <!-- Clinic -->
-
         <a
           href="clinic.html"
           class="healthcare-card"
         >
           <span>Clinic</span>
         </a>
-
-
-        <!-- Insurance -->
 
         <a
           href="insurance.html"
@@ -651,18 +650,12 @@
           <span>Insurance</span>
         </a>
 
-
-        <!-- Pharmacy -->
-
         <a
           href="pharmacy.html"
           class="healthcare-card"
         >
           <span>Pharmacy</span>
         </a>
-
-
-        <!-- Laboratory -->
 
         <a
           href="laboratory.html"
@@ -671,14 +664,32 @@
           <span>Laboratory</span>
         </a>
 
-
-        <!-- Sport & Fitness -->
-
         <a
           href="sport-fitness.html"
           class="healthcare-card"
         >
           <span>Sport &amp; Fitness</span>
+        </a>
+
+        <a
+          href="dental.html"
+          class="healthcare-card"
+        >
+          <span>Dental</span>
+        </a>
+
+        <a
+          href="nutrition.html"
+          class="healthcare-card"
+        >
+          <span>Nutrition</span>
+        </a>
+
+        <a
+          href="optical.html"
+          class="healthcare-card"
+        >
+          <span>Optical</span>
         </a>
 
       </div>
