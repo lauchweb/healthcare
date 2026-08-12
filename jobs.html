@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Healthcare jobs across Mauritius, including opportunities for doctors, nurses, pharmacists, laboratory professionals, healthcare support, administration, and sport and fitness professionals."
+    content="Find healthcare jobs and career opportunities in Mauritius, including doctors, hospitals, clinics, pharmacy, laboratory, dental, nutrition, mental health, optical, administration and coaching."
   >
 
   <style>
@@ -32,6 +32,7 @@
 
     body {
       min-height: 100vh;
+
       color: var(--black);
 
       font-family:
@@ -99,18 +100,22 @@
           transparent 0.7px
         );
 
-      background-size: 9px 9px, 13px 13px;
+      background-size:
+        9px 9px,
+        13px 13px;
 
       border-bottom: 1px solid rgba(0, 0, 0, 0.045);
     }
 
     .nav {
       width: min(1200px, calc(100% - 48px));
+
       min-height: 82px;
 
       margin: 0 auto;
 
       display: flex;
+
       align-items: center;
       justify-content: space-between;
 
@@ -119,9 +124,11 @@
 
     .logo {
       color: var(--red);
+
       text-decoration: none;
 
       font-size: 1.55rem;
+
       font-weight: 700;
 
       letter-spacing: -0.045em;
@@ -129,6 +136,7 @@
 
     .menu {
       display: flex;
+
       align-items: center;
 
       gap: 18px;
@@ -140,9 +148,11 @@
       position: relative;
 
       color: var(--black);
+
       text-decoration: none;
 
       font-size: 0.91rem;
+
       font-weight: 500;
 
       transition: color 180ms ease;
@@ -158,9 +168,11 @@
       position: absolute;
 
       left: 0;
+
       bottom: -6px;
 
       width: 0;
+
       height: 1.5px;
 
       background: var(--red);
@@ -176,12 +188,11 @@
       color: var(--black);
 
       font-size: 0.82rem;
+
       line-height: 1;
 
       user-select: none;
     }
-
-    /* Red separator before Safety */
 
     .menu-dot-safety {
       color: var(--red);
@@ -197,26 +208,31 @@
       width: 100%;
 
       display: flex;
+
       flex-direction: column;
 
       align-items: center;
 
-      padding: 72px 24px 80px;
+      padding: 65px 24px 80px;
     }
 
     .jobs-content {
-      width: min(900px, 100%);
+      width: min(1050px, 100%);
     }
 
     /* =========================
        INTRO
     ========================== */
 
-    .jobs-heading {
-      margin-bottom: 42px;
+    .jobs-intro {
+      text-align: center;
+
+      max-width: 700px;
+
+      margin: 0 auto 42px;
     }
 
-    .jobs-heading h1 {
+    .jobs-intro h1 {
       color: var(--red);
 
       font-size: clamp(2rem, 5vw, 3rem);
@@ -225,48 +241,29 @@
 
       letter-spacing: -0.045em;
 
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
-    .jobs-heading p {
-      max-width: 680px;
-
-      color: #333333;
+    .jobs-intro p {
+      color: #444444;
 
       font-size: 0.94rem;
 
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     /* =========================
-       JOB SECTION
-    ========================== */
-
-    .job-section {
-      margin-bottom: 42px;
-    }
-
-    .job-section-title {
-      color: var(--black);
-
-      font-size: 1.05rem;
-      font-weight: 650;
-
-      margin-bottom: 18px;
-
-      letter-spacing: -0.01em;
-    }
-
-    /* =========================
-       JOB GRID
+       JOBS GRID
     ========================== */
 
     .jobs-grid {
       display: grid;
 
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(5, 1fr);
 
       gap: 22px;
+
+      width: 100%;
     }
 
     /* =========================
@@ -277,16 +274,17 @@
       position: relative;
 
       width: 100%;
-      min-height: 130px;
 
-      padding: 26px;
+      aspect-ratio: 1.35 / 1;
+
+      min-height: 130px;
 
       display: flex;
 
       align-items: center;
       justify-content: center;
 
-      text-align: center;
+      padding: 24px;
 
       background-color: var(--card-white);
 
@@ -307,9 +305,11 @@
         14px 14px;
 
       border: 1.5px solid var(--red);
+
       border-radius: 12px;
 
       color: var(--black);
+
       text-decoration: none;
 
       box-shadow:
@@ -328,6 +328,7 @@
       inset: 5px;
 
       border: 1px solid var(--red);
+
       border-radius: 8px;
 
       pointer-events: none;
@@ -335,9 +336,13 @@
 
     .job-card span {
       position: relative;
+
       z-index: 1;
 
-      font-size: 1rem;
+      text-align: center;
+
+      font-size: 0.95rem;
+
       font-weight: 600;
     }
 
@@ -350,6 +355,7 @@
 
     .job-card:focus-visible {
       outline: 3px solid rgba(201, 40, 50, 0.25);
+
       outline-offset: 4px;
     }
 
@@ -358,19 +364,20 @@
     ========================== */
 
     .back-home {
-      width: min(900px, 100%);
+      width: min(1050px, 100%);
 
-      display: flex;
-      align-items: center;
+      margin-top: 42px;
     }
 
-    .back-home-link {
+    .back-home a {
       display: inline-flex;
+
       align-items: center;
 
       padding: 11px 18px;
 
       background: var(--red);
+
       color: #ffffff;
 
       border-radius: 9px;
@@ -378,6 +385,7 @@
       text-decoration: none;
 
       font-size: 0.88rem;
+
       font-weight: 600;
 
       box-shadow:
@@ -389,7 +397,7 @@
         box-shadow 180ms ease;
     }
 
-    .back-home-link:hover {
+    .back-home a:hover {
       background: #b8222c;
 
       transform: translateY(-2px);
@@ -398,17 +406,13 @@
         0 7px 18px rgba(201, 40, 50, 0.20);
     }
 
-    .back-home-link:focus-visible {
-      outline: 3px solid rgba(201, 40, 50, 0.25);
-      outline-offset: 4px;
-    }
-
     /* =========================
        FOOTER
     ========================== */
 
     footer {
       width: 100%;
+
       background: transparent;
     }
 
@@ -420,7 +424,9 @@
       margin: 0 auto;
 
       display: flex;
+
       align-items: flex-end;
+
       justify-content: space-between;
 
       padding: 24px 0;
@@ -430,26 +436,25 @@
       color: var(--black);
 
       font-size: 0.78rem;
-      font-weight: 500;
-    }
 
-    .footer-right {
-      display: flex;
-      align-items: center;
+      font-weight: 500;
     }
 
     .footer-links {
       display: flex;
+
       align-items: center;
 
       gap: 8px;
 
       font-size: 0.78rem;
+
       font-weight: 600;
     }
 
     .footer-links a {
       color: var(--black);
+
       text-decoration: none;
 
       transition: color 180ms ease;
@@ -461,6 +466,7 @@
 
     .footer-separator {
       color: var(--black);
+
       opacity: 0.7;
     }
 
@@ -468,7 +474,15 @@
        TABLET
     ========================== */
 
-    @media (max-width: 760px) {
+    @media (max-width: 1000px) {
+
+      .jobs-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+    }
+
+    @media (max-width: 800px) {
 
       .nav {
         min-height: auto;
@@ -476,6 +490,7 @@
         padding: 22px 0;
 
         align-items: flex-start;
+
         flex-direction: column;
 
         gap: 20px;
@@ -494,14 +509,12 @@
       }
 
       main {
-        padding: 60px 20px 70px;
-      }
-
-      .jobs-heading {
-        margin-bottom: 36px;
+        padding: 55px 20px 70px;
       }
 
       .jobs-grid {
+        grid-template-columns: repeat(3, 1fr);
+
         gap: 18px;
       }
 
@@ -514,7 +527,7 @@
        MOBILE
     ========================== */
 
-    @media (max-width: 520px) {
+    @media (max-width: 600px) {
 
       .nav,
       .footer-inner {
@@ -533,44 +546,42 @@
         padding: 45px 16px 60px;
       }
 
-      .jobs-heading {
+      .jobs-intro {
         margin-bottom: 32px;
       }
 
-      .jobs-heading h1 {
-        margin-bottom: 12px;
-      }
-
-      .jobs-heading p {
-        font-size: 0.91rem;
-        line-height: 1.65;
-      }
-
-      .job-section {
-        margin-bottom: 34px;
-      }
-
-      .job-section-title {
-        margin-bottom: 15px;
+      .jobs-intro p {
+        font-size: 0.9rem;
       }
 
       .jobs-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+
         gap: 16px;
       }
 
       .job-card {
+        aspect-ratio: 1.35 / 1;
+
         min-height: 115px;
+
+        padding: 20px;
+
         border-radius: 11px;
       }
 
       .job-card::after {
         inset: 4px;
+
         border-radius: 7px;
       }
 
-      .back-home-link {
-        border-radius: 8px;
+      .job-card span {
+        font-size: 0.92rem;
+      }
+
+      .back-home {
+        margin-top: 40px;
       }
 
       .footer-inner {
@@ -583,44 +594,75 @@
         padding: 24px 0;
       }
     }
+
+    @media (max-width: 390px) {
+
+      .jobs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .job-card {
+        min-height: 105px;
+
+        aspect-ratio: auto;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header>
 
-    <nav class="nav" aria-label="Main navigation">
+    <nav
+      class="nav"
+      aria-label="Main navigation"
+    >
 
-      <a href="index.html" class="logo">
+      <a
+        href="index.html"
+        class="logo"
+      >
         Healthcare Mauritius
       </a>
 
       <ul class="menu">
 
         <li>
-          <a href="info.html">Info</a>
+          <a href="info.html">
+            Info
+          </a>
         </li>
 
-        <li class="menu-dot" aria-hidden="true">
+        <li
+          class="menu-dot"
+          aria-hidden="true"
+        >
           ·
         </li>
 
         <li>
-          <a href="about.html">About</a>
+          <a href="about.html">
+            About
+          </a>
         </li>
 
-        <li class="menu-dot" aria-hidden="true">
+        <li
+          class="menu-dot"
+          aria-hidden="true"
+        >
           ·
         </li>
 
         <li>
-          <a href="jobs.html">Jobs</a>
+          <a href="jobs.html">
+            Jobs
+          </a>
         </li>
-
-        <!-- Red dot separating Jobs from Safety -->
 
         <li
           class="menu-dot menu-dot-safety"
@@ -639,7 +681,10 @@
           </a>
         </li>
 
-        <li class="menu-dot" aria-hidden="true">
+        <li
+          class="menu-dot"
+          aria-hidden="true"
+        >
           ·
         </li>
 
@@ -660,141 +705,157 @@
   </header>
 
 
-  <!-- MAIN -->
+  <!-- =========================
+       MAIN
+  ========================== -->
 
   <main>
 
     <div class="jobs-content">
 
-      <!-- INTRO -->
-
-      <div class="jobs-heading">
+      <section class="jobs-intro">
 
         <h1>Jobs</h1>
 
         <p>
-          Healthcare job opportunities from across Mauritius,
-          bringing together opportunities for professionals and
-          people working in healthcare, wellbeing and related fields.
+          Explore healthcare career opportunities across different
+          areas of healthcare and related services in Mauritius.
         </p>
 
+      </section>
+
+
+      <div class="jobs-grid">
+
+        <!-- Doctor -->
+
+        <a
+          href="jobs-doctor.html"
+          class="job-card"
+        >
+          <span>Doctor</span>
+        </a>
+
+
+        <!-- Hospital -->
+
+        <a
+          href="jobs-hospital.html"
+          class="job-card"
+        >
+          <span>Hospital</span>
+        </a>
+
+
+        <!-- Clinic -->
+
+        <a
+          href="jobs-clinic.html"
+          class="job-card"
+        >
+          <span>Clinic</span>
+        </a>
+
+
+        <!-- Insurance -->
+
+        <a
+          href="jobs-insurance.html"
+          class="job-card"
+        >
+          <span>Insurance</span>
+        </a>
+
+
+        <!-- Pharmacy -->
+
+        <a
+          href="jobs-pharmacy.html"
+          class="job-card"
+        >
+          <span>Pharmacy</span>
+        </a>
+
+
+        <!-- Laboratory -->
+
+        <a
+          href="jobs-laboratory.html"
+          class="job-card"
+        >
+          <span>Laboratory</span>
+        </a>
+
+
+        <!-- Coach -->
+
+        <a
+          href="jobs-coach.html"
+          class="job-card"
+        >
+          <span>Coach</span>
+        </a>
+
+
+        <!-- Dental -->
+
+        <a
+          href="jobs-dental.html"
+          class="job-card"
+        >
+          <span>Dental</span>
+        </a>
+
+
+        <!-- Nutrition -->
+
+        <a
+          href="jobs-nutrition.html"
+          class="job-card"
+        >
+          <span>Nutrition</span>
+        </a>
+
+
+        <!-- Mental Health -->
+
+        <a
+          href="jobs-mental-health.html"
+          class="job-card"
+        >
+          <span>Mental Health</span>
+        </a>
+
+
+        <!-- Optical -->
+
+        <a
+          href="jobs-optical.html"
+          class="job-card"
+        >
+          <span>Optical</span>
+        </a>
+
+
+        <!-- Administration -->
+
+        <a
+          href="jobs-administration.html"
+          class="job-card"
+        >
+          <span>Administration</span>
+        </a>
+
       </div>
-
-
-      <!-- HEALTHCARE PROFESSIONALS -->
-
-      <section class="job-section">
-
-        <h2 class="job-section-title">
-          Healthcare Professionals
-        </h2>
-
-        <div class="jobs-grid">
-
-          <a href="jobs-doctor.html" class="job-card">
-            <span>Doctor</span>
-          </a>
-
-          <a href="jobs-nurse.html" class="job-card">
-            <span>Nurse</span>
-          </a>
-
-          <a href="jobs-pharmacy.html" class="job-card">
-            <span>Pharmacy</span>
-          </a>
-
-          <a href="jobs-dentist.html" class="job-card">
-            <span>Dentist</span>
-          </a>
-
-          <a href="jobs-therapy.html" class="job-card">
-            <span>Therapy</span>
-          </a>
-
-          <a href="jobs-laboratory.html" class="job-card">
-            <span>Laboratory</span>
-          </a>
-
-        </div>
-
-      </section>
-
-
-      <!-- HEALTHCARE SUPPORT -->
-
-      <section class="job-section">
-
-        <h2 class="job-section-title">
-          Healthcare Support
-        </h2>
-
-        <div class="jobs-grid">
-
-          <a href="jobs-support.html" class="job-card">
-            <span>Healthcare Support</span>
-          </a>
-
-          <a href="jobs-administration.html" class="job-card">
-            <span>Administration</span>
-          </a>
-
-        </div>
-
-      </section>
-
-
-      <!-- TECHNICAL & LABORATORY -->
-
-      <section class="job-section">
-
-        <h2 class="job-section-title">
-          Technical &amp; Laboratory
-        </h2>
-
-        <div class="jobs-grid">
-
-          <a href="jobs-technical.html" class="job-card">
-            <span>Technical</span>
-          </a>
-
-          <a href="jobs-biomedical.html" class="job-card">
-            <span>Biomedical</span>
-          </a>
-
-        </div>
-
-      </section>
-
-
-      <!-- SPORT & FITNESS -->
-
-      <section class="job-section">
-
-        <h2 class="job-section-title">
-          Sport &amp; Fitness
-        </h2>
-
-        <div class="jobs-grid">
-
-          <a href="jobs-sport-fitness.html" class="job-card">
-            <span>Sport &amp; Fitness</span>
-          </a>
-
-        </div>
-
-      </section>
 
     </div>
 
 
-    <!-- BACK TO HOME -->
+    <!-- Back to Home -->
 
     <div class="back-home">
 
-      <a
-        href="index.html"
-        class="back-home-link"
-      >
+      <a href="index.html">
         &larr;&nbsp; Back to Home
       </a>
 
@@ -803,7 +864,9 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
@@ -813,23 +876,19 @@
        For your well-being © Healthcare Mauritius 2025-2026
       </div>
 
-      <div class="footer-right">
+      <div class="footer-links">
 
-        <div class="footer-links">
+        <a href="policy.html">
+          Policy
+        </a>
 
-          <a href="policy.html">
-            Policy
-          </a>
+        <span class="footer-separator">
+          |
+        </span>
 
-          <span class="footer-separator">
-            |
-          </span>
-
-          <a href="mailto:info@healthcare.mu">
-            Contact
-          </a>
-
-        </div>
+        <a href="mailto:info@healthcare.mu">
+          Contact
+        </a>
 
       </div>
 
