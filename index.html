@@ -45,23 +45,26 @@
         Arial,
         sans-serif;
 
-      /* Main matte background */
+      /*
+        Main matte background.
+        Texture slightly accentuated without changing the base color.
+      */
       background-color: var(--main-white);
 
       background-image:
         radial-gradient(
           circle at 20% 25%,
-          rgba(0, 0, 0, 0.026) 0.7px,
-          transparent 0.9px
+          rgba(0, 0, 0, 0.030) 0.7px,
+          transparent 0.95px
         ),
         radial-gradient(
           circle at 75% 65%,
-          rgba(0, 0, 0, 0.020) 0.7px,
-          transparent 0.9px
+          rgba(0, 0, 0, 0.024) 0.7px,
+          transparent 0.95px
         ),
         radial-gradient(
           circle at 45% 85%,
-          rgba(255, 255, 255, 0.55) 0.8px,
+          rgba(255, 255, 255, 0.58) 0.8px,
           transparent 1px
         ),
         linear-gradient(
@@ -193,7 +196,17 @@
       gap: 34px;
     }
 
+    /*
+      Healthcare provider cards:
+      - Two thin red borders
+      - Rounded corners
+      - Small gap between borders
+      - Refined rather than heavy
+    */
+
     .provider-card {
+      position: relative;
+
       min-height: 220px;
 
       display: flex;
@@ -205,7 +218,6 @@
 
       background-color: var(--card-white);
 
-      /* Subtle card texture */
       background-image:
         radial-gradient(
           circle at 30% 25%,
@@ -220,8 +232,11 @@
 
       background-size: 10px 10px, 14px 14px;
 
-      border: 3px solid var(--red);
-      border-radius: 5px;
+      /*
+        Outer border
+      */
+      border: 1.5px solid var(--red);
+      border-radius: 12px;
 
       font-size: clamp(1.25rem, 2vw, 1.55rem);
       font-weight: 600;
@@ -236,6 +251,25 @@
         background-color 200ms ease;
     }
 
+    /*
+      Inner red border
+    */
+    .provider-card::after {
+      content: "";
+
+      position: absolute;
+      inset: 5px;
+
+      border: 1px solid var(--red);
+      border-radius: 8px;
+
+      pointer-events: none;
+
+      transition:
+        inset 200ms ease,
+        border-color 200ms ease;
+    }
+
     .provider-card:hover {
       transform: translateY(-5px);
 
@@ -243,6 +277,10 @@
 
       box-shadow:
         0 14px 35px rgba(0, 0, 0, 0.07);
+    }
+
+    .provider-card:hover::after {
+      inset: 4px;
     }
 
     .provider-card:focus-visible {
@@ -257,7 +295,10 @@
     footer {
       width: 100%;
 
-      /* Transparent so the main background continues through */
+      /*
+        Transparent so the same main background
+        continues all the way to the bottom.
+      */
       background: transparent;
 
       border-top: none;
@@ -289,29 +330,29 @@
       justify-content: flex-end;
     }
 
-    /* Contact: text only */
-    .contact-button {
-      display: inline-flex;
+    .footer-links {
+      display: flex;
       align-items: center;
-      justify-content: center;
-
-      color: var(--black);
-      background: transparent;
-
-      text-decoration: none;
-
-      padding: 0;
-      border: 0;
-      border-radius: 0;
+      gap: 8px;
 
       font-size: 0.78rem;
       font-weight: 600;
+    }
+
+    .footer-links a {
+      color: var(--black);
+      text-decoration: none;
 
       transition: color 180ms ease;
     }
 
-    .contact-button:hover {
+    .footer-links a:hover {
       color: var(--red);
+    }
+
+    .footer-separator {
+      color: var(--black);
+      opacity: 0.7;
     }
 
     /* =========================
@@ -388,7 +429,14 @@
 
       .provider-card {
         min-height: 145px;
-        border-width: 2.5px;
+
+        border-width: 1.5px;
+        border-radius: 11px;
+      }
+
+      .provider-card::after {
+        inset: 4px;
+        border-radius: 7px;
       }
 
       .footer-inner {
@@ -418,7 +466,7 @@
     <nav class="nav" aria-label="Main navigation">
 
       <a href="index.html" class="logo">
-        Healthcare
+        Healthcare Mauritius
       </a>
 
       <ul class="menu">
@@ -472,18 +520,27 @@
     <div class="footer-inner">
 
       <div class="copyright">
-       For your well-being © Healthcare 2026
+       For your well-being © Healthcare Mauritius 2026
       </div>
 
       <div class="footer-right">
 
-        <!-- Add your email after mailto: -->
-        <a
-          href="mailto:"
-          class="contact-button"
-        >
-          Contact
-        </a>
+        <div class="footer-links">
+
+          <a href="policy.html">
+            Policy
+          </a>
+
+          <span class="footer-separator">
+            |
+          </span>
+
+          <!-- Leave the email address empty for now -->
+          <a href="mailto:info@healthcare.mu">
+            Contact
+          </a>
+
+        </div>
 
       </div>
 
