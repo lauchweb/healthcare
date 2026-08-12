@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Find healthcare jobs and career opportunities in Mauritius, including doctors, hospitals, clinics, pharmacy, laboratory, dental, nutrition, mental health, optical, administration and coaching."
+    content="Find healthcare jobs and career opportunities in Mauritius."
   >
 
   <style>
@@ -32,7 +32,6 @@
 
     body {
       min-height: 100vh;
-
       color: var(--black);
 
       font-family:
@@ -115,7 +114,6 @@
       margin: 0 auto;
 
       display: flex;
-
       align-items: center;
       justify-content: space-between;
 
@@ -128,7 +126,6 @@
       text-decoration: none;
 
       font-size: 1.55rem;
-
       font-weight: 700;
 
       letter-spacing: -0.045em;
@@ -136,7 +133,6 @@
 
     .menu {
       display: flex;
-
       align-items: center;
 
       gap: 18px;
@@ -152,7 +148,6 @@
       text-decoration: none;
 
       font-size: 0.91rem;
-
       font-weight: 500;
 
       transition: color 180ms ease;
@@ -168,11 +163,9 @@
       position: absolute;
 
       left: 0;
-
       bottom: -6px;
 
       width: 0;
-
       height: 1.5px;
 
       background: var(--red);
@@ -208,31 +201,27 @@
       width: 100%;
 
       display: flex;
-
-      flex-direction: column;
-
       align-items: center;
+      justify-content: center;
 
-      padding: 65px 24px 80px;
+      padding: 72px 24px 85px;
     }
 
     .jobs-content {
-      width: min(1050px, 100%);
+      width: min(900px, 100%);
     }
 
     /* =========================
-       INTRO
+       TITLE
     ========================== */
 
-    .jobs-intro {
+    .jobs-title {
       text-align: center;
 
-      max-width: 700px;
-
-      margin: 0 auto 42px;
+      margin-bottom: 38px;
     }
 
-    .jobs-intro h1 {
+    .jobs-title h1 {
       color: var(--red);
 
       font-size: clamp(2rem, 5vw, 3rem);
@@ -240,16 +229,6 @@
       font-weight: 700;
 
       letter-spacing: -0.045em;
-
-      margin-bottom: 16px;
-    }
-
-    .jobs-intro p {
-      color: #444444;
-
-      font-size: 0.94rem;
-
-      line-height: 1.75;
     }
 
     /* =========================
@@ -259,7 +238,7 @@
     .jobs-grid {
       display: grid;
 
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
 
       gap: 22px;
 
@@ -275,16 +254,16 @@
 
       width: 100%;
 
-      aspect-ratio: 1.35 / 1;
+      aspect-ratio: 1.65 / 1;
 
-      min-height: 130px;
+      min-height: 135px;
 
       display: flex;
 
       align-items: center;
       justify-content: center;
 
-      padding: 24px;
+      padding: 25px;
 
       background-color: var(--card-white);
 
@@ -341,7 +320,7 @@
 
       text-align: center;
 
-      font-size: 0.95rem;
+      font-size: 1rem;
 
       font-weight: 600;
     }
@@ -364,7 +343,7 @@
     ========================== */
 
     .back-home {
-      width: min(1050px, 100%);
+      width: min(900px, 100%);
 
       margin-top: 42px;
     }
@@ -426,7 +405,6 @@
       display: flex;
 
       align-items: flex-end;
-
       justify-content: space-between;
 
       padding: 24px 0;
@@ -474,14 +452,6 @@
        TABLET
     ========================== */
 
-    @media (max-width: 1000px) {
-
-      .jobs-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-    }
-
     @media (max-width: 800px) {
 
       .nav {
@@ -509,12 +479,10 @@
       }
 
       main {
-        padding: 55px 20px 70px;
+        padding: 60px 20px 70px;
       }
 
       .jobs-grid {
-        grid-template-columns: repeat(3, 1fr);
-
         gap: 18px;
       }
 
@@ -543,15 +511,7 @@
       }
 
       main {
-        padding: 45px 16px 60px;
-      }
-
-      .jobs-intro {
-        margin-bottom: 32px;
-      }
-
-      .jobs-intro p {
-        font-size: 0.9rem;
+        padding: 48px 16px 60px;
       }
 
       .jobs-grid {
@@ -612,9 +572,7 @@
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
+  <!-- HEADER -->
 
   <header>
 
@@ -673,7 +631,7 @@
 
         <li>
           <a
-            href="https://healthcare.mu"
+            href="https://example.com/safety"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -690,7 +648,7 @@
 
         <li>
           <a
-            href="https://healthcare.mu"
+            href="https://example.com/emergency"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -705,29 +663,18 @@
   </header>
 
 
-  <!-- =========================
-       MAIN
-  ========================== -->
+  <!-- MAIN -->
 
   <main>
 
     <div class="jobs-content">
 
-      <section class="jobs-intro">
-
+      <section class="jobs-title">
         <h1>Jobs</h1>
-
-        <p>
-          Explore healthcare career opportunities across different
-          areas of healthcare and related services in Mauritius.
-        </p>
-
       </section>
 
 
       <div class="jobs-grid">
-
-        <!-- Doctor -->
 
         <a
           href="jobs-doctor.html"
@@ -736,18 +683,12 @@
           <span>Doctor</span>
         </a>
 
-
-        <!-- Hospital -->
-
         <a
           href="jobs-hospital.html"
           class="job-card"
         >
           <span>Hospital</span>
         </a>
-
-
-        <!-- Clinic -->
 
         <a
           href="jobs-clinic.html"
@@ -756,18 +697,12 @@
           <span>Clinic</span>
         </a>
 
-
-        <!-- Insurance -->
-
         <a
           href="jobs-insurance.html"
           class="job-card"
         >
           <span>Insurance</span>
         </a>
-
-
-        <!-- Pharmacy -->
 
         <a
           href="jobs-pharmacy.html"
@@ -776,9 +711,6 @@
           <span>Pharmacy</span>
         </a>
 
-
-        <!-- Laboratory -->
-
         <a
           href="jobs-laboratory.html"
           class="job-card"
@@ -786,18 +718,12 @@
           <span>Laboratory</span>
         </a>
 
-
-        <!-- Coach -->
-
         <a
-          href="jobs-coach.html"
+          href="jobs-sport-fitness.html"
           class="job-card"
         >
-          <span>Coach</span>
+          <span>Sport & Fitness</span>
         </a>
-
-
-        <!-- Dental -->
 
         <a
           href="jobs-dental.html"
@@ -806,9 +732,6 @@
           <span>Dental</span>
         </a>
 
-
-        <!-- Nutrition -->
-
         <a
           href="jobs-nutrition.html"
           class="job-card"
@@ -816,18 +739,12 @@
           <span>Nutrition</span>
         </a>
 
-
-        <!-- Mental Health -->
-
         <a
-          href="jobs-mental-health.html"
+          href="jobs-therapy.html"
           class="job-card"
         >
-          <span>Mental Health</span>
+          <span>Therapy</span>
         </a>
-
-
-        <!-- Optical -->
 
         <a
           href="jobs-optical.html"
@@ -836,14 +753,11 @@
           <span>Optical</span>
         </a>
 
-
-        <!-- Administration -->
-
         <a
-          href="jobs-administration.html"
+          href="jobs-healthcare-support.html"
           class="job-card"
         >
-          <span>Administration</span>
+          <span>Healthcare Support</span>
         </a>
 
       </div>
@@ -851,7 +765,7 @@
     </div>
 
 
-    <!-- Back to Home -->
+    <!-- BACK TO HOME -->
 
     <div class="back-home">
 
@@ -864,9 +778,7 @@
   </main>
 
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+  <!-- FOOTER -->
 
   <footer>
 
