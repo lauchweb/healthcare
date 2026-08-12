@@ -9,7 +9,7 @@
 
   <meta
     name="description"
-    content="Find healthcare providers and services across Mauritius, including pharmacies, insurance, clinics, hospitals and doctors — all your healthcare needs in one place."
+    content="Find healthcare providers and services across Mauritius, including doctors, hospitals, clinics, insurance, pharmacies and laboratories — all your healthcare needs in one place."
   >
 
   <style>
@@ -170,7 +170,7 @@
 
     .menu-dot {
       color: var(--black);
-      font-size: 0.7rem;
+      font-size: 0.82rem;
       line-height: 1;
       user-select: none;
     }
@@ -247,6 +247,7 @@
         background-color 200ms ease;
     }
 
+    /* Inner thin red border */
     .provider-card::after {
       content: "";
 
@@ -453,7 +454,9 @@
       <ul class="menu">
 
         <li>
-          <a href="about.html">About</a>
+          <a href="about.html">
+            About
+          </a>
         </li>
 
         <li class="menu-dot" aria-hidden="true">
@@ -492,7 +495,7 @@
 
   <!-- =========================
        MAIN
-  ========================== -->
+    ========================== -->
 
   <main>
     <section
@@ -501,24 +504,10 @@
     >
 
       <a
-        href="pharmacy.html"
+        href="doctor.html"
         class="provider-card"
       >
-        Pharmacy
-      </a>
-
-      <a
-        href="insurance.html"
-        class="provider-card"
-      >
-        Insurance
-      </a>
-
-      <a
-        href="clinic.html"
-        class="provider-card"
-      >
-        Clinic
+        Doctor
       </a>
 
       <a
@@ -529,17 +518,31 @@
       </a>
 
       <a
-        href="doctor.html"
+        href="clinic.html"
         class="provider-card"
       >
-        Doctor
+        Clinic
       </a>
 
       <a
-        href="about.html"
+        href="insurance.html"
         class="provider-card"
       >
-        About
+        Insurance
+      </a>
+
+      <a
+        href="pharmacy.html"
+        class="provider-card"
+      >
+        Pharmacy
+      </a>
+
+      <a
+        href="laboratory.html"
+        class="provider-card"
+      >
+        Laboratory
       </a>
 
     </section>
@@ -569,7 +572,7 @@
             |
           </span>
 
-          <a href="mailto:info@healthcare.mu">
+          <a href="mailto:info@healthcare,mu">
             Contact
           </a>
 
