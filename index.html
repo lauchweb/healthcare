@@ -9,7 +9,7 @@
 
   <meta
     name="description"
-    content="Find healthcare providers and services across Mauritius, including clinics, hospitals, doctors and pharmacies — all your healthcare needs in one place."
+    content="Find healthcare providers and services across Mauritius, including pharmacies, insurance, clinics, hospitals, doctors and more — all your healthcare needs in one place."
   >
 
   <style>
@@ -45,10 +45,7 @@
         Arial,
         sans-serif;
 
-      /*
-        Main matte background.
-        Texture slightly accentuated without changing the base color.
-      */
+      /* Main matte background */
       background-color: var(--main-white);
 
       background-image:
@@ -184,30 +181,26 @@
       align-items: center;
       justify-content: center;
 
-      padding: 90px 24px;
+      padding: 80px 24px;
     }
 
     .provider-grid {
-      width: min(900px, 100%);
+      width: min(1000px, 100%);
 
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
 
-      gap: 34px;
+      gap: 30px;
     }
 
-    /*
-      Healthcare provider cards:
-      - Two thin red borders
-      - Rounded corners
-      - Small gap between borders
-      - Refined rather than heavy
-    */
+    /* =========================
+       GRID CARDS
+    ========================== */
 
     .provider-card {
       position: relative;
 
-      min-height: 220px;
+      min-height: 190px;
 
       display: flex;
       align-items: center;
@@ -232,9 +225,7 @@
 
       background-size: 10px 10px, 14px 14px;
 
-      /*
-        Outer border
-      */
+      /* Outer thin red border */
       border: 1.5px solid var(--red);
       border-radius: 12px;
 
@@ -251,9 +242,7 @@
         background-color 200ms ease;
     }
 
-    /*
-      Inner red border
-    */
+    /* Inner thin red border */
     .provider-card::after {
       content: "";
 
@@ -265,9 +254,7 @@
 
       pointer-events: none;
 
-      transition:
-        inset 200ms ease,
-        border-color 200ms ease;
+      transition: inset 200ms ease;
     }
 
     .provider-card:hover {
@@ -295,10 +282,7 @@
     footer {
       width: 100%;
 
-      /*
-        Transparent so the same main background
-        continues all the way to the bottom.
-      */
+      /* Main background continues through footer */
       background: transparent;
 
       border-top: none;
@@ -391,7 +375,7 @@
       }
 
       .provider-card {
-        min-height: 180px;
+        min-height: 170px;
       }
 
       .footer-inner {
@@ -470,12 +454,9 @@
       </a>
 
       <ul class="menu">
-        <li><a href="#">Pharmacy</a></li>
-        <li><a href="#">Insurance</a></li>
-        <li><a href="#">Clinic</a></li>
-        <li><a href="#">Hospitals</a></li>
-        <li><a href="#">Doctor</a></li>
-        <li><a href="#">About</a></li>
+        <li>
+          <a href="about.html">About</a>
+        </li>
       </ul>
 
     </nav>
@@ -489,23 +470,31 @@
   <main>
     <section
       class="provider-grid"
-      aria-label="Healthcare providers"
+      aria-label="Healthcare services"
     >
 
-      <a href="#" class="provider-card">
+      <a href="pharmacy.html" class="provider-card">
+        Pharmacy
+      </a>
+
+      <a href="insurance.html" class="provider-card">
+        Insurance
+      </a>
+
+      <a href="clinic.html" class="provider-card">
         Clinics
       </a>
 
-      <a href="#" class="provider-card">
+      <a href="hospitals.html" class="provider-card">
         Hospitals
       </a>
 
-      <a href="#" class="provider-card">
+      <a href="doctor.html" class="provider-card">
         Doctors
       </a>
 
-      <a href="#" class="provider-card">
-        Pharmacies
+      <a href="about.html" class="provider-card">
+        About
       </a>
 
     </section>
@@ -535,8 +524,7 @@
             |
           </span>
 
-          <!-- Leave the email address empty for now -->
-          <a href="mailto:info@healthcare.mu">
+          <a href="mailto:hello@healthcaremauritius.example">
             Contact
           </a>
 
