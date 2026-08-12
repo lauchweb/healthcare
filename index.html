@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Healthcare Mauritius | All Your Healthcare Needs in One Place</title>
+  <title>Healthcare Mauritius</title>
 
   <meta
     name="description"
-    content="Find doctors, hospitals, clinics, insurance, pharmacies, laboratories, dental and sport & fitness providers across Mauritius — all your healthcare needs in one place."
+    content="Healthcare Mauritius brings healthcare providers and services together in one place, helping you find doctors, clinics, hospitals, pharmacies, insurance, laboratories and more across Mauritius."
   >
 
   <style>
@@ -33,7 +32,6 @@
 
     body {
       min-height: 100vh;
-
       color: var(--black);
 
       font-family:
@@ -46,7 +44,6 @@
         Arial,
         sans-serif;
 
-      /* Main matte textured background */
       background-color: var(--main-white);
 
       background-image:
@@ -102,7 +99,9 @@
           transparent 0.7px
         );
 
-      background-size: 9px 9px, 13px 13px;
+      background-size:
+        9px 9px,
+        13px 13px;
 
       border-bottom: 1px solid rgba(0, 0, 0, 0.045);
     }
@@ -188,6 +187,12 @@
       user-select: none;
     }
 
+    /* Red separator before Safety */
+
+    .menu-dot-safety {
+      color: var(--red);
+    }
+
     /* =========================
        MAIN
     ========================== */
@@ -201,44 +206,45 @@
       align-items: center;
       justify-content: center;
 
-      padding: 70px 24px;
+      padding: 72px 24px 85px;
     }
 
-    .provider-grid {
-      width: min(760px, 100%);
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 28px;
+    .home-content {
+      width: min(900px, 100%);
     }
 
     /* =========================
-       PROVIDER CARDS
+       HEALTHCARE GRID
     ========================== */
 
-    .provider-card {
+    .healthcare-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 22px;
+
+      width: 100%;
+    }
+
+    /* =========================
+       HEALTHCARE CARD
+    ========================== */
+
+    .healthcare-card {
       position: relative;
 
-      /*
-        Every card has exactly the
-        same dimensions.
-      */
       width: 100%;
-      height: 160px;
+
+      aspect-ratio: 1.65 / 1;
+
+      min-height: 135px;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
-      text-align: center;
-
-      color: var(--black);
-
-      text-decoration: none;
+      padding: 25px;
 
       background-color: var(--card-white);
 
@@ -258,36 +264,25 @@
         10px 10px,
         14px 14px;
 
-      /*
-        Outer red border
-      */
       border: 1.5px solid var(--red);
 
       border-radius: 12px;
 
-      /*
-        Smaller, quiet typography
-        to preserve the airy feel.
-      */
-      font-size: 1.22rem;
+      color: var(--black);
 
-      font-weight: 600;
-
-      letter-spacing: -0.025em;
+      text-decoration: none;
 
       box-shadow:
         0 5px 20px rgba(0, 0, 0, 0.025);
 
       transition:
-        transform 200ms ease,
-        box-shadow 200ms ease,
-        background-color 200ms ease;
+        transform 180ms ease,
+        box-shadow 180ms ease;
     }
 
-    /*
-      Inner red border
-    */
-    .provider-card::after {
+    /* Second fine red border */
+
+    .healthcare-card::after {
       content: "";
 
       position: absolute;
@@ -299,27 +294,31 @@
       border-radius: 8px;
 
       pointer-events: none;
-
-      transition: inset 200ms ease;
     }
 
-    .provider-card:hover {
-      transform: translateY(-4px);
+    .healthcare-card span {
+      position: relative;
 
-      background-color: #ffffff;
+      z-index: 1;
+
+      text-align: center;
+
+      font-size: 1rem;
+
+      font-weight: 600;
+    }
+
+    .healthcare-card:hover {
+      transform: translateY(-2px);
 
       box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.065);
+        0 9px 25px rgba(0, 0, 0, 0.055);
     }
 
-    .provider-card:hover::after {
-      inset: 4px;
-    }
-
-    .provider-card:focus-visible {
+    .healthcare-card:focus-visible {
       outline: 3px solid rgba(201, 40, 50, 0.25);
 
-      outline-offset: 5px;
+      outline-offset: 4px;
     }
 
     /* =========================
@@ -329,14 +328,7 @@
     footer {
       width: 100%;
 
-      /*
-        No separate footer background.
-        The main textured background
-        continues all the way down.
-      */
       background: transparent;
-
-      border-top: none;
     }
 
     .footer-inner {
@@ -363,14 +355,11 @@
 
     .footer-right {
       display: flex;
-
       align-items: center;
-      justify-content: flex-end;
     }
 
     .footer-links {
       display: flex;
-
       align-items: center;
 
       gap: 8px;
@@ -402,7 +391,7 @@
        TABLET
     ========================== */
 
-    @media (max-width: 760px) {
+    @media (max-width: 800px) {
 
       .nav {
         min-height: auto;
@@ -429,20 +418,14 @@
       }
 
       main {
-        padding: 55px 20px;
+        padding: 60px 20px 70px;
       }
 
-      .provider-grid {
-        width: min(680px, 100%);
-
-        gap: 22px;
+      .healthcare-grid {
+        gap: 18px;
       }
 
-      .provider-card {
-        height: 155px;
-      }
-
-      .footer-inner {
+      .healthcare-card {
         min-height: 125px;
       }
     }
@@ -451,7 +434,7 @@
        MOBILE
     ========================== */
 
-    @media (max-width: 520px) {
+    @media (max-width: 600px) {
 
       .nav,
       .footer-inner {
@@ -467,29 +450,33 @@
       }
 
       main {
-        padding: 45px 20px;
+        padding: 48px 16px 60px;
       }
 
-      .provider-grid {
-        grid-template-columns: 1fr;
+      .healthcare-grid {
+        grid-template-columns: repeat(2, 1fr);
 
-        gap: 18px;
-
-        width: min(360px, 100%);
+        gap: 16px;
       }
 
-      .provider-card {
-        height: 145px;
+      .healthcare-card {
+        aspect-ratio: 1.35 / 1;
+
+        min-height: 115px;
+
+        padding: 20px;
 
         border-radius: 11px;
-
-        font-size: 1.16rem;
       }
 
-      .provider-card::after {
+      .healthcare-card::after {
         inset: 4px;
 
         border-radius: 7px;
+      }
+
+      .healthcare-card span {
+        font-size: 0.92rem;
       }
 
       .footer-inner {
@@ -501,9 +488,18 @@
 
         padding: 24px 0;
       }
+    }
 
-      .footer-right {
-        align-items: flex-start;
+    @media (max-width: 390px) {
+
+      .healthcare-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .healthcare-card {
+        min-height: 105px;
+
+        aspect-ratio: auto;
       }
     }
   </style>
@@ -558,8 +554,23 @@
         </li>
 
         <li>
+          <a href="jobs.html">
+            Jobs
+          </a>
+        </li>
+
+        <!-- Red dot before Safety -->
+
+        <li
+          class="menu-dot menu-dot-safety"
+          aria-hidden="true"
+        >
+          ·
+        </li>
+
+        <li>
           <a
-            href="https://healthcare.mu"
+            href="https://example.com/safety"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -576,7 +587,7 @@
 
         <li>
           <a
-            href="https://healthcare.mu"
+            href="https://example.com/emergency"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -592,73 +603,87 @@
 
 
   <!-- =========================
-       MAIN GRID
+       MAIN
   ========================== -->
 
   <main>
 
-    <section
-      class="provider-grid"
-      aria-label="Healthcare services"
-    >
+    <div class="home-content">
 
-      <a
-        href="doctor.html"
-        class="provider-card"
-      >
-        Doctor
-      </a>
+      <div class="healthcare-grid">
 
-      <a
-        href="hospital.html"
-        class="provider-card"
-      >
-        Hospital
-      </a>
+        <!-- Doctor -->
 
-      <a
-        href="clinic.html"
-        class="provider-card"
-      >
-        Clinic
-      </a>
+        <a
+          href="doctor.html"
+          class="healthcare-card"
+        >
+          <span>Doctor</span>
+        </a>
 
-      <a
-        href="insurance.html"
-        class="provider-card"
-      >
-        Insurance
-      </a>
 
-      <a
-        href="pharmacy.html"
-        class="provider-card"
-      >
-        Pharmacy
-      </a>
+        <!-- Hospital -->
 
-      <a
-        href="laboratory.html"
-        class="provider-card"
-      >
-        Laboratory
-      </a>
+        <a
+          href="hospital.html"
+          class="healthcare-card"
+        >
+          <span>Hospital</span>
+        </a>
 
-      <a
-        href="dental.html"
-        class="provider-card"
-      >
-        Dental
-      </a>
 
-      <a
-        href="sport-fitness.html"
-        class="provider-card"
-      >
-        Sport &amp; Fitness
-      </a>
+        <!-- Clinic -->
 
-    </section>
+        <a
+          href="clinic.html"
+          class="healthcare-card"
+        >
+          <span>Clinic</span>
+        </a>
+
+
+        <!-- Insurance -->
+
+        <a
+          href="insurance.html"
+          class="healthcare-card"
+        >
+          <span>Insurance</span>
+        </a>
+
+
+        <!-- Pharmacy -->
+
+        <a
+          href="pharmacy.html"
+          class="healthcare-card"
+        >
+          <span>Pharmacy</span>
+        </a>
+
+
+        <!-- Laboratory -->
+
+        <a
+          href="laboratory.html"
+          class="healthcare-card"
+        >
+          <span>Laboratory</span>
+        </a>
+
+
+        <!-- Sport & Fitness -->
+
+        <a
+          href="sport-fitness.html"
+          class="healthcare-card"
+        >
+          <span>Sport &amp; Fitness</span>
+        </a>
+
+      </div>
+
+    </div>
 
   </main>
 
