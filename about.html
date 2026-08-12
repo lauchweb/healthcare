@@ -33,6 +33,7 @@
 
     body {
       min-height: 100vh;
+
       color: var(--black);
 
       font-family:
@@ -45,6 +46,7 @@
         Arial,
         sans-serif;
 
+      /* Same textured background as the homepage */
       background-color: var(--main-white);
 
       background-image:
@@ -107,27 +109,34 @@
 
     .nav {
       width: min(1200px, calc(100% - 48px));
+
       min-height: 82px;
+
       margin: 0 auto;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 30px;
     }
 
     .logo {
       color: var(--red);
+
       text-decoration: none;
 
       font-size: 1.55rem;
+
       font-weight: 700;
+
       letter-spacing: -0.045em;
     }
 
     .menu {
       display: flex;
       align-items: center;
+
       gap: 18px;
 
       list-style: none;
@@ -137,9 +146,11 @@
       position: relative;
 
       color: var(--black);
+
       text-decoration: none;
 
       font-size: 0.91rem;
+
       font-weight: 500;
 
       transition: color 180ms ease;
@@ -153,6 +164,7 @@
       content: "";
 
       position: absolute;
+
       left: 0;
       bottom: -6px;
 
@@ -170,8 +182,11 @@
 
     .menu-dot {
       color: var(--black);
+
       font-size: 0.82rem;
+
       line-height: 1;
+
       user-select: none;
     }
 
@@ -181,11 +196,15 @@
 
     main {
       flex: 1;
+
       width: 100%;
 
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
+
       justify-content: center;
 
       padding: 80px 24px;
@@ -208,7 +227,9 @@
           transparent 0.75px
         );
 
-      background-size: 10px 10px, 14px 14px;
+      background-size:
+        10px 10px,
+        14px 14px;
 
       border-radius: 16px;
 
@@ -222,6 +243,7 @@
       color: var(--red);
 
       font-size: clamp(2rem, 5vw, 3rem);
+
       font-weight: 700;
 
       letter-spacing: -0.045em;
@@ -233,6 +255,7 @@
       max-width: 680px;
 
       font-size: 1.05rem;
+
       line-height: 1.8;
 
       color: #242424;
@@ -251,15 +274,32 @@
     .back-home {
       align-self: flex-start;
 
+      /*
+        Same left alignment as the
+        About heading inside the box.
+      */
+      width: min(820px, 100%);
+
       margin-top: 24px;
-      margin-left: 4px;
+
+      padding-left: 60px;
 
       display: inline-flex;
+
+      align-items: center;
+
+      width: min(820px, 100%);
+    }
+
+    .back-home-link {
+      display: inline-flex;
+
       align-items: center;
 
       padding: 11px 18px;
 
       background: var(--red);
+
       color: #ffffff;
 
       border-radius: 9px;
@@ -267,6 +307,7 @@
       text-decoration: none;
 
       font-size: 0.88rem;
+
       font-weight: 600;
 
       box-shadow:
@@ -278,7 +319,7 @@
         box-shadow 180ms ease;
     }
 
-    .back-home:hover {
+    .back-home-link:hover {
       background: #b8222c;
 
       transform: translateY(-2px);
@@ -287,8 +328,9 @@
         0 7px 18px rgba(201, 40, 50, 0.20);
     }
 
-    .back-home:focus-visible {
+    .back-home-link:focus-visible {
       outline: 3px solid rgba(201, 40, 50, 0.25);
+
       outline-offset: 4px;
     }
 
@@ -298,18 +340,23 @@
 
     footer {
       width: 100%;
+
       background: transparent;
+
       border-top: none;
     }
 
     .footer-inner {
       width: min(1200px, calc(100% - 48px));
+
       min-height: 105px;
 
       margin: 0 auto;
 
       display: flex;
+
       align-items: flex-end;
+
       justify-content: space-between;
 
       padding: 24px 0;
@@ -319,26 +366,33 @@
       color: var(--black);
 
       font-size: 0.78rem;
+
       font-weight: 500;
     }
 
     .footer-right {
       display: flex;
+
       align-items: center;
+
       justify-content: flex-end;
     }
 
     .footer-links {
       display: flex;
+
       align-items: center;
+
       gap: 8px;
 
       font-size: 0.78rem;
+
       font-weight: 600;
     }
 
     .footer-links a {
       color: var(--black);
+
       text-decoration: none;
 
       transition: color 180ms ease;
@@ -350,6 +404,7 @@
 
     .footer-separator {
       color: var(--black);
+
       opacity: 0.7;
     }
 
@@ -365,6 +420,7 @@
         padding: 22px 0;
 
         align-items: flex-start;
+
         flex-direction: column;
 
         gap: 20px;
@@ -372,7 +428,9 @@
 
       .menu {
         width: 100%;
+
         gap: 12px;
+
         flex-wrap: wrap;
       }
 
@@ -386,6 +444,12 @@
 
       .about-container {
         padding: 45px 40px;
+      }
+
+      .back-home {
+        width: min(820px, 100%);
+
+        padding-left: 40px;
       }
 
       .footer-inner {
@@ -418,6 +482,7 @@
 
       .about-container {
         padding: 35px 25px;
+
         border-radius: 13px;
       }
 
@@ -427,12 +492,19 @@
 
       .about-container p {
         font-size: 0.98rem;
+
         line-height: 1.7;
       }
 
       .back-home {
+        width: 100%;
+
         margin-top: 22px;
-        margin-left: 2px;
+
+        padding-left: 25px;
+      }
+
+      .back-home-link {
         border-radius: 8px;
       }
 
@@ -460,9 +532,16 @@
   ========================== -->
 
   <header>
-    <nav class="nav" aria-label="Main navigation">
 
-      <a href="index.html" class="logo">
+    <nav
+      class="nav"
+      aria-label="Main navigation"
+    >
+
+      <a
+        href="index.html"
+        class="logo"
+      >
         Healthcare Mauritius
       </a>
 
@@ -474,7 +553,10 @@
           </a>
         </li>
 
-        <li class="menu-dot" aria-hidden="true">
+        <li
+          class="menu-dot"
+          aria-hidden="true"
+        >
           ·
         </li>
 
@@ -484,7 +566,10 @@
           </a>
         </li>
 
-        <li class="menu-dot" aria-hidden="true">
+        <li
+          class="menu-dot"
+          aria-hidden="true"
+        >
           ·
         </li>
 
@@ -498,7 +583,10 @@
           </a>
         </li>
 
-        <li class="menu-dot" aria-hidden="true">
+        <li
+          class="menu-dot"
+          aria-hidden="true"
+        >
           ·
         </li>
 
@@ -515,6 +603,7 @@
       </ul>
 
     </nav>
+
   </header>
 
 
@@ -548,14 +637,21 @@
 
     </article>
 
-    <!-- Deliberately separated from the text box -->
-    <a
-      href="index.html"
-      class="back-home"
-      aria-label="Back to Home"
-    >
-      &larr;&nbsp; Back to Home
-    </a>
+
+    <!-- Back button aligned with
+         the left edge of the About text -->
+
+    <div class="back-home">
+
+      <a
+        href="index.html"
+        class="back-home-link"
+        aria-label="Back to Home"
+      >
+        &larr;&nbsp; Back to Home
+      </a>
+
+    </div>
 
   </main>
 
@@ -584,7 +680,7 @@
             |
           </span>
 
-          <a href="mailto:hello@healthcaremauritius.example">
+          <a href="mailto:info@healthcare.mu">
             Contact
           </a>
 
