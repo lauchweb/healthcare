@@ -9,7 +9,7 @@
 
   <meta
     name="description"
-    content="Find doctors, hospitals, clinics, insurance, pharmacies, laboratories, dental and sports & fitness providers across Mauritius — all your healthcare needs in one place."
+    content="Find doctors, hospitals, clinics, insurance, pharmacies, laboratories, dental and sport & fitness providers across Mauritius — all your healthcare needs in one place."
   >
 
   <style>
@@ -33,6 +33,7 @@
 
     body {
       min-height: 100vh;
+
       color: var(--black);
 
       font-family:
@@ -45,6 +46,7 @@
         Arial,
         sans-serif;
 
+      /* Main matte textured background */
       background-color: var(--main-white);
 
       background-image:
@@ -107,27 +109,33 @@
 
     .nav {
       width: min(1200px, calc(100% - 48px));
+
       min-height: 82px;
+
       margin: 0 auto;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 30px;
     }
 
     .logo {
       color: var(--red);
+
       text-decoration: none;
 
       font-size: 1.55rem;
       font-weight: 700;
+
       letter-spacing: -0.045em;
     }
 
     .menu {
       display: flex;
       align-items: center;
+
       gap: 18px;
 
       list-style: none;
@@ -137,6 +145,7 @@
       position: relative;
 
       color: var(--black);
+
       text-decoration: none;
 
       font-size: 0.91rem;
@@ -153,6 +162,7 @@
       content: "";
 
       position: absolute;
+
       left: 0;
       bottom: -6px;
 
@@ -170,8 +180,11 @@
 
     .menu-dot {
       color: var(--black);
+
       font-size: 0.82rem;
+
       line-height: 1;
+
       user-select: none;
     }
 
@@ -181,40 +194,51 @@
 
     main {
       flex: 1;
+
       width: 100%;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      padding: 80px 24px;
+      padding: 70px 24px;
     }
 
     .provider-grid {
-      width: min(1000px, 100%);
+      width: min(760px, 100%);
 
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
 
-      gap: 30px;
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 28px;
     }
 
     /* =========================
-       GRID CARDS
+       PROVIDER CARDS
     ========================== */
 
     .provider-card {
       position: relative;
 
-      min-height: 190px;
+      /*
+        Every card has exactly the
+        same dimensions.
+      */
+      width: 100%;
+      height: 160px;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
-      color: var(--black);
-      text-decoration: none;
       text-align: center;
+
+      color: var(--black);
+
+      text-decoration: none;
 
       background-color: var(--card-white);
 
@@ -230,13 +254,25 @@
           transparent 0.75px
         );
 
-      background-size: 10px 10px, 14px 14px;
+      background-size:
+        10px 10px,
+        14px 14px;
 
+      /*
+        Outer red border
+      */
       border: 1.5px solid var(--red);
+
       border-radius: 12px;
 
-      font-size: clamp(1.25rem, 2vw, 1.55rem);
+      /*
+        Smaller, quiet typography
+        to preserve the airy feel.
+      */
+      font-size: 1.22rem;
+
       font-weight: 600;
+
       letter-spacing: -0.025em;
 
       box-shadow:
@@ -248,14 +284,18 @@
         background-color 200ms ease;
     }
 
-    /* Inner thin red border */
+    /*
+      Inner red border
+    */
     .provider-card::after {
       content: "";
 
       position: absolute;
+
       inset: 5px;
 
       border: 1px solid var(--red);
+
       border-radius: 8px;
 
       pointer-events: none;
@@ -264,12 +304,12 @@
     }
 
     .provider-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
 
       background-color: #ffffff;
 
       box-shadow:
-        0 14px 35px rgba(0, 0, 0, 0.07);
+        0 12px 30px rgba(0, 0, 0, 0.065);
     }
 
     .provider-card:hover::after {
@@ -278,6 +318,7 @@
 
     .provider-card:focus-visible {
       outline: 3px solid rgba(201, 40, 50, 0.25);
+
       outline-offset: 5px;
     }
 
@@ -287,12 +328,20 @@
 
     footer {
       width: 100%;
+
+      /*
+        No separate footer background.
+        The main textured background
+        continues all the way down.
+      */
       background: transparent;
+
       border-top: none;
     }
 
     .footer-inner {
       width: min(1200px, calc(100% - 48px));
+
       min-height: 105px;
 
       margin: 0 auto;
@@ -308,26 +357,32 @@
       color: var(--black);
 
       font-size: 0.78rem;
+
       font-weight: 500;
     }
 
     .footer-right {
       display: flex;
+
       align-items: center;
       justify-content: flex-end;
     }
 
     .footer-links {
       display: flex;
+
       align-items: center;
+
       gap: 8px;
 
       font-size: 0.78rem;
+
       font-weight: 600;
     }
 
     .footer-links a {
       color: var(--black);
+
       text-decoration: none;
 
       transition: color 180ms ease;
@@ -339,6 +394,7 @@
 
     .footer-separator {
       color: var(--black);
+
       opacity: 0.7;
     }
 
@@ -354,6 +410,7 @@
         padding: 22px 0;
 
         align-items: flex-start;
+
         flex-direction: column;
 
         gap: 20px;
@@ -361,7 +418,9 @@
 
       .menu {
         width: 100%;
+
         gap: 12px;
+
         flex-wrap: wrap;
       }
 
@@ -370,15 +429,17 @@
       }
 
       main {
-        padding: 60px 20px;
+        padding: 55px 20px;
       }
 
       .provider-grid {
-        gap: 20px;
+        width: min(680px, 100%);
+
+        gap: 22px;
       }
 
       .provider-card {
-        min-height: 170px;
+        height: 155px;
       }
 
       .footer-inner {
@@ -406,29 +467,38 @@
       }
 
       main {
-        padding: 45px 16px;
+        padding: 45px 20px;
       }
 
       .provider-grid {
         grid-template-columns: 1fr;
+
         gap: 18px;
+
+        width: min(360px, 100%);
       }
 
       .provider-card {
-        min-height: 145px;
-        border-width: 1.5px;
+        height: 145px;
+
         border-radius: 11px;
+
+        font-size: 1.16rem;
       }
 
       .provider-card::after {
         inset: 4px;
+
         border-radius: 7px;
       }
 
       .footer-inner {
         align-items: flex-start;
+
         flex-direction: column;
+
         gap: 20px;
+
         padding: 24px 0;
       }
 
@@ -446,40 +516,50 @@
   ========================== -->
 
   <header>
-    <nav class="nav" aria-label="Main navigation">
 
-      <a href="index.html" class="logo">
+    <nav
+      class="nav"
+      aria-label="Main navigation"
+    >
+
+      <a
+        href="index.html"
+        class="logo"
+      >
         Healthcare Mauritius
       </a>
 
       <ul class="menu">
 
-        <!-- Info is menu-only -->
         <li>
           <a href="info.html">
             Info
           </a>
         </li>
 
-        <li class="menu-dot" aria-hidden="true">
+        <li
+          class="menu-dot"
+          aria-hidden="true"
+        >
           ·
         </li>
 
-        <!-- About is menu-only -->
         <li>
           <a href="about.html">
             About
           </a>
         </li>
 
-        <li class="menu-dot" aria-hidden="true">
+        <li
+          class="menu-dot"
+          aria-hidden="true"
+        >
           ·
         </li>
 
-        <!-- Safety is menu-only -->
         <li>
           <a
-            href="https://safety"
+            href="https://afety"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -487,11 +567,13 @@
           </a>
         </li>
 
-        <li class="menu-dot" aria-hidden="true">
+        <li
+          class="menu-dot"
+          aria-hidden="true"
+        >
           ·
         </li>
 
-        <!-- Emergency is menu-only -->
         <li>
           <a
             href="https://emergency"
@@ -505,6 +587,7 @@
       </ul>
 
     </nav>
+
   </header>
 
 
@@ -513,6 +596,7 @@
   ========================== -->
 
   <main>
+
     <section
       class="provider-grid"
       aria-label="Healthcare services"
@@ -568,13 +652,14 @@
       </a>
 
       <a
-        href="sport-fitness.html"
+        href="sports-fitness.html"
         class="provider-card"
       >
         Sport &amp; Fitness
       </a>
 
     </section>
+
   </main>
 
 
@@ -583,10 +668,11 @@
   ========================== -->
 
   <footer>
+
     <div class="footer-inner">
 
       <div class="copyright">
-       For your well-being © Healthcare Mauritius 2026
+       For your well being © Healthcare Mauritius 2025 - 2026
       </div>
 
       <div class="footer-right">
@@ -610,6 +696,7 @@
       </div>
 
     </div>
+
   </footer>
 
 </body>
