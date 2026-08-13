@@ -194,6 +194,32 @@
       color: var(--red);
     }
 
+    /* Login separator */
+
+    .menu-separator {
+      color: var(--black);
+
+      opacity: 0.7;
+
+      font-size: 0.82rem;
+
+      line-height: 1;
+
+      user-select: none;
+    }
+
+    /* Login */
+
+    .menu-login a {
+      color: var(--red);
+
+      font-weight: 600;
+    }
+
+    .menu-login a:hover {
+      color: var(--red);
+    }
+
     /* =========================
        MAIN
     ========================== */
@@ -672,6 +698,23 @@
           </a>
         </li>
 
+        <!-- Login separator -->
+
+        <li
+          class="menu-separator"
+          aria-hidden="true"
+        >
+          |
+        </li>
+
+        <!-- Login -->
+
+        <li class="menu-login">
+          <a href="login.html">
+            Login
+          </a>
+        </li>
+
       </ul>
 
     </nav>
@@ -784,6 +827,18 @@
 
           <a href="policy.html">
             Policy
+          </a>
+
+          <span class="footer-separator">
+            |
+          </span>
+
+          <a
+            href="https://www.instagram.com/healthcare.mu/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Follow
           </a>
 
           <span class="footer-separator">
