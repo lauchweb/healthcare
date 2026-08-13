@@ -469,6 +469,46 @@
     }
 
     /* =========================
+       STATUS MESSAGE
+    ========================== */
+
+    .status-message {
+      display: none;
+
+      margin-top: 18px;
+
+      padding: 11px 13px;
+
+      border-radius: 8px;
+
+      font-size: 0.80rem;
+
+      line-height: 1.5;
+
+      text-align: center;
+    }
+
+    .status-message.success {
+      display: block;
+
+      color: #246b35;
+
+      background: rgba(36, 107, 53, 0.08);
+
+      border: 1px solid rgba(36, 107, 53, 0.18);
+    }
+
+    .status-message.error {
+      display: block;
+
+      color: var(--red);
+
+      background: rgba(201, 40, 50, 0.07);
+
+      border: 1px solid rgba(201, 40, 50, 0.16);
+    }
+
+    /* =========================
        BACK TO HOME
     ========================== */
 
@@ -861,8 +901,13 @@
           </div>
 
 
+          <!-- =========================
+               LOGIN FORM
+          ========================== -->
+
           <form
             class="login-form"
+            id="loginForm"
             action="#"
             method="post"
           >
@@ -906,11 +951,22 @@
             <button
               type="submit"
               class="login-button"
+              id="loginButton"
             >
               Login
             </button>
 
           </form>
+
+
+          <!-- STATUS MESSAGE -->
+
+          <div
+            id="statusMessage"
+            class="status-message"
+            role="status"
+            aria-live="polite"
+          ></div>
 
 
           <div class="login-links">
@@ -937,7 +993,9 @@
       </section>
 
 
-      <!-- BACK TO HOME -->
+      <!-- =========================
+           BACK TO HOME
+      ========================== -->
 
       <div class="back-home">
 
@@ -1003,6 +1061,204 @@
     </div>
 
   </footer>
+
+
+  <!-- ========================================================
+       LOGIN AUTHENTICATION LOGIC
+       PLACEHOLDER ONLY
+  ========================================================= -->
+
+  <script>
+
+    /*
+    ========================================================
+    LOGIN API — PLACEHOLDER
+    ========================================================
+
+    This is the location where the real authentication
+    provider/backend will eventually be connected.
+
+    The login page will send:
+
+      - email
+      - password
+
+    to the authentication backend.
+
+    Example endpoint:
+
+      POST /api/auth/login
+
+    Example request:
+
+      fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password
+        })
+      });
+
+    IMPORTANT:
+    The endpoint above does NOT exist yet.
+
+    It is only a placeholder showing exactly where
+    the authentication connection will be added later.
+
+    The final endpoint, response format, session handling,
+    token handling and redirect will depend on the
+    authentication provider/backend selected.
+    ========================================================
+    */
+
+
+    const loginForm =
+      document.getElementById("loginForm");
+
+    const loginButton =
+      document.getElementById("loginButton");
+
+    const statusMessage =
+      document.getElementById("statusMessage");
+
+
+    loginForm.addEventListener(
+      "submit",
+      async function(event) {
+
+        event.preventDefault();
+
+
+        const email =
+          document.getElementById("email").value.trim();
+
+        const password =
+          document.getElementById("password").value;
+
+
+        /*
+        ====================================================
+        BASIC FRONTEND VALIDATION
+        ====================================================
+        */
+
+        if (!email || !password) {
+
+          statusMessage.className =
+            "status-message error";
+
+          statusMessage.textContent =
+            "Please enter your email and password.";
+
+          return;
+        }
+
+
+        /*
+        ====================================================
+        TEMPORARY PLACEHOLDER
+        ====================================================
+
+        When the authentication backend is connected,
+        the code below will be replaced/activated.
+
+        Example:
+
+        try {
+
+          loginButton.disabled = true;
+
+          loginButton.textContent = "Logging in...";
+
+          const response = await fetch(
+            "/api/auth/login",
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type": "application/json"
+              },
+
+              body: JSON.stringify({
+                email: email,
+                password: password
+              })
+            }
+          );
+
+
+          const data = await response.json();
+
+
+          if (!response.ok) {
+
+            throw new Error(
+              data.message ||
+              "Unable to log in."
+            );
+
+          }
+
+
+          // Example:
+          //
+          // The authentication system may return
+          // a session/token here.
+          //
+          // Store/process it according to the
+          // provider's authentication method.
+
+
+          window.location.href =
+            "account.html";
+
+
+        } catch (error) {
+
+          statusMessage.className =
+            "status-message error";
+
+          statusMessage.textContent =
+            error.message ||
+            "Incorrect email or password.";
+
+        } finally {
+
+          loginButton.disabled = false;
+
+          loginButton.textContent =
+            "Login";
+
+        }
+
+        ====================================================
+        */
+
+
+        /*
+        ====================================================
+        TEMPORARY DEVELOPMENT MESSAGE
+        ====================================================
+
+        This confirms that the frontend is ready for
+        the authentication API without pretending that
+        authentication is currently working.
+        ====================================================
+        */
+
+        statusMessage.className =
+          "status-message success";
+
+        statusMessage.textContent =
+          "Login form ready. The authentication system will be connected here later.";
+
+      }
+    );
+
+  </script>
 
 </body>
 </html>
