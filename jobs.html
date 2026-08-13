@@ -177,6 +177,17 @@
       width: 100%;
     }
 
+    /* LOGIN */
+
+    .menu .login-link {
+      color: var(--red);
+      font-weight: 600;
+    }
+
+    .menu .login-link:hover {
+      color: var(--red);
+    }
+
     .menu-dot {
       color: var(--black);
 
@@ -187,38 +198,8 @@
       user-select: none;
     }
 
-    /* Red separator before Safety */
-
     .menu-dot-safety {
       color: var(--red);
-    }
-
-    /* =========================
-       LOGIN
-    ========================== */
-
-    .menu-dot-login {
-      color: var(--black);
-
-      font-size: 0.82rem;
-
-      line-height: 1;
-
-      user-select: none;
-    }
-
-    .menu a.login-link {
-      color: var(--red);
-
-      font-weight: 600;
-    }
-
-    .menu a.login-link:hover {
-      color: #b8222c;
-    }
-
-    .menu a.login-link::after {
-      background: var(--red);
     }
 
     /* =========================
@@ -300,7 +281,7 @@
       display: grid;
 
       grid-template-columns:
-        repeat(2, 1fr);
+        repeat(2, minmax(0, 1fr));
 
       gap: 22px;
     }
@@ -314,6 +295,7 @@
 
       width: 100%;
 
+      min-width: 0;
       min-height: 130px;
 
       padding: 26px;
@@ -521,16 +503,6 @@
       opacity: 0.7;
     }
 
-    /* Follow */
-
-    .footer-follow {
-      color: var(--red) !important;
-    }
-
-    .footer-follow:hover {
-      color: #b8222c !important;
-    }
-
     /* =========================
        TABLET
     ========================== */
@@ -586,7 +558,7 @@
 
       .nav,
       .footer-inner {
-        width: min(100% - 32px, 1200px);
+        width: calc(100% - 32px);
       }
 
       .logo {
@@ -624,7 +596,8 @@
       }
 
       .jobs-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          minmax(0, 1fr);
 
         gap: 16px;
       }
@@ -653,6 +626,10 @@
         gap: 20px;
 
         padding: 24px 0;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
       }
     }
   </style>
@@ -712,8 +689,6 @@
           </a>
         </li>
 
-        <!-- Red separator before Safety -->
-
         <li
           class="menu-dot menu-dot-safety"
           aria-hidden="true"
@@ -748,16 +723,14 @@
           </a>
         </li>
 
-        <!-- Login separator -->
+        <!-- Separator before Login -->
 
         <li
-          class="menu-dot menu-dot-login"
+          class="menu-dot"
           aria-hidden="true"
         >
           |
         </li>
-
-        <!-- LOGIN IN RED -->
 
         <li>
           <a
@@ -969,8 +942,6 @@
 
         <div class="footer-links">
 
-          <!-- POLICY -->
-
           <a href="policy.html">
             Policy
           </a>
@@ -979,11 +950,8 @@
             |
           </span>
 
-          <!-- FOLLOW -->
-
           <a
-            href="https://instagram.com/healthcare.mu"
-            class="footer-follow"
+            href="https://www.instagram.com/healhcare.mu"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -993,8 +961,6 @@
           <span class="footer-separator">
             |
           </span>
-
-          <!-- CONTACT -->
 
           <a href="mailto:info@healthcare.mu">
             Contact
