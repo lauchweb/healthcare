@@ -21,7 +21,6 @@
       --black: #111111;
       --main-white: #f7f7f4;
       --card-white: #fbfbf9;
-      --green: #246b35;
     }
 
     * {
@@ -132,6 +131,7 @@
       text-decoration: none;
 
       font-size: 1.55rem;
+
       font-weight: 700;
 
       letter-spacing: -0.045em;
@@ -155,6 +155,7 @@
       text-decoration: none;
 
       font-size: 0.91rem;
+
       font-weight: 500;
 
       transition: color 180ms ease;
@@ -197,8 +198,6 @@
     .menu-dot-safety {
       color: var(--red);
     }
-
-    /* LOGIN */
 
     .menu-login a {
       color: var(--red);
@@ -389,102 +388,6 @@
     }
 
     /* =========================
-       PASSWORD REQUIREMENTS
-    ========================== */
-
-    .password-requirements {
-      margin-top: 2px;
-
-      padding: 11px 13px;
-
-      background: rgba(0, 0, 0, 0.025);
-
-      border: 1px solid rgba(0, 0, 0, 0.07);
-
-      border-radius: 8px;
-    }
-
-    .password-requirements-title {
-      margin-bottom: 7px;
-
-      color: #444444;
-
-      font-size: 0.75rem;
-
-      font-weight: 600;
-    }
-
-    .password-requirements ul {
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 4px;
-
-      list-style: none;
-    }
-
-    .password-requirements li {
-      position: relative;
-
-      padding-left: 20px;
-
-      color: #777777;
-
-      font-size: 0.74rem;
-
-      line-height: 1.4;
-
-      transition: color 180ms ease;
-    }
-
-    .password-requirements li::before {
-      content: "○";
-
-      position: absolute;
-
-      left: 0;
-
-      color: #888888;
-
-      font-weight: 700;
-    }
-
-    .password-requirements li.valid {
-      color: var(--green);
-    }
-
-    .password-requirements li.valid::before {
-      content: "✓";
-
-      color: var(--green);
-    }
-
-    /* =========================
-       PASSWORD MATCH
-    ========================== */
-
-    .password-match {
-      display: none;
-
-      font-size: 0.75rem;
-
-      line-height: 1.4;
-    }
-
-    .password-match.valid {
-      display: block;
-
-      color: var(--green);
-    }
-
-    .password-match.invalid {
-      display: block;
-
-      color: var(--red);
-    }
-
-    /* =========================
        TERMS
     ========================== */
 
@@ -615,7 +518,7 @@
     .status-message.success {
       display: block;
 
-      color: var(--green);
+      color: #246b35;
 
       background: rgba(36, 107, 53, 0.08);
 
@@ -630,6 +533,16 @@
       background: rgba(201, 40, 50, 0.07);
 
       border: 1px solid rgba(201, 40, 50, 0.16);
+    }
+
+    .status-message.info {
+      display: block;
+
+      color: #444444;
+
+      background: rgba(0, 0, 0, 0.045);
+
+      border: 1px solid rgba(0, 0, 0, 0.10);
     }
 
     /* =========================
@@ -889,10 +802,6 @@
         height: 45px;
       }
 
-      .password-requirements {
-        padding: 10px 11px;
-      }
-
       .back-home {
         margin-top: 42px;
       }
@@ -1074,6 +983,7 @@
                 id="full-name"
                 name="full_name"
                 autocomplete="name"
+                placeholder="Your full name"
                 required
               >
 
@@ -1091,6 +1001,7 @@
                 id="email"
                 name="email"
                 autocomplete="email"
+                placeholder="Your email"
                 required
               >
 
@@ -1110,50 +1021,17 @@
                 autocomplete="new-password"
                 minlength="8"
                 required
-                aria-describedby="passwordRequirements"
+                aria-describedby="password-requirements"
               >
 
-              <p class="form-note">
-                Your password must meet all of the requirements below.
+              <p
+                class="form-note"
+                id="password-requirements"
+              >
+                Password must contain at least 8 characters,
+                including one uppercase letter, one lowercase
+                letter, one number, and one special character.
               </p>
-
-
-              <!-- PASSWORD REQUIREMENTS -->
-
-              <div
-                class="password-requirements"
-                id="passwordRequirements"
-              >
-
-                <p class="password-requirements-title">
-                  Password requirements:
-                </p>
-
-                <ul>
-
-                  <li id="requirement-length">
-                    At least 8 characters
-                  </li>
-
-                  <li id="requirement-uppercase">
-                    At least 1 uppercase letter (A-Z)
-                  </li>
-
-                  <li id="requirement-lowercase">
-                    At least 1 lowercase letter (a-z)
-                  </li>
-
-                  <li id="requirement-number">
-                    At least 1 number (0-9)
-                  </li>
-
-                  <li id="requirement-special">
-                    At least 1 special character (! @ # $ % ...)
-                  </li>
-
-                </ul>
-
-              </div>
 
             </div>
 
@@ -1169,19 +1047,12 @@
                 id="confirm-password"
                 name="confirm_password"
                 autocomplete="new-password"
+                minlength="8"
                 required
-                aria-describedby="passwordMatch"
               >
-
-              <p
-                class="password-match"
-                id="passwordMatch"
-              ></p>
 
             </div>
 
-
-            <!-- TERMS -->
 
             <div class="terms">
 
@@ -1208,8 +1079,6 @@
             </div>
 
 
-            <!-- REGISTER BUTTON -->
-
             <button
               type="submit"
               class="register-button"
@@ -1232,8 +1101,6 @@
             aria-live="polite"
           ></div>
 
-
-          <!-- LOGIN -->
 
           <div class="login-link">
 
@@ -1321,42 +1188,71 @@
 
 
   <!-- ========================================================
-       REGISTRATION JAVASCRIPT
-  ======================================================== -->
+       REGISTRATION BACKEND API PLACEHOLDER
+  ========================================================= -->
 
   <script>
 
     /*
     ========================================================
-    PASSWORD SECURITY REQUIREMENTS
+    REGISTRATION API — PLACEHOLDER
     ========================================================
 
-    Password must contain:
+    CURRENT STATUS:
 
-      ✓ At least 8 characters
-      ✓ At least 1 uppercase letter
-      ✓ At least 1 lowercase letter
-      ✓ At least 1 number
-      ✓ At least 1 special character
+    The backend does NOT exist yet.
 
-    Special characters are anything that is not:
-      A-Z
-      a-z
-      0-9
+    This frontend is prepared for a future backend endpoint:
 
-    Examples of valid passwords:
+        POST /api/auth/register
 
-      Healthcare@2026
-      Mauritius#2026
-      Welcome!123
 
-    Examples of invalid passwords:
+    When the backend is ready, this endpoint should:
 
-      healthcare
-      Healthcare
-      Healthcare2026
-      healthcare2026
-      HEALTHCARE@2026
+      1. Receive:
+           - full_name
+           - email
+           - password
+
+      2. Validate all information.
+
+      3. Validate the password requirements:
+           - Minimum 8 characters
+           - Uppercase letter
+           - Lowercase letter
+           - Number
+           - Special character
+
+      4. Check whether the email already exists.
+
+      5. Hash the password securely.
+
+      6. Create the user in the database.
+
+      7. Return JSON.
+
+    Example successful response:
+
+      {
+        "success": true,
+        "message": "Account created successfully."
+      }
+
+
+    Example error response:
+
+      {
+        "success": false,
+        "message": "Email address already exists."
+      }
+
+
+    IMPORTANT:
+
+    Never store passwords as plain text.
+
+    The password must be hashed by the backend before
+    being stored in the database.
 
     ========================================================
     */
@@ -1389,246 +1285,42 @@
 
     /*
     ========================================================
-    PASSWORD REQUIREMENT ELEMENTS
+       STATUS MESSAGE
     ========================================================
     */
 
-    const requirementLength =
-      document.getElementById(
-        "requirement-length"
-      );
-
-    const requirementUppercase =
-      document.getElementById(
-        "requirement-uppercase"
-      );
-
-    const requirementLowercase =
-      document.getElementById(
-        "requirement-lowercase"
-      );
-
-    const requirementNumber =
-      document.getElementById(
-        "requirement-number"
-      );
-
-    const requirementSpecial =
-      document.getElementById(
-        "requirement-special"
-      );
-
-    const passwordMatch =
-      document.getElementById(
-        "passwordMatch"
-      );
-
-
-    /*
-    ========================================================
-    PASSWORD VALIDATION FUNCTION
-    ========================================================
-    */
-
-    function validatePassword(password) {
-
-      return {
-
-        length:
-          password.length >= 8,
-
-        uppercase:
-          /[A-Z]/.test(password),
-
-        lowercase:
-          /[a-z]/.test(password),
-
-        number:
-          /[0-9]/.test(password),
-
-        special:
-          /[^A-Za-z0-9]/.test(password)
-
-      };
-
-    }
-
-
-    /*
-    ========================================================
-    CHECK IF PASSWORD IS COMPLETELY VALID
-    ========================================================
-    */
-
-    function isPasswordValid(password) {
-
-      const requirements =
-        validatePassword(password);
-
-      return (
-        requirements.length &&
-        requirements.uppercase &&
-        requirements.lowercase &&
-        requirements.number &&
-        requirements.special
-      );
-
-    }
-
-
-    /*
-    ========================================================
-    UPDATE PASSWORD REQUIREMENTS DISPLAY
-    ========================================================
-    */
-
-    function updatePasswordRequirements() {
-
-      const password =
-        passwordInput.value;
-
-      const requirements =
-        validatePassword(password);
-
-
-      requirementLength.classList.toggle(
-        "valid",
-        requirements.length
-      );
-
-
-      requirementUppercase.classList.toggle(
-        "valid",
-        requirements.uppercase
-      );
-
-
-      requirementLowercase.classList.toggle(
-        "valid",
-        requirements.lowercase
-      );
-
-
-      requirementNumber.classList.toggle(
-        "valid",
-        requirements.number
-      );
-
-
-      requirementSpecial.classList.toggle(
-        "valid",
-        requirements.special
-      );
-
-
-      updatePasswordMatch();
-
-    }
-
-
-    /*
-    ========================================================
-    PASSWORD MATCH CHECK
-    ========================================================
-    */
-
-    function updatePasswordMatch() {
-
-      const password =
-        passwordInput.value;
-
-      const confirmPassword =
-        confirmPasswordInput.value;
-
-
-      if (!confirmPassword) {
-
-        passwordMatch.className =
-          "password-match";
-
-        passwordMatch.textContent =
-          "";
-
-        return;
-      }
-
-
-      if (password === confirmPassword) {
-
-        passwordMatch.className =
-          "password-match valid";
-
-        passwordMatch.textContent =
-          "✓ Passwords match.";
-
-      } else {
-
-        passwordMatch.className =
-          "password-match invalid";
-
-        passwordMatch.textContent =
-          "Passwords do not match.";
-
-      }
-
-    }
-
-
-    /*
-    ========================================================
-    LIVE PASSWORD VALIDATION
-    ========================================================
-    */
-
-    passwordInput.addEventListener(
-      "input",
-      function() {
-
-        updatePasswordRequirements();
-
-      }
-    );
-
-
-    /*
-    ========================================================
-    LIVE CONFIRM PASSWORD VALIDATION
-    ========================================================
-    */
-
-    confirmPasswordInput.addEventListener(
-      "input",
-      function() {
-
-        updatePasswordMatch();
-
-      }
-    );
-
-
-    /*
-    ========================================================
-    STATUS MESSAGE HELPER
-    ========================================================
-    */
-
-    function showStatus(
-      message,
-      type
-    ) {
+    function showStatus(message, type) {
 
       statusMessage.className =
         "status-message " + type;
 
       statusMessage.textContent =
         message;
-
     }
 
 
     /*
     ========================================================
-    REGISTRATION SUBMISSION
+       PASSWORD REQUIREMENTS
+    ========================================================
+
+       At least:
+       - 8 characters
+       - 1 lowercase
+       - 1 uppercase
+       - 1 number
+       - 1 special character
+
+    ========================================================
+    */
+
+    const passwordRequirements =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
+
+
+    /*
+    ========================================================
+       FORM SUBMISSION
     ========================================================
     */
 
@@ -1638,6 +1330,12 @@
 
         event.preventDefault();
 
+
+        /*
+        ====================================================
+        GET FORM VALUES
+        ====================================================
+        */
 
         const fullName =
           fullNameInput.value.trim();
@@ -1654,7 +1352,7 @@
 
         /*
         ====================================================
-        FULL NAME VALIDATION
+        BASIC VALIDATION
         ====================================================
         */
 
@@ -1670,12 +1368,6 @@
           return;
         }
 
-
-        /*
-        ====================================================
-        EMAIL VALIDATION
-        ====================================================
-        */
 
         if (!email) {
 
@@ -1705,20 +1397,18 @@
 
         /*
         ====================================================
-        PASSWORD SECURITY VALIDATION
+        PASSWORD VALIDATION
         ====================================================
         */
 
-        if (!isPasswordValid(password)) {
+        if (!passwordRequirements.test(password)) {
 
           showStatus(
-            "Your password does not meet all the security requirements.",
+            "Password must be at least 8 characters and contain an uppercase letter, a lowercase letter, a number, and a special character.",
             "error"
           );
 
           passwordInput.focus();
-
-          updatePasswordRequirements();
 
           return;
         }
@@ -1726,7 +1416,7 @@
 
         /*
         ====================================================
-        PASSWORD CONFIRMATION
+        CONFIRM PASSWORD
         ====================================================
         */
 
@@ -1745,7 +1435,7 @@
 
         /*
         ====================================================
-        TERMS VALIDATION
+        TERMS
         ====================================================
         */
 
@@ -1764,7 +1454,7 @@
 
         /*
         ====================================================
-        DISABLE BUTTON WHILE REQUEST IS RUNNING
+        DISABLE BUTTON
         ====================================================
         */
 
@@ -1774,165 +1464,86 @@
           "Creating Account...";
 
 
-        statusMessage.className =
-          "status-message";
+        /*
+        ====================================================
+        PLACEHOLDER API CONNECTION
+        ====================================================
 
-        statusMessage.textContent =
-          "";
+        DO NOT CHANGE THIS URL YET.
+
+        When your backend is ready, this:
+
+            /api/auth/register
+
+        will become the real registration endpoint.
+
+        ====================================================
+        */
+
+        const API_ENDPOINT =
+          "/api/auth/register";
 
 
         /*
         ====================================================
-        SEND REGISTRATION REQUEST TO BACKEND
-        ====================================================
+        TEMPORARY PLACEHOLDER
 
-        The backend endpoint should be:
+        The real fetch() request is intentionally NOT
+        executed yet because the backend does not exist.
 
-          POST /api/auth/register
-
-        The backend should receive:
-
-          full_name
-          email
-          password
-
-        IMPORTANT:
-
-        The password must ALSO be validated on the
-        backend. Frontend validation alone is not enough.
-
-        The backend must hash the password securely
-        before saving it to the database.
-
-        Never store plain-text passwords.
         ====================================================
         */
 
-        try {
+        console.log(
+          "Registration API placeholder:",
+          API_ENDPOINT
+        );
 
-          const response =
-            await fetch(
-              "/api/auth/register",
-              {
-                method: "POST",
+        console.log(
+          "Registration data prepared:",
+          {
+            full_name: fullName,
+            email: email,
+            password: "[hidden]"
+          }
+        );
 
-                headers: {
-                  "Content-Type": "application/json",
-                  "Accept": "application/json"
-                },
 
-                body: JSON.stringify({
+        /*
+        ====================================================
+        TEMPORARY DEVELOPMENT MESSAGE
+        ====================================================
 
-                  full_name:
-                    fullName,
+        This does NOT create an account.
 
-                  email:
-                    email,
+        It only confirms that:
 
-                  password:
-                    password
+        - The form works
+        - Validation works
+        - Password requirements work
+        - The API connection point is ready
 
-                })
+        ====================================================
+        */
 
-              }
+        setTimeout(
+          function() {
+
+            showStatus(
+              "Registration form is ready. The account creation system will be connected to the backend here.",
+              "info"
             );
 
 
-          /*
-          ==================================================
-          READ API RESPONSE
-          ==================================================
-          */
+            registerButton.disabled =
+              false;
 
-          let data = {};
+            registerButton.textContent =
+              "Create Account";
 
-
-          try {
-
-            data =
-              await response.json();
-
-          } catch (jsonError) {
-
-            data = {};
-
-          }
-
-
-          /*
-          ==================================================
-          HANDLE API ERROR
-          ==================================================
-          */
-
-          if (!response.ok) {
-
-            throw new Error(
-              data.message ||
-              "Unable to create your account."
-            );
-
-          }
-
-
-          /*
-          ==================================================
-          REGISTRATION SUCCESS
-          ==================================================
-          */
-
-          showStatus(
-            data.message ||
-            "Account created successfully. Redirecting to login...",
-            "success"
-          );
-
-
-          /*
-          ==================================================
-          REDIRECT TO LOGIN
-          ==================================================
-          */
-
-          setTimeout(
-            function() {
-
-              window.location.href =
-                "login.html";
-
-            },
-            1200
-          );
-
-
-        } catch (error) {
-
-          /*
-          ==================================================
-          NETWORK / API ERROR
-          ==================================================
-          */
-
-          console.error(
-            "Registration error:",
-            error
-          );
-
-
-          showStatus(
-            error.message ||
-            "Unable to create your account. Please try again.",
-            "error"
-          );
-
-
-          registerButton.disabled =
-            false;
-
-          registerButton.textContent =
-            "Create Account";
-
-        }
+          },
+          700
+        );
 
       }
     );
