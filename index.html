@@ -218,7 +218,7 @@
     .healthcare-grid {
       display: grid;
 
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(5, minmax(0, 1fr));
 
       gap: 22px;
 
@@ -233,6 +233,7 @@
       position: relative;
 
       width: 100%;
+      min-width: 0;
 
       aspect-ratio: 1.35 / 1;
 
@@ -298,11 +299,15 @@
 
       z-index: 1;
 
+      max-width: 100%;
+
       text-align: center;
 
       font-size: 0.95rem;
 
       font-weight: 600;
+
+      overflow-wrap: break-word;
     }
 
     .healthcare-card:hover {
@@ -394,9 +399,8 @@
     @media (max-width: 1000px) {
 
       .healthcare-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
-
     }
 
     @media (max-width: 800px) {
@@ -430,7 +434,7 @@
       }
 
       .healthcare-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
 
         gap: 18px;
       }
@@ -448,7 +452,7 @@
 
       .nav,
       .footer-inner {
-        width: min(100% - 32px, 1200px);
+        width: calc(100% - 32px);
       }
 
       .logo {
@@ -460,21 +464,44 @@
       }
 
       main {
+        width: 100%;
+
         padding: 48px 16px 60px;
       }
 
-      .healthcare-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .home-content {
+        width: 100%;
+        max-width: 100%;
+      }
 
-        gap: 16px;
+      .healthcare-grid {
+        display: grid !important;
+
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr)) !important;
+
+        grid-template-rows: auto;
+
+        grid-auto-flow: row;
+
+        gap: 12px;
+
+        width: 100%;
+        max-width: 100%;
       }
 
       .healthcare-card {
-        aspect-ratio: 1.35 / 1;
+        display: flex;
+
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
 
         min-height: 115px;
 
-        padding: 20px;
+        aspect-ratio: 1.35 / 1;
+
+        padding: 16px;
 
         border-radius: 11px;
       }
@@ -486,7 +513,11 @@
       }
 
       .healthcare-card span {
-        font-size: 0.92rem;
+        max-width: 100%;
+
+        font-size: 0.88rem;
+
+        overflow-wrap: break-word;
       }
 
       .footer-inner {
