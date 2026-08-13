@@ -32,7 +32,6 @@
 
     body {
       min-height: 100vh;
-
       color: var(--black);
 
       font-family:
@@ -428,6 +427,17 @@
       outline: 3px solid rgba(201, 40, 50, 0.25);
 
       outline-offset: 4px;
+    }
+
+    .login-button:disabled {
+      opacity: 0.65;
+
+      cursor: not-allowed;
+
+      transform: none;
+
+      box-shadow:
+        0 4px 12px rgba(201, 40, 50, 0.08);
     }
 
     /* =========================
@@ -908,7 +918,6 @@
           <form
             class="login-form"
             id="loginForm"
-            action="#"
             method="post"
           >
 
@@ -1064,55 +1073,43 @@
 
 
   <!-- ========================================================
-       LOGIN AUTHENTICATION LOGIC
-       PLACEHOLDER ONLY
+       LOGIN API
   ========================================================= -->
 
   <script>
 
     /*
     ========================================================
-    LOGIN API — PLACEHOLDER
+    LOGIN API ENDPOINT
     ========================================================
 
-    This is the location where the real authentication
-    provider/backend will eventually be connected.
-
-    The login page will send:
-
-      - email
-      - password
-
-    to the authentication backend.
-
-    Example endpoint:
+    Your backend should expose:
 
       POST /api/auth/login
 
-    Example request:
+    Expected request:
 
-      fetch("/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password
-        })
-      });
+      {
+        "email": "user@example.com",
+        "password": "password"
+      }
 
-    IMPORTANT:
-    The endpoint above does NOT exist yet.
+    Recommended successful response:
 
-    It is only a placeholder showing exactly where
-    the authentication connection will be added later.
+      {
+        "success": true,
+        "message": "Login successful"
+      }
 
-    The final endpoint, response format, session handling,
-    token handling and redirect will depend on the
-    authentication provider/backend selected.
+    The backend should create a secure session using
+    an HttpOnly + Secure cookie.
+
+    Do NOT put passwords or secret API keys in frontend
+    JavaScript.
     ========================================================
     */
+
+    const LOGIN_API_URL = "/api/auth/login";
 
 
     const loginForm =
@@ -1124,6 +1121,28 @@
     const statusMessage =
       document.getElementById("statusMessage");
 
+
+    /*
+    ========================================================
+    STATUS HELPER
+    ========================================================
+    */
+
+    function showStatus(message, type) {
+
+      statusMessage.className =
+        "status-message " + type;
+
+      statusMessage.textContent =
+        message;
+    }
+
+
+    /*
+    ========================================================
+    LOGIN FORM
+    ========================================================
+    */
 
     loginForm.addEventListener(
       "submit",
@@ -1141,17 +1160,16 @@
 
         /*
         ====================================================
-        BASIC FRONTEND VALIDATION
+        BASIC VALIDATION
         ====================================================
         */
 
         if (!email || !password) {
 
-          statusMessage.className =
-            "status-message error";
-
-          statusMessage.textContent =
-            "Please enter your email and password.";
+          showStatus(
+            "Please enter your email and password.",
+            "error"
+          );
 
           return;
         }
@@ -1159,73 +1177,148 @@
 
         /*
         ====================================================
-        TEMPORARY PLACEHOLDER
+        DISABLE BUTTON
         ====================================================
+        */
 
-        When the authentication backend is connected,
-        the code below will be replaced/activated.
+        loginButton.disabled = true;
 
-        Example:
+        loginButton.textContent =
+          "Logging in...";
+
+
+        /*
+        ====================================================
+        API REQUEST
+        ====================================================
+        */
 
         try {
 
-          loginButton.disabled = true;
+          const response =
+            await fetch(
+              LOGIN_API_URL,
+              {
+                method: "POST",
 
-          loginButton.textContent = "Logging in...";
+                headers: {
+                  "Content-Type":
+                    "application/json",
 
-          const response = await fetch(
-            "/api/auth/login",
-            {
-              method: "POST",
+                  "Accept":
+                    "application/json"
+                },
 
-              headers: {
-                "Content-Type": "application/json"
-              },
+                credentials: "include",
 
-              body: JSON.stringify({
-                email: email,
-                password: password
-              })
-            }
-          );
-
-
-          const data = await response.json();
-
-
-          if (!response.ok) {
-
-            throw new Error(
-              data.message ||
-              "Unable to log in."
+                body:
+                  JSON.stringify({
+                    email: email,
+                    password: password
+                  })
+              }
             );
+
+
+          /*
+          ==================================================
+          TRY TO READ JSON RESPONSE
+          ==================================================
+          */
+
+          let data = {};
+
+          try {
+
+            data =
+              await response.json();
+
+          } catch (jsonError) {
+
+            data = {};
 
           }
 
 
-          // Example:
-          //
-          // The authentication system may return
-          // a session/token here.
-          //
-          // Store/process it according to the
-          // provider's authentication method.
+          /*
+          ==================================================
+          LOGIN FAILED
+          ==================================================
+          */
+
+          if (!response.ok) {
+
+            showStatus(
+              data.message ||
+              "Incorrect email or password.",
+              "error"
+            );
+
+            return;
+          }
 
 
-          window.location.href =
-            "account.html";
+          /*
+          ==================================================
+          LOGIN SUCCESSFUL
+          ==================================================
+          */
+
+          showStatus(
+            data.message ||
+            "Login successful.",
+            "success"
+          );
+
+
+          /*
+          ==================================================
+          REDIRECT
+          ==================================================
+
+          The backend should already have created the
+          secure authentication session/cookie.
+
+          ==================================================
+          */
+
+          setTimeout(
+            function() {
+
+              window.location.href =
+                "account.html";
+
+            },
+            500
+          );
 
 
         } catch (error) {
 
-          statusMessage.className =
-            "status-message error";
+          /*
+          ==================================================
+          NETWORK / SERVER ERROR
+          ==================================================
+          */
 
-          statusMessage.textContent =
-            error.message ||
-            "Incorrect email or password.";
+          console.error(
+            "Login API error:",
+            error
+          );
+
+          showStatus(
+            "Unable to connect to the login server. Please try again.",
+            "error"
+          );
+
 
         } finally {
+
+          /*
+          ==================================================
+          RESTORE BUTTON
+          ==================================================
+          */
 
           loginButton.disabled = false;
 
@@ -1233,27 +1326,6 @@
             "Login";
 
         }
-
-        ====================================================
-        */
-
-
-        /*
-        ====================================================
-        TEMPORARY DEVELOPMENT MESSAGE
-        ====================================================
-
-        This confirms that the frontend is ready for
-        the authentication API without pretending that
-        authentication is currently working.
-        ====================================================
-        */
-
-        statusMessage.className =
-          "status-message success";
-
-        statusMessage.textContent =
-          "Login form ready. The authentication system will be connected here later.";
 
       }
     );
