@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Find clinic locations, opening hours, visiting hours and contact information across Mauritius."
+    content="Find clinic locations, opening hours and contact information across Mauritius."
   >
 
   <style>
@@ -17,8 +17,6 @@
       --black: #111111;
       --main-white: #f7f7f4;
       --card-white: #fbfbf9;
-      --muted: #555555;
-      --line: rgba(17, 17, 17, 0.12);
     }
 
     * {
@@ -80,6 +78,7 @@
       flex-direction: column;
     }
 
+
     /* =========================
        HEADER
     ========================== */
@@ -110,7 +109,9 @@
 
     .nav {
       width: min(1200px, calc(100% - 48px));
+
       min-height: 82px;
+
       margin: 0 auto;
 
       display: flex;
@@ -122,17 +123,23 @@
 
     .logo {
       color: var(--red);
+
       text-decoration: none;
 
       font-size: 1.55rem;
+
       font-weight: 700;
+
       letter-spacing: -0.045em;
     }
 
     .menu {
       display: flex;
+
       align-items: center;
+
       gap: 18px;
+
       list-style: none;
     }
 
@@ -140,9 +147,11 @@
       position: relative;
 
       color: var(--black);
+
       text-decoration: none;
 
       font-size: 0.91rem;
+
       font-weight: 500;
 
       transition: color 180ms ease;
@@ -156,6 +165,7 @@
       content: "";
 
       position: absolute;
+
       left: 0;
       bottom: -6px;
 
@@ -173,8 +183,11 @@
 
     .menu-dot {
       color: var(--black);
+
       font-size: 0.82rem;
+
       line-height: 1;
+
       user-select: none;
     }
 
@@ -184,6 +197,7 @@
 
     .menu-login {
       color: var(--red) !important;
+
       font-weight: 600 !important;
     }
 
@@ -191,12 +205,14 @@
       background: var(--red);
     }
 
+
     /* =========================
        MAIN
     ========================== */
 
     main {
       flex: 1;
+
       width: 100%;
 
       padding: 72px 24px 80px;
@@ -204,8 +220,14 @@
 
     .page-container {
       width: min(1000px, 100%);
+
       margin: 0 auto;
     }
+
+
+    /* =========================
+       PAGE TITLE
+    ========================== */
 
     .page-heading {
       margin-bottom: 38px;
@@ -215,7 +237,9 @@
       color: var(--red);
 
       font-size: clamp(2.2rem, 5vw, 3.1rem);
+
       font-weight: 700;
+
       letter-spacing: -0.045em;
 
       margin-bottom: 10px;
@@ -227,8 +251,10 @@
       color: #444444;
 
       font-size: 0.92rem;
+
       line-height: 1.7;
     }
+
 
     /* =========================
        CLINIC LIST
@@ -236,9 +262,12 @@
 
     .clinic-list {
       display: flex;
+
       flex-direction: column;
+
       gap: 28px;
     }
+
 
     /* =========================
        CLINIC BOX
@@ -270,6 +299,7 @@
         14px 14px;
 
       border: 1.5px solid var(--red);
+
       border-radius: 14px;
 
       box-shadow:
@@ -284,6 +314,7 @@
       inset: 5px;
 
       border: 1px solid var(--red);
+
       border-radius: 10px;
 
       pointer-events: none;
@@ -291,8 +322,10 @@
 
     .clinic-content {
       position: relative;
+
       z-index: 1;
     }
+
 
     /* =========================
        CLINIC HEADER
@@ -300,6 +333,7 @@
 
     .clinic-header {
       padding-bottom: 25px;
+
       margin-bottom: 27px;
 
       border-bottom: 1px solid rgba(17, 17, 17, 0.10);
@@ -309,7 +343,9 @@
       color: var(--red);
 
       font-size: 1.55rem;
+
       font-weight: 700;
+
       letter-spacing: -0.035em;
 
       margin-bottom: 8px;
@@ -319,8 +355,10 @@
       color: #444444;
 
       font-size: 0.88rem;
+
       line-height: 1.6;
     }
+
 
     /* =========================
        INFORMATION GRID
@@ -343,55 +381,16 @@
       color: var(--black);
 
       font-size: 0.78rem;
+
       font-weight: 700;
 
       text-transform: uppercase;
+
       letter-spacing: 0.06em;
 
       margin-bottom: 12px;
     }
 
-    .info-list {
-      display: flex;
-      flex-direction: column;
-
-      gap: 7px;
-    }
-
-    .info-row {
-      display: grid;
-
-      grid-template-columns:
-        minmax(105px, 125px)
-        1fr;
-
-      gap: 10px;
-
-      color: #444444;
-
-      font-size: 0.82rem;
-      line-height: 1.5;
-    }
-
-    .info-label {
-      color: var(--black);
-      font-weight: 600;
-    }
-
-    .info-value {
-      min-width: 0;
-    }
-
-    .info-value a {
-      color: var(--black);
-      text-decoration: none;
-
-      transition: color 180ms ease;
-    }
-
-    .info-value a:hover {
-      color: var(--red);
-    }
 
     /* =========================
        HOURS
@@ -399,8 +398,6 @@
 
     .hours-section {
       grid-column: 1 / -1;
-
-      padding-top: 4px;
     }
 
     .hours-grid {
@@ -417,7 +414,8 @@
 
       background: rgba(255, 255, 255, 0.52);
 
-      border: 1px solid var(--line);
+      border: 1px solid rgba(17, 17, 17, 0.12);
+
       border-radius: 10px;
     }
 
@@ -425,6 +423,7 @@
       color: var(--red);
 
       font-size: 0.88rem;
+
       font-weight: 700;
 
       margin-bottom: 13px;
@@ -432,7 +431,9 @@
 
     .hours-list {
       display: flex;
+
       flex-direction: column;
+
       gap: 6px;
     }
 
@@ -440,6 +441,7 @@
       display: flex;
 
       align-items: flex-start;
+
       justify-content: space-between;
 
       gap: 15px;
@@ -447,21 +449,25 @@
       color: #444444;
 
       font-size: 0.77rem;
+
       line-height: 1.45;
     }
 
     .hours-day {
       color: var(--black);
+
       font-weight: 600;
     }
 
     .hours-time {
       text-align: right;
+
       white-space: nowrap;
     }
 
     .holiday-row {
       margin-top: 5px;
+
       padding-top: 10px;
 
       border-top: 1px solid rgba(17, 17, 17, 0.09);
@@ -470,17 +476,60 @@
     .holiday-row .hours-day,
     .holiday-row .hours-time {
       color: var(--red);
+
       font-weight: 600;
     }
 
+
     /* =========================
-       CONTACT / LOCATION
+       LOCATION
+    ========================== */
+
+    .location-section {
+      grid-column: 1 / -1;
+    }
+
+    .info-list {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 9px;
+    }
+
+    .info-row {
+      display: grid;
+
+      grid-template-columns:
+        125px
+        1fr;
+
+      gap: 10px;
+
+      color: #444444;
+
+      font-size: 0.82rem;
+
+      line-height: 1.5;
+    }
+
+    .info-label {
+      color: var(--black);
+
+      font-weight: 600;
+    }
+
+    .info-value {
+      min-width: 0;
+    }
+
+
+    /* =========================
+       CONTACT
     ========================== */
 
     .contact-section {
       grid-column: 1 / -1;
-
-      padding-top: 3px;
     }
 
     .contact-grid {
@@ -492,6 +541,19 @@
       gap: 10px 38px;
     }
 
+    .info-value a {
+      color: var(--black);
+
+      text-decoration: none;
+
+      transition: color 180ms ease;
+    }
+
+    .info-value a:hover {
+      color: var(--red);
+    }
+
+
     /* =========================
        BACK TO HOME
     ========================== */
@@ -502,16 +564,19 @@
       margin: 30px auto 0;
 
       display: flex;
+
       align-items: center;
     }
 
     .back-home-link {
       display: inline-flex;
+
       align-items: center;
 
       padding: 11px 18px;
 
       background: var(--red);
+
       color: #ffffff;
 
       border-radius: 9px;
@@ -519,6 +584,7 @@
       text-decoration: none;
 
       font-size: 0.88rem;
+
       font-weight: 600;
 
       box-shadow:
@@ -541,8 +607,10 @@
 
     .back-home-link:focus-visible {
       outline: 3px solid rgba(201, 40, 50, 0.25);
+
       outline-offset: 4px;
     }
+
 
     /* =========================
        FOOTER
@@ -550,6 +618,7 @@
 
     footer {
       width: 100%;
+
       background: transparent;
     }
 
@@ -561,7 +630,9 @@
       margin: 0 auto;
 
       display: flex;
+
       align-items: flex-end;
+
       justify-content: space-between;
 
       padding: 24px 0;
@@ -571,21 +642,25 @@
       color: var(--black);
 
       font-size: 0.78rem;
+
       font-weight: 500;
     }
 
     .footer-right {
       display: flex;
+
       align-items: center;
     }
 
     .footer-links {
       display: flex;
+
       align-items: center;
 
       gap: 8px;
 
       font-size: 0.78rem;
+
       font-weight: 600;
     }
 
@@ -603,23 +678,16 @@
 
     .footer-separator {
       color: var(--black);
+
       opacity: 0.7;
     }
+
 
     /* =========================
        TABLET
     ========================== */
 
     @media (max-width: 850px) {
-
-      .clinic-info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hours-section,
-      .contact-section {
-        grid-column: auto;
-      }
 
       .hours-grid {
         grid-template-columns:
@@ -630,6 +698,7 @@
         grid-template-columns: 1fr;
       }
     }
+
 
     /* =========================
        SMALL TABLET
@@ -665,6 +734,7 @@
         padding: 60px 20px 70px;
       }
     }
+
 
     /* =========================
        MOBILE
@@ -713,11 +783,13 @@
 
       .clinic-box::after {
         inset: 4px;
+
         border-radius: 8px;
       }
 
       .clinic-header {
         padding-bottom: 21px;
+
         margin-bottom: 23px;
       }
 
@@ -735,6 +807,7 @@
 
       .info-row {
         grid-template-columns: 1fr;
+
         gap: 2px;
       }
 
@@ -764,6 +837,7 @@
 </head>
 
 <body>
+
 
   <!-- =========================
        HEADER
@@ -870,6 +944,9 @@
 
     <div class="page-container">
 
+
+      <!-- PAGE HEADING -->
+
       <div class="page-heading">
 
         <h1 class="page-title">
@@ -877,8 +954,7 @@
         </h1>
 
         <p class="page-description">
-          Find clinic locations, opening hours, inpatient
-          services, visiting hours and contact information.
+          
         </p>
 
       </div>
@@ -899,14 +975,17 @@
 
           <div class="clinic-content">
 
+
+            <!-- CLINIC NAME / LOCATION -->
+
             <header class="clinic-header">
 
               <h2 class="clinic-name">
-                Clinic Name
+                
               </h2>
 
               <p class="clinic-location">
-                Clinic location, district, Mauritius
+                
               </p>
 
             </header>
@@ -916,7 +995,7 @@
 
 
               <!-- =========================
-                   OPENING HOURS
+                   HOURS
               ========================== -->
 
               <section class="hours-section">
@@ -940,42 +1019,42 @@
 
                       <div class="hours-row">
                         <span class="hours-day">Monday</span>
-                        <span class="hours-time">08:00 – 16:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Tuesday</span>
-                        <span class="hours-time">08:00 – 16:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Wednesday</span>
-                        <span class="hours-time">08:00 – 16:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Thursday</span>
-                        <span class="hours-time">08:00 – 16:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Friday</span>
-                        <span class="hours-time">08:00 – 16:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Saturday</span>
-                        <span class="hours-time">08:00 – 12:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Sunday</span>
-                        <span class="hours-time">Closed</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row holiday-row">
                         <span class="hours-day">Public Holiday</span>
-                        <span class="hours-time">Closed</span>
+                        <span class="hours-time"></span>
                       </div>
 
                     </div>
@@ -995,42 +1074,42 @@
 
                       <div class="hours-row">
                         <span class="hours-day">Monday</span>
-                        <span class="hours-time">24 Hours</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Tuesday</span>
-                        <span class="hours-time">24 Hours</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Wednesday</span>
-                        <span class="hours-time">24 Hours</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Thursday</span>
-                        <span class="hours-time">24 Hours</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Friday</span>
-                        <span class="hours-time">24 Hours</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Saturday</span>
-                        <span class="hours-time">24 Hours</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Sunday</span>
-                        <span class="hours-time">24 Hours</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row holiday-row">
                         <span class="hours-day">Public Holiday</span>
-                        <span class="hours-time">24 Hours</span>
+                        <span class="hours-time"></span>
                       </div>
 
                     </div>
@@ -1043,49 +1122,49 @@
                   <div class="hours-card">
 
                     <h4 class="hours-card-title">
-                      Visiting Hours
+                      Visit Hours
                     </h4>
 
                     <div class="hours-list">
 
                       <div class="hours-row">
                         <span class="hours-day">Monday</span>
-                        <span class="hours-time">14:00 – 17:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Tuesday</span>
-                        <span class="hours-time">14:00 – 17:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Wednesday</span>
-                        <span class="hours-time">14:00 – 17:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Thursday</span>
-                        <span class="hours-time">14:00 – 17:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Friday</span>
-                        <span class="hours-time">14:00 – 17:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Saturday</span>
-                        <span class="hours-time">14:00 – 17:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Sunday</span>
-                        <span class="hours-time">14:00 – 17:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row holiday-row">
                         <span class="hours-day">Public Holiday</span>
-                        <span class="hours-time">14:00 – 17:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                     </div>
@@ -1101,7 +1180,7 @@
                    LOCATION
               ========================== -->
 
-              <section class="info-section">
+              <section class="location-section">
 
                 <h3 class="info-title">
                   Location
@@ -1110,24 +1189,39 @@
                 <div class="info-list">
 
                   <div class="info-row">
-                    <span class="info-label">Address</span>
-                    <span class="info-value">
-                      Clinic location, district, Mauritius
+
+                    <span class="info-label">
+                      Location
                     </span>
+
+                    <span class="info-value">
+                      
+                    </span>
+
                   </div>
 
                   <div class="info-row">
-                    <span class="info-label">Road</span>
-                    <span class="info-value">
-                      Clinic Road
+
+                    <span class="info-label">
+                      Road
                     </span>
+
+                    <span class="info-value">
+                      
+                    </span>
+
                   </div>
 
                   <div class="info-row">
-                    <span class="info-label">GPS</span>
-                    <span class="info-value">
-                      -20.000000, 57.000000
+
+                    <span class="info-label">
+                      GPS
                     </span>
+
+                    <span class="info-value">
+                      
+                    </span>
+
                   </div>
 
                 </div>
@@ -1148,23 +1242,27 @@
                 <div class="contact-grid">
 
                   <div class="info-row">
-                    <span class="info-label">Phone</span>
+
+                    <span class="info-label">
+                      Phone
+                    </span>
 
                     <span class="info-value">
-                      <a href="tel:+2300000000">
-                        +230 000 0000
-                      </a>
+                      
                     </span>
+
                   </div>
 
                   <div class="info-row">
-                    <span class="info-label">Email</span>
+
+                    <span class="info-label">
+                      Email
+                    </span>
 
                     <span class="info-value">
-                      <a href="mailto:clinic@example.com">
-                        clinic@example.com
-                      </a>
+                      
                     </span>
+
                   </div>
 
                 </div>
@@ -1179,7 +1277,7 @@
 
 
         <!-- ==================================================
-             CLINIC 2
+             COPY THIS ENTIRE ARTICLE FOR EACH ADDITIONAL CLINIC
         =================================================== -->
 
         <article class="clinic-box">
@@ -1188,13 +1286,9 @@
 
             <header class="clinic-header">
 
-              <h2 class="clinic-name">
-                Another Clinic
-              </h2>
+              <h2 class="clinic-name"></h2>
 
-              <p class="clinic-location">
-                Clinic location, district, Mauritius
-              </p>
+              <p class="clinic-location"></p>
 
             </header>
 
@@ -1209,6 +1303,7 @@
 
                 <div class="hours-grid">
 
+
                   <div class="hours-card">
 
                     <h4 class="hours-card-title">
@@ -1219,42 +1314,42 @@
 
                       <div class="hours-row">
                         <span class="hours-day">Monday</span>
-                        <span class="hours-time">08:00 – 16:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Tuesday</span>
-                        <span class="hours-time">08:00 – 16:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Wednesday</span>
-                        <span class="hours-time">08:00 – 16:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Thursday</span>
-                        <span class="hours-time">08:00 – 16:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Friday</span>
-                        <span class="hours-time">08:00 – 16:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Saturday</span>
-                        <span class="hours-time">08:00 – 12:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Sunday</span>
-                        <span class="hours-time">Closed</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row holiday-row">
                         <span class="hours-day">Public Holiday</span>
-                        <span class="hours-time">Closed</span>
+                        <span class="hours-time"></span>
                       </div>
 
                     </div>
@@ -1272,42 +1367,42 @@
 
                       <div class="hours-row">
                         <span class="hours-day">Monday</span>
-                        <span class="hours-time">24 Hours</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Tuesday</span>
-                        <span class="hours-time">24 Hours</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Wednesday</span>
-                        <span class="hours-time">24 Hours</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Thursday</span>
-                        <span class="hours-time">24 Hours</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Friday</span>
-                        <span class="hours-time">24 Hours</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Saturday</span>
-                        <span class="hours-time">24 Hours</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Sunday</span>
-                        <span class="hours-time">24 Hours</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row holiday-row">
                         <span class="hours-day">Public Holiday</span>
-                        <span class="hours-time">24 Hours</span>
+                        <span class="hours-time"></span>
                       </div>
 
                     </div>
@@ -1318,49 +1413,49 @@
                   <div class="hours-card">
 
                     <h4 class="hours-card-title">
-                      Visiting Hours
+                      Visit Hours
                     </h4>
 
                     <div class="hours-list">
 
                       <div class="hours-row">
                         <span class="hours-day">Monday</span>
-                        <span class="hours-time">14:00 – 17:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Tuesday</span>
-                        <span class="hours-time">14:00 – 17:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Wednesday</span>
-                        <span class="hours-time">14:00 – 17:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Thursday</span>
-                        <span class="hours-time">14:00 – 17:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Friday</span>
-                        <span class="hours-time">14:00 – 17:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Saturday</span>
-                        <span class="hours-time">14:00 – 17:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row">
                         <span class="hours-day">Sunday</span>
-                        <span class="hours-time">14:00 – 17:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                       <div class="hours-row holiday-row">
                         <span class="hours-day">Public Holiday</span>
-                        <span class="hours-time">14:00 – 17:00</span>
+                        <span class="hours-time"></span>
                       </div>
 
                     </div>
@@ -1372,7 +1467,7 @@
               </section>
 
 
-              <section class="info-section">
+              <section class="location-section">
 
                 <h3 class="info-title">
                   Location
@@ -1381,24 +1476,33 @@
                 <div class="info-list">
 
                   <div class="info-row">
-                    <span class="info-label">Address</span>
-                    <span class="info-value">
-                      Clinic location, district, Mauritius
+
+                    <span class="info-label">
+                      Location
                     </span>
+
+                    <span class="info-value"></span>
+
                   </div>
 
                   <div class="info-row">
-                    <span class="info-label">Road</span>
-                    <span class="info-value">
-                      Clinic Road
+
+                    <span class="info-label">
+                      Road
                     </span>
+
+                    <span class="info-value"></span>
+
                   </div>
 
                   <div class="info-row">
-                    <span class="info-label">GPS</span>
-                    <span class="info-value">
-                      -20.000000, 57.000000
+
+                    <span class="info-label">
+                      GPS
                     </span>
+
+                    <span class="info-value"></span>
+
                   </div>
 
                 </div>
@@ -1415,23 +1519,23 @@
                 <div class="contact-grid">
 
                   <div class="info-row">
-                    <span class="info-label">Phone</span>
 
-                    <span class="info-value">
-                      <a href="tel:+2300000000">
-                        +230 000 0000
-                      </a>
+                    <span class="info-label">
+                      Phone
                     </span>
+
+                    <span class="info-value"></span>
+
                   </div>
 
                   <div class="info-row">
-                    <span class="info-label">Email</span>
 
-                    <span class="info-value">
-                      <a href="mailto:clinic@example.com">
-                        clinic@example.com
-                      </a>
+                    <span class="info-label">
+                      Email
                     </span>
+
+                    <span class="info-value"></span>
+
                   </div>
 
                 </div>
