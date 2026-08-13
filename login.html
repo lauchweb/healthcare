@@ -371,11 +371,22 @@
       color: #999999;
     }
 
+    .form-group input:hover {
+      border-color: rgba(17, 17, 17, 0.35);
+    }
+
     .form-group input:focus {
       border-color: var(--red);
 
       box-shadow:
         0 0 0 3px rgba(201, 40, 50, 0.10);
+    }
+
+    .form-group input.input-error {
+      border-color: var(--red);
+
+      box-shadow:
+        0 0 0 3px rgba(201, 40, 50, 0.08);
     }
 
     /* =========================
@@ -919,6 +930,7 @@
             class="login-form"
             id="loginForm"
             method="post"
+            novalidate
           >
 
             <div class="form-group">
@@ -968,7 +980,9 @@
           </form>
 
 
-          <!-- STATUS MESSAGE -->
+          <!-- =========================
+               STATUS MESSAGE
+          ========================== -->
 
           <div
             id="statusMessage"
@@ -1074,43 +1088,71 @@
 
   <!-- ========================================================
        LOGIN API
+       BACKEND CONNECTION PLACEHOLDER
   ========================================================= -->
 
   <script>
 
     /*
     ========================================================
-    LOGIN API ENDPOINT
+    LOGIN API CONFIGURATION
     ========================================================
 
-    Your backend should expose:
+    FRONTEND PLACEHOLDER:
 
       POST /api/auth/login
 
-    Expected request:
+    The backend/API will eventually receive:
 
       {
         "email": "user@example.com",
-        "password": "password"
+        "password": "user-password"
       }
 
-    Recommended successful response:
+    Expected successful response:
 
       {
         "success": true,
-        "message": "Login successful"
+        "message": "Login successful."
       }
 
-    The backend should create a secure session using
-    an HttpOnly + Secure cookie.
+    Expected error response:
 
-    Do NOT put passwords or secret API keys in frontend
-    JavaScript.
+      {
+        "success": false,
+        "message": "Incorrect email or password."
+      }
+
+    IMPORTANT:
+
+    - Do NOT put database credentials here.
+    - Do NOT put API secret keys here.
+    - Do NOT hash/store passwords in frontend JavaScript.
+    - Password verification must happen on the backend.
+    - The backend should create a secure HttpOnly session cookie.
+
+    Replace only the API URL when your backend is ready.
+
+    Example:
+
+      const LOGIN_API_URL =
+        "https://your-domain.com/api/auth/login";
+
+    For now, this placeholder uses:
+
+      /api/auth/login
     ========================================================
     */
 
-    const LOGIN_API_URL = "/api/auth/login";
+    const LOGIN_API_URL =
+      "/api/auth/login";
 
+
+    /*
+    ========================================================
+    ELEMENTS
+    ========================================================
+    */
 
     const loginForm =
       document.getElementById("loginForm");
@@ -1120,6 +1162,12 @@
 
     const statusMessage =
       document.getElementById("statusMessage");
+
+    const emailInput =
+      document.getElementById("email");
+
+    const passwordInput =
+      document.getElementById("password");
 
 
     /*
@@ -1140,7 +1188,25 @@
 
     /*
     ========================================================
-    LOGIN FORM
+    CLEAR INPUT ERRORS
+    ========================================================
+    */
+
+    function clearInputErrors() {
+
+      emailInput.classList.remove(
+        "input-error"
+      );
+
+      passwordInput.classList.remove(
+        "input-error"
+      );
+    }
+
+
+    /*
+    ========================================================
+    LOGIN FORM SUBMISSION
     ========================================================
     */
 
@@ -1151,11 +1217,20 @@
         event.preventDefault();
 
 
+        /*
+        ====================================================
+        GET FORM VALUES
+        ====================================================
+        */
+
         const email =
-          document.getElementById("email").value.trim();
+          emailInput.value.trim();
 
         const password =
-          document.getElementById("password").value;
+          passwordInput.value;
+
+
+        clearInputErrors();
 
 
         /*
@@ -1164,12 +1239,52 @@
         ====================================================
         */
 
-        if (!email || !password) {
+        if (!email) {
+
+          emailInput.classList.add(
+            "input-error"
+          );
 
           showStatus(
-            "Please enter your email and password.",
+            "Please enter your email address.",
             "error"
           );
+
+          emailInput.focus();
+
+          return;
+        }
+
+
+        if (!emailInput.checkValidity()) {
+
+          emailInput.classList.add(
+            "input-error"
+          );
+
+          showStatus(
+            "Please enter a valid email address.",
+            "error"
+          );
+
+          emailInput.focus();
+
+          return;
+        }
+
+
+        if (!password) {
+
+          passwordInput.classList.add(
+            "input-error"
+          );
+
+          showStatus(
+            "Please enter your password.",
+            "error"
+          );
+
+          passwordInput.focus();
 
           return;
         }
@@ -1177,7 +1292,7 @@
 
         /*
         ====================================================
-        DISABLE BUTTON
+        DISABLE LOGIN BUTTON
         ====================================================
         */
 
@@ -1187,9 +1302,16 @@
           "Logging in...";
 
 
+        statusMessage.className =
+          "status-message";
+
+        statusMessage.textContent =
+          "";
+
+
         /*
         ====================================================
-        API REQUEST
+        SEND LOGIN REQUEST
         ====================================================
         */
 
@@ -1209,6 +1331,22 @@
                     "application/json"
                 },
 
+                /*
+                IMPORTANT:
+
+                Allows the browser to receive/send
+                the secure authentication cookie.
+
+                Your backend should configure the cookie
+                as:
+
+                  HttpOnly
+                  Secure
+                  SameSite=Lax
+
+                or an appropriate SameSite policy.
+                */
+
                 credentials: "include",
 
                 body:
@@ -1222,11 +1360,12 @@
 
           /*
           ==================================================
-          TRY TO READ JSON RESPONSE
+          READ API RESPONSE
           ==================================================
           */
 
           let data = {};
+
 
           try {
 
@@ -1234,6 +1373,11 @@
               await response.json();
 
           } catch (jsonError) {
+
+            /*
+            API did not return JSON.
+            Keep data as an empty object.
+            */
 
             data = {};
 
@@ -1254,30 +1398,44 @@
               "error"
             );
 
+            passwordInput.classList.add(
+              "input-error"
+            );
+
+            passwordInput.focus();
+
             return;
           }
 
 
           /*
           ==================================================
-          LOGIN SUCCESSFUL
+          LOGIN SUCCESS
           ==================================================
           */
 
           showStatus(
             data.message ||
-            "Login successful.",
+            "Login successful. Redirecting...",
             "success"
           );
 
 
           /*
           ==================================================
-          REDIRECT
+          REDIRECT TO ACCOUNT
           ==================================================
 
-          The backend should already have created the
-          secure authentication session/cookie.
+          The backend should have created the secure
+          authentication session/cookie before this
+          redirect happens.
+
+          The account page should then call something
+          such as:
+
+            GET /api/auth/me
+
+          to check whether the user is authenticated.
 
           ==================================================
           */
@@ -1289,7 +1447,7 @@
                 "account.html";
 
             },
-            500
+            700
           );
 
 
@@ -1305,6 +1463,7 @@
             "Login API error:",
             error
           );
+
 
           showStatus(
             "Unable to connect to the login server. Please try again.",
@@ -1326,6 +1485,36 @@
             "Login";
 
         }
+
+      }
+    );
+
+
+    /*
+    ========================================================
+    REMOVE ERROR STATE WHEN USER TYPES
+    ========================================================
+    */
+
+    emailInput.addEventListener(
+      "input",
+      function() {
+
+        emailInput.classList.remove(
+          "input-error"
+        );
+
+      }
+    );
+
+
+    passwordInput.addEventListener(
+      "input",
+      function() {
+
+        passwordInput.classList.remove(
+          "input-error"
+        );
 
       }
     );
