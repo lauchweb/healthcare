@@ -198,6 +198,7 @@
 
     .menu-login a {
       color: var(--red);
+
       font-weight: 600;
     }
 
@@ -340,6 +341,40 @@
     }
 
     /* =========================
+       CONTACT US LINK
+    ========================== */
+
+    .contact-link {
+      color: var(--red);
+
+      text-decoration: underline;
+
+      text-decoration-thickness: 1.5px;
+
+      text-underline-offset: 3px;
+
+      font-weight: 600;
+
+      transition:
+        color 180ms ease,
+        text-decoration-color 180ms ease;
+    }
+
+    .contact-link:hover {
+      color: #b8222c;
+
+      text-decoration-thickness: 2px;
+    }
+
+    .contact-link:focus-visible {
+      outline: 3px solid rgba(201, 40, 50, 0.20);
+
+      outline-offset: 3px;
+
+      border-radius: 2px;
+    }
+
+    /* =========================
        BACK TO HOME
     ========================== */
 
@@ -416,6 +451,7 @@
       display: flex;
 
       align-items: flex-end;
+
       justify-content: space-between;
 
       padding: 24px 0;
@@ -788,8 +824,14 @@
 
           <p>
             If you have questions regarding this policy or information
-            presented on Healthcare Mauritius, you can contact us at
-            info@healthcare.mu.
+            presented on Healthcare Mauritius, you can
+            <a
+              href="mailto:policy@healthcare.mu"
+              class="contact-link"
+              aria-label="Contact Healthcare Mauritius by email"
+            >
+              contact us
+            </a>.
           </p>
 
         </div>
