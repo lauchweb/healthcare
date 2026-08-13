@@ -193,6 +193,32 @@
       color: var(--red);
     }
 
+    /* Separator before Login */
+
+    .menu-separator {
+      color: var(--black);
+
+      opacity: 0.7;
+
+      font-size: 0.82rem;
+
+      line-height: 1;
+
+      user-select: none;
+    }
+
+    /* Login */
+
+    .menu-login a {
+      color: var(--red);
+
+      font-weight: 600;
+    }
+
+    .menu-login a:hover {
+      color: var(--red);
+    }
+
     /* =========================
        MAIN
     ========================== */
@@ -615,7 +641,9 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header>
 
@@ -701,6 +729,23 @@
           </a>
         </li>
 
+        <!-- Separator before Login -->
+
+        <li
+          class="menu-separator"
+          aria-hidden="true"
+        >
+          |
+        </li>
+
+        <!-- Login -->
+
+        <li class="menu-login">
+          <a href="login.html">
+            Login
+          </a>
+        </li>
+
       </ul>
 
     </nav>
@@ -708,7 +753,9 @@
   </header>
 
 
-  <!-- MAIN -->
+  <!-- =========================
+       MAIN
+  ========================== -->
 
   <main>
 
@@ -744,7 +791,7 @@
           </h2>
 
           <p>
-          Description.
+            Description.
           </p>
 
         </a>
@@ -780,7 +827,7 @@
           </h2>
 
           <p>
-            Description
+            Description.
           </p>
 
         </a>
@@ -808,7 +855,9 @@
     </div>
 
 
-    <!-- BACK TO HOME -->
+    <!-- =========================
+         BACK TO HOME
+    ========================== -->
 
     <div class="back-home">
 
@@ -825,14 +874,16 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
     <div class="footer-inner">
 
       <div class="copyright">
-       For your well-being © Healthcare Mauritius 2025-2026
+        For your well-being © Healthcare Mauritius 2025-2026
       </div>
 
       <div class="footer-right">
@@ -841,6 +892,18 @@
 
           <a href="policy.html">
             Policy
+          </a>
+
+          <span class="footer-separator">
+            |
+          </span>
+
+          <a
+            href="https://www.instagram.com/healthcare.mu/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Follow
           </a>
 
           <span class="footer-separator">
