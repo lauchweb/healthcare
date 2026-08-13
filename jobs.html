@@ -99,13 +99,16 @@
           transparent 0.7px
         );
 
-      background-size: 9px 9px, 13px 13px;
+      background-size:
+        9px 9px,
+        13px 13px;
 
       border-bottom: 1px solid rgba(0, 0, 0, 0.045);
     }
 
     .nav {
       width: min(1200px, calc(100% - 48px));
+
       min-height: 82px;
 
       margin: 0 auto;
@@ -119,6 +122,7 @@
 
     .logo {
       color: var(--red);
+
       text-decoration: none;
 
       font-size: 1.55rem;
@@ -140,6 +144,7 @@
       position: relative;
 
       color: var(--black);
+
       text-decoration: none;
 
       font-size: 0.91rem;
@@ -176,6 +181,7 @@
       color: var(--black);
 
       font-size: 0.82rem;
+
       line-height: 1;
 
       user-select: none;
@@ -264,7 +270,8 @@
     .jobs-grid {
       display: grid;
 
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
       gap: 22px;
     }
@@ -277,6 +284,7 @@
       position: relative;
 
       width: 100%;
+      min-width: 0;
       min-height: 130px;
 
       padding: 26px;
@@ -307,9 +315,11 @@
         14px 14px;
 
       border: 1.5px solid var(--red);
+
       border-radius: 12px;
 
       color: var(--black);
+
       text-decoration: none;
 
       box-shadow:
@@ -328,6 +338,7 @@
       inset: 5px;
 
       border: 1px solid var(--red);
+
       border-radius: 8px;
 
       pointer-events: none;
@@ -335,10 +346,14 @@
 
     .job-card span {
       position: relative;
+
       z-index: 1;
 
       font-size: 1rem;
+
       font-weight: 600;
+
+      overflow-wrap: break-word;
     }
 
     .job-card:hover {
@@ -350,6 +365,7 @@
 
     .job-card:focus-visible {
       outline: 3px solid rgba(201, 40, 50, 0.25);
+
       outline-offset: 4px;
     }
 
@@ -361,16 +377,19 @@
       width: min(900px, 100%);
 
       display: flex;
+
       align-items: center;
     }
 
     .back-home-link {
       display: inline-flex;
+
       align-items: center;
 
       padding: 11px 18px;
 
       background: var(--red);
+
       color: #ffffff;
 
       border-radius: 9px;
@@ -378,6 +397,7 @@
       text-decoration: none;
 
       font-size: 0.88rem;
+
       font-weight: 600;
 
       box-shadow:
@@ -400,6 +420,7 @@
 
     .back-home-link:focus-visible {
       outline: 3px solid rgba(201, 40, 50, 0.25);
+
       outline-offset: 4px;
     }
 
@@ -409,6 +430,7 @@
 
     footer {
       width: 100%;
+
       background: transparent;
     }
 
@@ -420,7 +442,9 @@
       margin: 0 auto;
 
       display: flex;
+
       align-items: flex-end;
+
       justify-content: space-between;
 
       padding: 24px 0;
@@ -430,26 +454,31 @@
       color: var(--black);
 
       font-size: 0.78rem;
+
       font-weight: 500;
     }
 
     .footer-right {
       display: flex;
+
       align-items: center;
     }
 
     .footer-links {
       display: flex;
+
       align-items: center;
 
       gap: 8px;
 
       font-size: 0.78rem;
+
       font-weight: 600;
     }
 
     .footer-links a {
       color: var(--black);
+
       text-decoration: none;
 
       transition: color 180ms ease;
@@ -461,6 +490,7 @@
 
     .footer-separator {
       color: var(--black);
+
       opacity: 0.7;
     }
 
@@ -476,6 +506,7 @@
         padding: 22px 0;
 
         align-items: flex-start;
+
         flex-direction: column;
 
         gap: 20px;
@@ -518,7 +549,7 @@
 
       .nav,
       .footer-inner {
-        width: min(100% - 32px, 1200px);
+        width: calc(100% - 32px);
       }
 
       .logo {
@@ -543,6 +574,7 @@
 
       .jobs-heading p {
         font-size: 0.91rem;
+
         line-height: 1.65;
       }
 
@@ -556,16 +588,19 @@
 
       .jobs-grid {
         grid-template-columns: 1fr;
+
         gap: 16px;
       }
 
       .job-card {
         min-height: 115px;
+
         border-radius: 11px;
       }
 
       .job-card::after {
         inset: 4px;
+
         border-radius: 7px;
       }
 
@@ -588,39 +623,59 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header>
 
-    <nav class="nav" aria-label="Main navigation">
+    <nav
+      class="nav"
+      aria-label="Main navigation"
+    >
 
-      <a href="index.html" class="logo">
+      <a
+        href="index.html"
+        class="logo"
+      >
         Healthcare Mauritius
       </a>
 
       <ul class="menu">
 
         <li>
-          <a href="info.html">Info</a>
+          <a href="info.html">
+            Info
+          </a>
         </li>
 
-        <li class="menu-dot" aria-hidden="true">
+        <li
+          class="menu-dot"
+          aria-hidden="true"
+        >
           ·
         </li>
 
         <li>
-          <a href="about.html">About</a>
+          <a href="about.html">
+            About
+          </a>
         </li>
 
-        <li class="menu-dot" aria-hidden="true">
+        <li
+          class="menu-dot"
+          aria-hidden="true"
+        >
           ·
         </li>
 
         <li>
-          <a href="jobs.html">Jobs</a>
+          <a href="jobs.html">
+            Jobs
+          </a>
         </li>
 
-        <!-- Red dot separating Jobs from Safety -->
+        <!-- Red separator before Safety -->
 
         <li
           class="menu-dot menu-dot-safety"
@@ -639,7 +694,10 @@
           </a>
         </li>
 
-        <li class="menu-dot" aria-hidden="true">
+        <li
+          class="menu-dot"
+          aria-hidden="true"
+        >
           ·
         </li>
 
@@ -653,6 +711,21 @@
           </a>
         </li>
 
+        <!-- Login -->
+
+        <li
+          class="menu-dot"
+          aria-hidden="true"
+        >
+          |
+        </li>
+
+        <li>
+          <a href="login.html">
+            Login
+          </a>
+        </li>
+
       </ul>
 
     </nav>
@@ -660,7 +733,9 @@
   </header>
 
 
-  <!-- MAIN -->
+  <!-- =========================
+       MAIN
+  ========================== -->
 
   <main>
 
@@ -691,27 +766,45 @@
 
         <div class="jobs-grid">
 
-          <a href="jobs-doctor.html" class="job-card">
+          <a
+            href="jobs-doctor.html"
+            class="job-card"
+          >
             <span>Doctor</span>
           </a>
 
-          <a href="jobs-nurse.html" class="job-card">
+          <a
+            href="jobs-nurse.html"
+            class="job-card"
+          >
             <span>Nurse</span>
           </a>
 
-          <a href="jobs-pharmacy.html" class="job-card">
+          <a
+            href="jobs-pharmacy.html"
+            class="job-card"
+          >
             <span>Pharmacy</span>
           </a>
 
-          <a href="jobs-dentist.html" class="job-card">
+          <a
+            href="jobs-dentist.html"
+            class="job-card"
+          >
             <span>Dentist</span>
           </a>
 
-          <a href="jobs-mental-health.html" class="job-card">
+          <a
+            href="jobs-mental-health.html"
+            class="job-card"
+          >
             <span>Mental Health</span>
           </a>
 
-          <a href="jobs-laboratory.html" class="job-card">
+          <a
+            href="jobs-laboratory.html"
+            class="job-card"
+          >
             <span>Laboratory</span>
           </a>
 
@@ -730,11 +823,17 @@
 
         <div class="jobs-grid">
 
-          <a href="jobs-support.html" class="job-card">
+          <a
+            href="jobs-support.html"
+            class="job-card"
+          >
             <span>Support</span>
           </a>
 
-          <a href="jobs-administration.html" class="job-card">
+          <a
+            href="jobs-administration.html"
+            class="job-card"
+          >
             <span>Administration</span>
           </a>
 
@@ -753,11 +852,17 @@
 
         <div class="jobs-grid">
 
-          <a href="jobs-technical.html" class="job-card">
+          <a
+            href="jobs-technical.html"
+            class="job-card"
+          >
             <span>Technical</span>
           </a>
 
-          <a href="jobs-biomedical.html" class="job-card">
+          <a
+            href="jobs-biomedical.html"
+            class="job-card"
+          >
             <span>Biomedical</span>
           </a>
 
@@ -776,7 +881,10 @@
 
         <div class="jobs-grid">
 
-          <a href="jobs-coach.html" class="job-card">
+          <a
+            href="jobs-coach.html"
+            class="job-card"
+          >
             <span>Coach</span>
           </a>
 
@@ -787,7 +895,9 @@
     </div>
 
 
-    <!-- BACK TO HOME -->
+    <!-- =========================
+         BACK TO HOME
+    ========================== -->
 
     <div class="back-home">
 
@@ -803,14 +913,16 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
     <div class="footer-inner">
 
       <div class="copyright">
-       For your well-being © Healthcare Mauritius 2025-2026
+        For your well-being © Healthcare Mauritius 2025-2026
       </div>
 
       <div class="footer-right">
@@ -825,8 +937,20 @@
             |
           </span>
 
-          <a href="mailto:info@helathcare.mu">
+          <a href="mailto:info@healthcare.mu">
             Contact
+          </a>
+
+          <span class="footer-separator">
+            |
+          </span>
+
+          <a
+            href="https://www.instagram.com/healthcare.mu/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Follow
           </a>
 
         </div>
