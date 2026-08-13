@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
@@ -20,6 +21,7 @@
       --black: #111111;
       --main-white: #f7f7f4;
       --card-white: #fbfbf9;
+      --green: #246b35;
     }
 
     * {
@@ -35,6 +37,7 @@
 
     body {
       min-height: 100vh;
+
       color: var(--black);
 
       font-family:
@@ -136,6 +139,7 @@
 
     .menu {
       display: flex;
+
       align-items: center;
 
       gap: 18px;
@@ -385,6 +389,102 @@
     }
 
     /* =========================
+       PASSWORD REQUIREMENTS
+    ========================== */
+
+    .password-requirements {
+      margin-top: 2px;
+
+      padding: 11px 13px;
+
+      background: rgba(0, 0, 0, 0.025);
+
+      border: 1px solid rgba(0, 0, 0, 0.07);
+
+      border-radius: 8px;
+    }
+
+    .password-requirements-title {
+      margin-bottom: 7px;
+
+      color: #444444;
+
+      font-size: 0.75rem;
+
+      font-weight: 600;
+    }
+
+    .password-requirements ul {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 4px;
+
+      list-style: none;
+    }
+
+    .password-requirements li {
+      position: relative;
+
+      padding-left: 20px;
+
+      color: #777777;
+
+      font-size: 0.74rem;
+
+      line-height: 1.4;
+
+      transition: color 180ms ease;
+    }
+
+    .password-requirements li::before {
+      content: "○";
+
+      position: absolute;
+
+      left: 0;
+
+      color: #888888;
+
+      font-weight: 700;
+    }
+
+    .password-requirements li.valid {
+      color: var(--green);
+    }
+
+    .password-requirements li.valid::before {
+      content: "✓";
+
+      color: var(--green);
+    }
+
+    /* =========================
+       PASSWORD MATCH
+    ========================== */
+
+    .password-match {
+      display: none;
+
+      font-size: 0.75rem;
+
+      line-height: 1.4;
+    }
+
+    .password-match.valid {
+      display: block;
+
+      color: var(--green);
+    }
+
+    .password-match.invalid {
+      display: block;
+
+      color: var(--red);
+    }
+
+    /* =========================
        TERMS
     ========================== */
 
@@ -515,7 +615,7 @@
     .status-message.success {
       display: block;
 
-      color: #246b35;
+      color: var(--green);
 
       background: rgba(36, 107, 53, 0.08);
 
@@ -789,6 +889,10 @@
         height: 45px;
       }
 
+      .password-requirements {
+        padding: 10px 11px;
+      }
+
       .back-home {
         margin-top: 42px;
       }
@@ -1006,11 +1110,50 @@
                 autocomplete="new-password"
                 minlength="8"
                 required
+                aria-describedby="passwordRequirements"
               >
 
               <p class="form-note">
-                Password must contain at least 8 characters.
+                Your password must meet all of the requirements below.
               </p>
+
+
+              <!-- PASSWORD REQUIREMENTS -->
+
+              <div
+                class="password-requirements"
+                id="passwordRequirements"
+              >
+
+                <p class="password-requirements-title">
+                  Password requirements:
+                </p>
+
+                <ul>
+
+                  <li id="requirement-length">
+                    At least 8 characters
+                  </li>
+
+                  <li id="requirement-uppercase">
+                    At least 1 uppercase letter (A-Z)
+                  </li>
+
+                  <li id="requirement-lowercase">
+                    At least 1 lowercase letter (a-z)
+                  </li>
+
+                  <li id="requirement-number">
+                    At least 1 number (0-9)
+                  </li>
+
+                  <li id="requirement-special">
+                    At least 1 special character (! @ # $ % ...)
+                  </li>
+
+                </ul>
+
+              </div>
 
             </div>
 
@@ -1026,12 +1169,19 @@
                 id="confirm-password"
                 name="confirm_password"
                 autocomplete="new-password"
-                minlength="8"
                 required
+                aria-describedby="passwordMatch"
               >
+
+              <p
+                class="password-match"
+                id="passwordMatch"
+              ></p>
 
             </div>
 
+
+            <!-- TERMS -->
 
             <div class="terms">
 
@@ -1043,16 +1193,22 @@
               >
 
               <label for="terms">
+
                 I agree to the
+
                 <a href="account-policy.html">
                   Policy
                 </a>
+
                 and understand the terms of using
                 Healthcare Mauritius.
+
               </label>
 
             </div>
 
+
+            <!-- REGISTER BUTTON -->
 
             <button
               type="submit"
@@ -1077,9 +1233,12 @@
           ></div>
 
 
+          <!-- LOGIN -->
+
           <div class="login-link">
 
             Already have an account?
+
             <a href="login.html">
               Login
             </a>
@@ -1162,54 +1321,43 @@
 
 
   <!-- ========================================================
-       REGISTRATION API
+       REGISTRATION JAVASCRIPT
   ======================================================== -->
 
   <script>
 
     /*
     ========================================================
-    REGISTRATION API CONNECTION
+    PASSWORD SECURITY REQUIREMENTS
     ========================================================
 
-    The frontend sends:
+    Password must contain:
 
-      full_name
-      email
-      password
+      ✓ At least 8 characters
+      ✓ At least 1 uppercase letter
+      ✓ At least 1 lowercase letter
+      ✓ At least 1 number
+      ✓ At least 1 special character
 
-    to:
+    Special characters are anything that is not:
+      A-Z
+      a-z
+      0-9
 
-      POST /api/auth/register
+    Examples of valid passwords:
 
-    The backend must:
+      Healthcare@2026
+      Mauritius#2026
+      Welcome!123
 
-      1. Validate the submitted information.
-      2. Check whether the email already exists.
-      3. Hash the password securely.
-      4. Create the user account.
-      5. Return an appropriate JSON response.
+    Examples of invalid passwords:
 
-    Example successful response:
+      healthcare
+      Healthcare
+      Healthcare2026
+      healthcare2026
+      HEALTHCARE@2026
 
-      {
-        "success": true,
-        "message": "Account created successfully."
-      }
-
-    Example error response:
-
-      {
-        "success": false,
-        "message": "Email address already exists."
-      }
-
-    IMPORTANT:
-
-    /api/auth/register must exist on your backend/server
-    before real account creation will work.
-
-    Never store plain-text passwords in a database.
     ========================================================
     */
 
@@ -1241,17 +1389,240 @@
 
     /*
     ========================================================
+    PASSWORD REQUIREMENT ELEMENTS
+    ========================================================
+    */
+
+    const requirementLength =
+      document.getElementById(
+        "requirement-length"
+      );
+
+    const requirementUppercase =
+      document.getElementById(
+        "requirement-uppercase"
+      );
+
+    const requirementLowercase =
+      document.getElementById(
+        "requirement-lowercase"
+      );
+
+    const requirementNumber =
+      document.getElementById(
+        "requirement-number"
+      );
+
+    const requirementSpecial =
+      document.getElementById(
+        "requirement-special"
+      );
+
+    const passwordMatch =
+      document.getElementById(
+        "passwordMatch"
+      );
+
+
+    /*
+    ========================================================
+    PASSWORD VALIDATION FUNCTION
+    ========================================================
+    */
+
+    function validatePassword(password) {
+
+      return {
+
+        length:
+          password.length >= 8,
+
+        uppercase:
+          /[A-Z]/.test(password),
+
+        lowercase:
+          /[a-z]/.test(password),
+
+        number:
+          /[0-9]/.test(password),
+
+        special:
+          /[^A-Za-z0-9]/.test(password)
+
+      };
+
+    }
+
+
+    /*
+    ========================================================
+    CHECK IF PASSWORD IS COMPLETELY VALID
+    ========================================================
+    */
+
+    function isPasswordValid(password) {
+
+      const requirements =
+        validatePassword(password);
+
+      return (
+        requirements.length &&
+        requirements.uppercase &&
+        requirements.lowercase &&
+        requirements.number &&
+        requirements.special
+      );
+
+    }
+
+
+    /*
+    ========================================================
+    UPDATE PASSWORD REQUIREMENTS DISPLAY
+    ========================================================
+    */
+
+    function updatePasswordRequirements() {
+
+      const password =
+        passwordInput.value;
+
+      const requirements =
+        validatePassword(password);
+
+
+      requirementLength.classList.toggle(
+        "valid",
+        requirements.length
+      );
+
+
+      requirementUppercase.classList.toggle(
+        "valid",
+        requirements.uppercase
+      );
+
+
+      requirementLowercase.classList.toggle(
+        "valid",
+        requirements.lowercase
+      );
+
+
+      requirementNumber.classList.toggle(
+        "valid",
+        requirements.number
+      );
+
+
+      requirementSpecial.classList.toggle(
+        "valid",
+        requirements.special
+      );
+
+
+      updatePasswordMatch();
+
+    }
+
+
+    /*
+    ========================================================
+    PASSWORD MATCH CHECK
+    ========================================================
+    */
+
+    function updatePasswordMatch() {
+
+      const password =
+        passwordInput.value;
+
+      const confirmPassword =
+        confirmPasswordInput.value;
+
+
+      if (!confirmPassword) {
+
+        passwordMatch.className =
+          "password-match";
+
+        passwordMatch.textContent =
+          "";
+
+        return;
+      }
+
+
+      if (password === confirmPassword) {
+
+        passwordMatch.className =
+          "password-match valid";
+
+        passwordMatch.textContent =
+          "✓ Passwords match.";
+
+      } else {
+
+        passwordMatch.className =
+          "password-match invalid";
+
+        passwordMatch.textContent =
+          "Passwords do not match.";
+
+      }
+
+    }
+
+
+    /*
+    ========================================================
+    LIVE PASSWORD VALIDATION
+    ========================================================
+    */
+
+    passwordInput.addEventListener(
+      "input",
+      function() {
+
+        updatePasswordRequirements();
+
+      }
+    );
+
+
+    /*
+    ========================================================
+    LIVE CONFIRM PASSWORD VALIDATION
+    ========================================================
+    */
+
+    confirmPasswordInput.addEventListener(
+      "input",
+      function() {
+
+        updatePasswordMatch();
+
+      }
+    );
+
+
+    /*
+    ========================================================
     STATUS MESSAGE HELPER
     ========================================================
     */
 
-    function showStatus(message, type) {
+    function showStatus(
+      message,
+      type
+    ) {
 
       statusMessage.className =
         "status-message " + type;
 
       statusMessage.textContent =
         message;
+
     }
 
 
@@ -1283,7 +1654,7 @@
 
         /*
         ====================================================
-        BASIC VALIDATION
+        FULL NAME VALIDATION
         ====================================================
         */
 
@@ -1299,6 +1670,12 @@
           return;
         }
 
+
+        /*
+        ====================================================
+        EMAIL VALIDATION
+        ====================================================
+        */
 
         if (!email) {
 
@@ -1326,18 +1703,32 @@
         }
 
 
-        if (password.length < 8) {
+        /*
+        ====================================================
+        PASSWORD SECURITY VALIDATION
+        ====================================================
+        */
+
+        if (!isPasswordValid(password)) {
 
           showStatus(
-            "Password must contain at least 8 characters.",
+            "Your password does not meet all the security requirements.",
             "error"
           );
 
           passwordInput.focus();
 
+          updatePasswordRequirements();
+
           return;
         }
 
+
+        /*
+        ====================================================
+        PASSWORD CONFIRMATION
+        ====================================================
+        */
 
         if (password !== confirmPassword) {
 
@@ -1351,6 +1742,12 @@
           return;
         }
 
+
+        /*
+        ====================================================
+        TERMS VALIDATION
+        ====================================================
+        */
 
         if (!termsInput.checked) {
 
@@ -1386,7 +1783,28 @@
 
         /*
         ====================================================
-        SEND REGISTRATION REQUEST TO API
+        SEND REGISTRATION REQUEST TO BACKEND
+        ====================================================
+
+        The backend endpoint should be:
+
+          POST /api/auth/register
+
+        The backend should receive:
+
+          full_name
+          email
+          password
+
+        IMPORTANT:
+
+        The password must ALSO be validated on the
+        backend. Frontend validation alone is not enough.
+
+        The backend must hash the password securely
+        before saving it to the database.
+
+        Never store plain-text passwords.
         ====================================================
         */
 
@@ -1404,10 +1822,18 @@
                 },
 
                 body: JSON.stringify({
-                  full_name: fullName,
-                  email: email,
-                  password: password
+
+                  full_name:
+                    fullName,
+
+                  email:
+                    email,
+
+                  password:
+                    password
+
                 })
+
               }
             );
 
@@ -1419,6 +1845,7 @@
           */
 
           let data = {};
+
 
           try {
 
