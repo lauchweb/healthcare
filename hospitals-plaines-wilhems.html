@@ -17,7 +17,7 @@
       --black: #111111;
       --main-white: #f7f7f4;
       --card-white: #fbfbf9;
-      --muted: #444444;
+      --muted: #111111;
       --line: rgba(17, 17, 17, 0.11);
     }
 
@@ -247,7 +247,7 @@
     .page-description {
       max-width: 700px;
 
-      color: var(--muted);
+      color: var(--black);
 
       font-size: 0.92rem;
 
@@ -329,14 +329,16 @@
 
     /* =====================================================
        HOSPITAL HEADER
+       
+       NO BOTTOM LINE UNDER HOSPITAL NAME
     ====================================================== */
 
     .hospital-header {
-      padding-bottom: 21px;
+      padding-bottom: 0;
 
       margin-bottom: 23px;
 
-      border-bottom: 1px solid rgba(17, 17, 17, 0.10);
+      border-bottom: none;
     }
 
     .hospital-name {
@@ -352,7 +354,7 @@
     }
 
     .hospital-location {
-      color: var(--muted);
+      color: var(--black);
 
       font-size: 0.82rem;
 
@@ -365,7 +367,7 @@
     ====================================================== */
 
     .info-title {
-      color: var(--black);
+      color: var(--red);
 
       font-size: 0.75rem;
 
@@ -395,14 +397,6 @@
       gap: 0;
     }
 
-    /*
-      CLEAN FORMAT:
-
-      Monday:        00:00 – 00:00
-      Tuesday:       00:00 – 00:00
-      Wednesday:     00:00 – 00:00
-    */
-
     .hours-row {
       display: grid;
 
@@ -416,7 +410,7 @@
 
       min-height: 27px;
 
-      color: var(--muted);
+      color: var(--black);
 
       font-size: 0.76rem;
 
@@ -444,7 +438,7 @@
     }
 
     .hours-time {
-      color: var(--muted);
+      color: var(--black);
 
       text-align: left;
 
@@ -461,7 +455,7 @@
 
     .holiday-row .hours-day,
     .holiday-row .hours-time {
-      color: var(--red);
+      color: var(--black);
 
       font-weight: 600;
     }
@@ -486,17 +480,6 @@
 
       gap: 9px;
     }
-
-    /*
-      CLEAN FORMAT:
-
-      Location:      00000
-      Road:          00000
-      GPS:           00000
-
-      Phone:         00000
-      Email:         00000
-    */
 
     .info-row {
       display: grid;
@@ -535,13 +518,13 @@
     .info-value {
       min-width: 0;
 
-      color: var(--muted);
+      color: var(--black);
 
       overflow-wrap: anywhere;
     }
 
     .info-value a {
-      color: var(--muted);
+      color: var(--black);
 
       text-decoration: none;
 
@@ -788,9 +771,11 @@
       }
 
       .hospital-header {
-        padding-bottom: 19px;
+        padding-bottom: 0;
 
         margin-bottom: 21px;
+
+        border-bottom: none;
       }
 
       .hospital-name {
@@ -810,11 +795,6 @@
 
         margin-bottom: 11px;
       }
-
-      /*
-        Keep everything on one clean line
-        on mobile as well.
-      */
 
       .hours-row {
         grid-template-columns:
@@ -950,10 +930,7 @@
           </a>
         </li>
 
-        <li
-          class="menu-dot"
-          aria-hidden="true"
-        >
+        <li class="menu-dot" aria-hidden="true">
           ·
         </li>
 
@@ -963,10 +940,7 @@
           </a>
         </li>
 
-        <li
-          class="menu-dot"
-          aria-hidden="true"
-        >
+        <li class="menu-dot" aria-hidden="true">
           ·
         </li>
 
@@ -993,10 +967,7 @@
           </a>
         </li>
 
-        <li
-          class="menu-dot"
-          aria-hidden="true"
-        >
+        <li class="menu-dot" aria-hidden="true">
           ·
         </li>
 
@@ -1010,10 +981,7 @@
           </a>
         </li>
 
-        <li
-          class="menu-dot"
-          aria-hidden="true"
-        >
+        <li class="menu-dot" aria-hidden="true">
           |
         </li>
 
@@ -1040,9 +1008,6 @@
   <main>
 
     <div class="page-container">
-
-
-      <!-- PAGE HEADING -->
 
       <div class="page-heading">
 
@@ -1086,8 +1051,6 @@
             </header>
 
 
-            <!-- DAILY HOURS -->
-
             <section class="hours-section">
 
               <h3 class="info-title">
@@ -1140,8 +1103,6 @@
 
             </section>
 
-
-            <!-- VISIT HOURS -->
 
             <section class="hours-section">
 
@@ -1196,8 +1157,6 @@
             </section>
 
 
-            <!-- DETAILS -->
-
             <div class="hospital-details">
 
               <section>
@@ -1238,21 +1197,15 @@
 
                   <div class="info-row">
                     <span class="info-label">Phone</span>
-
                     <span class="info-value">
-                      <a href="tel:00000">
-                        00000
-                      </a>
+                      <a href="tel:00000">00000</a>
                     </span>
                   </div>
 
                   <div class="info-row">
                     <span class="info-label">Email</span>
-
                     <span class="info-value">
-                      <a href="mailto:00000">
-                        00000
-                      </a>
+                      <a href="mailto:00000">00000</a>
                     </span>
                   </div>
 
@@ -1290,46 +1243,17 @@
 
             <section class="hours-section">
 
-              <h3 class="info-title">
-                Daily Hours
-              </h3>
+              <h3 class="info-title">Daily Hours</h3>
 
               <div class="hours-list">
 
-                <div class="hours-row">
-                  <span class="hours-day">Monday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Tuesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Wednesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Thursday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Friday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Saturday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Sunday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
+                <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">00:00 – 00:00</span></div>
 
                 <div class="hours-row holiday-row">
                   <span class="hours-day">Public Holiday</span>
@@ -1343,46 +1267,17 @@
 
             <section class="hours-section">
 
-              <h3 class="info-title">
-                Visit Hours
-              </h3>
+              <h3 class="info-title">Visit Hours</h3>
 
               <div class="hours-list">
 
-                <div class="hours-row">
-                  <span class="hours-day">Monday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Tuesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Wednesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Thursday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Friday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Saturday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Sunday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
+                <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">00:00 – 00:00</span></div>
 
                 <div class="hours-row holiday-row">
                   <span class="hours-day">Public Holiday</span>
@@ -1398,26 +1293,13 @@
 
               <section>
 
-                <h3 class="info-title">
-                  Location
-                </h3>
+                <h3 class="info-title">Location</h3>
 
                 <div class="info-list">
 
-                  <div class="info-row">
-                    <span class="info-label">Location</span>
-                    <span class="info-value">00000</span>
-                  </div>
-
-                  <div class="info-row">
-                    <span class="info-label">Road</span>
-                    <span class="info-value">00000</span>
-                  </div>
-
-                  <div class="info-row">
-                    <span class="info-label">GPS</span>
-                    <span class="info-value">00000</span>
-                  </div>
+                  <div class="info-row"><span class="info-label">Location</span><span class="info-value">00000</span></div>
+                  <div class="info-row"><span class="info-label">Road</span><span class="info-value">00000</span></div>
+                  <div class="info-row"><span class="info-label">GPS</span><span class="info-value">00000</span></div>
 
                 </div>
 
@@ -1426,30 +1308,18 @@
 
               <section>
 
-                <h3 class="info-title">
-                  Contact
-                </h3>
+                <h3 class="info-title">Contact</h3>
 
                 <div class="info-list">
 
                   <div class="info-row">
                     <span class="info-label">Phone</span>
-
-                    <span class="info-value">
-                      <a href="tel:00000">
-                        00000
-                      </a>
-                    </span>
+                    <span class="info-value"><a href="tel:00000">00000</a></span>
                   </div>
 
                   <div class="info-row">
                     <span class="info-label">Email</span>
-
-                    <span class="info-value">
-                      <a href="mailto:00000">
-                        00000
-                      </a>
-                    </span>
+                    <span class="info-value"><a href="mailto:00000">00000</a></span>
                   </div>
 
                 </div>
@@ -1473,59 +1343,26 @@
 
             <header class="hospital-header">
 
-              <h2 class="hospital-name">
-                Hospital 00003
-              </h2>
+              <h2 class="hospital-name">Hospital 00003</h2>
 
-              <p class="hospital-location">
-                00000
-              </p>
+              <p class="hospital-location">00000</p>
 
             </header>
 
 
             <section class="hours-section">
 
-              <h3 class="info-title">
-                Daily Hours
-              </h3>
+              <h3 class="info-title">Daily Hours</h3>
 
               <div class="hours-list">
 
-                <div class="hours-row">
-                  <span class="hours-day">Monday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Tuesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Wednesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Thursday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Friday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Saturday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Sunday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
+                <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">00:00 – 00:00</span></div>
 
                 <div class="hours-row holiday-row">
                   <span class="hours-day">Public Holiday</span>
@@ -1539,46 +1376,17 @@
 
             <section class="hours-section">
 
-              <h3 class="info-title">
-                Visit Hours
-              </h3>
+              <h3 class="info-title">Visit Hours</h3>
 
               <div class="hours-list">
 
-                <div class="hours-row">
-                  <span class="hours-day">Monday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Tuesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Wednesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Thursday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Friday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Saturday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Sunday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
+                <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">00:00 – 00:00</span></div>
 
                 <div class="hours-row holiday-row">
                   <span class="hours-day">Public Holiday</span>
@@ -1594,26 +1402,13 @@
 
               <section>
 
-                <h3 class="info-title">
-                  Location
-                </h3>
+                <h3 class="info-title">Location</h3>
 
                 <div class="info-list">
 
-                  <div class="info-row">
-                    <span class="info-label">Location</span>
-                    <span class="info-value">00000</span>
-                  </div>
-
-                  <div class="info-row">
-                    <span class="info-label">Road</span>
-                    <span class="info-value">00000</span>
-                  </div>
-
-                  <div class="info-row">
-                    <span class="info-label">GPS</span>
-                    <span class="info-value">00000</span>
-                  </div>
+                  <div class="info-row"><span class="info-label">Location</span><span class="info-value">00000</span></div>
+                  <div class="info-row"><span class="info-label">Road</span><span class="info-value">00000</span></div>
+                  <div class="info-row"><span class="info-label">GPS</span><span class="info-value">00000</span></div>
 
                 </div>
 
@@ -1622,30 +1417,18 @@
 
               <section>
 
-                <h3 class="info-title">
-                  Contact
-                </h3>
+                <h3 class="info-title">Contact</h3>
 
                 <div class="info-list">
 
                   <div class="info-row">
                     <span class="info-label">Phone</span>
-
-                    <span class="info-value">
-                      <a href="tel:00000">
-                        00000
-                      </a>
-                    </span>
+                    <span class="info-value"><a href="tel:00000">00000</a></span>
                   </div>
 
                   <div class="info-row">
                     <span class="info-label">Email</span>
-
-                    <span class="info-value">
-                      <a href="mailto:00000">
-                        00000
-                      </a>
-                    </span>
+                    <span class="info-value"><a href="mailto:00000">00000</a></span>
                   </div>
 
                 </div>
@@ -1669,59 +1452,26 @@
 
             <header class="hospital-header">
 
-              <h2 class="hospital-name">
-                Hospital 00004
-              </h2>
+              <h2 class="hospital-name">Hospital 00004</h2>
 
-              <p class="hospital-location">
-                00000
-              </p>
+              <p class="hospital-location">00000</p>
 
             </header>
 
 
             <section class="hours-section">
 
-              <h3 class="info-title">
-                Daily Hours
-              </h3>
+              <h3 class="info-title">Daily Hours</h3>
 
               <div class="hours-list">
 
-                <div class="hours-row">
-                  <span class="hours-day">Monday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Tuesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Wednesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Thursday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Friday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Saturday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Sunday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
+                <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">00:00 – 00:00</span></div>
 
                 <div class="hours-row holiday-row">
                   <span class="hours-day">Public Holiday</span>
@@ -1735,46 +1485,17 @@
 
             <section class="hours-section">
 
-              <h3 class="info-title">
-                Visit Hours
-              </h3>
+              <h3 class="info-title">Visit Hours</h3>
 
               <div class="hours-list">
 
-                <div class="hours-row">
-                  <span class="hours-day">Monday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Tuesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Wednesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Thursday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Friday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Saturday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Sunday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
+                <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">00:00 – 00:00</span></div>
 
                 <div class="hours-row holiday-row">
                   <span class="hours-day">Public Holiday</span>
@@ -1790,26 +1511,13 @@
 
               <section>
 
-                <h3 class="info-title">
-                  Location
-                </h3>
+                <h3 class="info-title">Location</h3>
 
                 <div class="info-list">
 
-                  <div class="info-row">
-                    <span class="info-label">Location</span>
-                    <span class="info-value">00000</span>
-                  </div>
-
-                  <div class="info-row">
-                    <span class="info-label">Road</span>
-                    <span class="info-value">00000</span>
-                  </div>
-
-                  <div class="info-row">
-                    <span class="info-label">GPS</span>
-                    <span class="info-value">00000</span>
-                  </div>
+                  <div class="info-row"><span class="info-label">Location</span><span class="info-value">00000</span></div>
+                  <div class="info-row"><span class="info-label">Road</span><span class="info-value">00000</span></div>
+                  <div class="info-row"><span class="info-label">GPS</span><span class="info-value">00000</span></div>
 
                 </div>
 
@@ -1818,30 +1526,18 @@
 
               <section>
 
-                <h3 class="info-title">
-                  Contact
-                </h3>
+                <h3 class="info-title">Contact</h3>
 
                 <div class="info-list">
 
                   <div class="info-row">
                     <span class="info-label">Phone</span>
-
-                    <span class="info-value">
-                      <a href="tel:00000">
-                        00000
-                      </a>
-                    </span>
+                    <span class="info-value"><a href="tel:00000">00000</a></span>
                   </div>
 
                   <div class="info-row">
                     <span class="info-label">Email</span>
-
-                    <span class="info-value">
-                      <a href="mailto:00000">
-                        00000
-                      </a>
-                    </span>
+                    <span class="info-value"><a href="mailto:00000">00000</a></span>
                   </div>
 
                 </div>
@@ -1865,59 +1561,26 @@
 
             <header class="hospital-header">
 
-              <h2 class="hospital-name">
-                Hospital 00005
-              </h2>
+              <h2 class="hospital-name">Hospital 00005</h2>
 
-              <p class="hospital-location">
-                00000
-              </p>
+              <p class="hospital-location">00000</p>
 
             </header>
 
 
             <section class="hours-section">
 
-              <h3 class="info-title">
-                Daily Hours
-              </h3>
+              <h3 class="info-title">Daily Hours</h3>
 
               <div class="hours-list">
 
-                <div class="hours-row">
-                  <span class="hours-day">Monday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Tuesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Wednesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Thursday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Friday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Saturday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Sunday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
+                <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">00:00 – 00:00</span></div>
 
                 <div class="hours-row holiday-row">
                   <span class="hours-day">Public Holiday</span>
@@ -1931,46 +1594,17 @@
 
             <section class="hours-section">
 
-              <h3 class="info-title">
-                Visit Hours
-              </h3>
+              <h3 class="info-title">Visit Hours</h3>
 
               <div class="hours-list">
 
-                <div class="hours-row">
-                  <span class="hours-day">Monday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Tuesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Wednesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Thursday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Friday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Saturday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Sunday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
+                <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">00:00 – 00:00</span></div>
 
                 <div class="hours-row holiday-row">
                   <span class="hours-day">Public Holiday</span>
@@ -1986,26 +1620,13 @@
 
               <section>
 
-                <h3 class="info-title">
-                  Location
-                </h3>
+                <h3 class="info-title">Location</h3>
 
                 <div class="info-list">
 
-                  <div class="info-row">
-                    <span class="info-label">Location</span>
-                    <span class="info-value">00000</span>
-                  </div>
-
-                  <div class="info-row">
-                    <span class="info-label">Road</span>
-                    <span class="info-value">00000</span>
-                  </div>
-
-                  <div class="info-row">
-                    <span class="info-label">GPS</span>
-                    <span class="info-value">00000</span>
-                  </div>
+                  <div class="info-row"><span class="info-label">Location</span><span class="info-value">00000</span></div>
+                  <div class="info-row"><span class="info-label">Road</span><span class="info-value">00000</span></div>
+                  <div class="info-row"><span class="info-label">GPS</span><span class="info-value">00000</span></div>
 
                 </div>
 
@@ -2014,30 +1635,18 @@
 
               <section>
 
-                <h3 class="info-title">
-                  Contact
-                </h3>
+                <h3 class="info-title">Contact</h3>
 
                 <div class="info-list">
 
                   <div class="info-row">
                     <span class="info-label">Phone</span>
-
-                    <span class="info-value">
-                      <a href="tel:00000">
-                        00000
-                      </a>
-                    </span>
+                    <span class="info-value"><a href="tel:00000">00000</a></span>
                   </div>
 
                   <div class="info-row">
                     <span class="info-label">Email</span>
-
-                    <span class="info-value">
-                      <a href="mailto:00000">
-                        00000
-                      </a>
-                    </span>
+                    <span class="info-value"><a href="mailto:00000">00000</a></span>
                   </div>
 
                 </div>
@@ -2061,59 +1670,26 @@
 
             <header class="hospital-header">
 
-              <h2 class="hospital-name">
-                Hospital 00006
-              </h2>
+              <h2 class="hospital-name">Hospital 00006</h2>
 
-              <p class="hospital-location">
-                00000
-              </p>
+              <p class="hospital-location">00000</p>
 
             </header>
 
 
             <section class="hours-section">
 
-              <h3 class="info-title">
-                Daily Hours
-              </h3>
+              <h3 class="info-title">Daily Hours</h3>
 
               <div class="hours-list">
 
-                <div class="hours-row">
-                  <span class="hours-day">Monday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Tuesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Wednesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Thursday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Friday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Saturday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Sunday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
+                <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">00:00 – 00:00</span></div>
 
                 <div class="hours-row holiday-row">
                   <span class="hours-day">Public Holiday</span>
@@ -2127,46 +1703,17 @@
 
             <section class="hours-section">
 
-              <h3 class="info-title">
-                Visit Hours
-              </h3>
+              <h3 class="info-title">Visit Hours</h3>
 
               <div class="hours-list">
 
-                <div class="hours-row">
-                  <span class="hours-day">Monday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Tuesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Wednesday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Thursday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Friday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Saturday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
-
-                <div class="hours-row">
-                  <span class="hours-day">Sunday</span>
-                  <span class="hours-time">00:00 – 00:00</span>
-                </div>
+                <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">00:00 – 00:00</span></div>
+                <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">00:00 – 00:00</span></div>
 
                 <div class="hours-row holiday-row">
                   <span class="hours-day">Public Holiday</span>
@@ -2182,26 +1729,13 @@
 
               <section>
 
-                <h3 class="info-title">
-                  Location
-                </h3>
+                <h3 class="info-title">Location</h3>
 
                 <div class="info-list">
 
-                  <div class="info-row">
-                    <span class="info-label">Location</span>
-                    <span class="info-value">00000</span>
-                  </div>
-
-                  <div class="info-row">
-                    <span class="info-label">Road</span>
-                    <span class="info-value">00000</span>
-                  </div>
-
-                  <div class="info-row">
-                    <span class="info-label">GPS</span>
-                    <span class="info-value">00000</span>
-                  </div>
+                  <div class="info-row"><span class="info-label">Location</span><span class="info-value">00000</span></div>
+                  <div class="info-row"><span class="info-label">Road</span><span class="info-value">00000</span></div>
+                  <div class="info-row"><span class="info-label">GPS</span><span class="info-value">00000</span></div>
 
                 </div>
 
@@ -2210,30 +1744,18 @@
 
               <section>
 
-                <h3 class="info-title">
-                  Contact
-                </h3>
+                <h3 class="info-title">Contact</h3>
 
                 <div class="info-list">
 
                   <div class="info-row">
                     <span class="info-label">Phone</span>
-
-                    <span class="info-value">
-                      <a href="tel:00000">
-                        00000
-                      </a>
-                    </span>
+                    <span class="info-value"><a href="tel:00000">00000</a></span>
                   </div>
 
                   <div class="info-row">
                     <span class="info-label">Email</span>
-
-                    <span class="info-value">
-                      <a href="mailto:00000">
-                        00000
-                      </a>
-                    </span>
+                    <span class="info-value"><a href="mailto:00000">00000</a></span>
                   </div>
 
                 </div>
