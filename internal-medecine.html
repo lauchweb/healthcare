@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Internal Medicine Specialists in Mauritius | Healthcare Mauritius</title>
+  <title>Internal Medicine Specialists | Healthcare Mauritius</title>
 
   <meta
     name="description"
-    content="Find internal medicine specialists in Mauritius, their workplaces, consultation hours and contact information."
+    content="Find internal medicine doctors and specialists, their phone numbers, workplaces and consultation hours."
   >
 
   <style>
@@ -33,7 +33,6 @@
 
     body {
       min-height: 100vh;
-
       color: var(--black);
 
       font-family:
@@ -331,7 +330,11 @@
     ====================================================== */
 
     .doctor-header {
-      margin-bottom: 24px;
+      padding-bottom: 0;
+
+      margin-bottom: 23px;
+
+      border-bottom: none;
     }
 
     .doctor-name {
@@ -349,9 +352,7 @@
     .doctor-specialty {
       color: var(--black);
 
-      font-size: 0.80rem;
-
-      font-weight: 600;
+      font-size: 0.82rem;
 
       line-height: 1.55;
     }
@@ -367,6 +368,10 @@
       flex-direction: column;
 
       gap: 24px;
+    }
+
+    .info-section {
+      width: 100%;
     }
 
     .info-title {
@@ -443,53 +448,6 @@
 
     .info-value a:hover {
       color: var(--red);
-    }
-
-
-    /* =====================================================
-       HOURS
-    ====================================================== */
-
-    .hours-list {
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 0;
-    }
-
-    .hours-row {
-      display: grid;
-
-      grid-template-columns:
-        115px
-        minmax(0, 1fr);
-
-      align-items: center;
-
-      gap: 10px;
-
-      min-height: 27px;
-
-      color: var(--black);
-
-      font-size: 0.76rem;
-
-      line-height: 1.4;
-    }
-
-    .hours-day {
-      color: var(--black);
-
-      font-weight: 600;
-    }
-
-    .hours-time {
-      color: var(--black);
-
-      text-align: left;
-
-      white-space: nowrap;
     }
 
 
@@ -727,30 +685,30 @@
         border-radius: 8px;
       }
 
+      .doctor-header {
+        padding-bottom: 0;
+
+        margin-bottom: 21px;
+
+        border-bottom: none;
+      }
+
       .doctor-name {
         font-size: 1.3rem;
       }
 
       .doctor-specialty {
-        font-size: 0.78rem;
+        font-size: 0.80rem;
       }
 
-      .hours-row {
-        grid-template-columns:
-          105px
-          minmax(0, 1fr);
+      .info-title {
+        font-size: 0.72rem;
 
-        gap: 7px;
-
-        min-height: 29px;
-
-        font-size: 0.74rem;
+        margin-bottom: 11px;
       }
 
-      .hours-time {
-        font-size: 0.73rem;
-
-        white-space: normal;
+      .doctor-details {
+        gap: 22px;
       }
 
       .info-row {
@@ -761,10 +719,6 @@
         gap: 7px;
 
         font-size: 0.77rem;
-      }
-
-      .doctor-details {
-        gap: 22px;
       }
 
       .back-home {
@@ -811,18 +765,6 @@
 
       .doctor-box {
         padding: 28px 20px 30px;
-      }
-
-      .hours-row {
-        grid-template-columns:
-          96px
-          minmax(0, 1fr);
-
-        font-size: 0.70rem;
-      }
-
-      .hours-time {
-        font-size: 0.69rem;
       }
 
       .info-row {
@@ -944,11 +886,6 @@
 
     <div class="page-container">
 
-
-      <!-- =================================================
-           PAGE HEADING
-      ================================================== -->
-
       <div class="page-heading">
 
         <h1 class="page-title">
@@ -956,9 +893,9 @@
         </h1>
 
         <p class="page-description">
-          Find internal medicine specialists in Mauritius,
-          including where they work, their consultation hours
-          and contact information.
+          Find internal medicine doctors and specialists,
+          including their contact information, workplaces
+          and consultation hours.
         </p>
 
       </div>
@@ -972,7 +909,7 @@
 
 
         <!-- =================================================
-             SPECIALIST 1
+             DOCTOR 1
         ================================================== -->
 
         <article class="doctor-box">
@@ -982,7 +919,7 @@
             <header class="doctor-header">
 
               <h2 class="doctor-name">
-                Dr. Doctor Name 01
+                Dr. 00001
               </h2>
 
               <p class="doctor-specialty">
@@ -994,99 +931,7 @@
 
             <div class="doctor-details">
 
-
-              <!-- PRACTICE -->
-
-              <section>
-
-                <h3 class="info-title">
-                  Practice
-                </h3>
-
-                <div class="info-list">
-
-                  <div class="info-row">
-
-                    <span class="info-label">
-                      Works at
-                    </span>
-
-                    <span class="info-value">
-                      Clinic / Hospital Name
-                    </span>
-
-                  </div>
-
-                  <div class="info-row">
-
-                    <span class="info-label">
-                      Location
-                    </span>
-
-                    <span class="info-value">
-                      Mauritius
-                    </span>
-
-                  </div>
-
-                </div>
-
-              </section>
-
-
-              <!-- HOURS -->
-
-              <section>
-
-                <h3 class="info-title">
-                  Hours
-                </h3>
-
-                <div class="hours-list">
-
-                  <div class="hours-row">
-                    <span class="hours-day">Monday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Tuesday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Wednesday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Thursday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Friday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Saturday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Sunday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                </div>
-
-              </section>
-
-
-              <!-- CONTACT -->
-
-              <section>
+              <section class="info-section">
 
                 <h3 class="info-title">
                   Contact
@@ -1101,9 +946,11 @@
                     </span>
 
                     <span class="info-value">
-                      <a href="tel:00000000">
-                        00000000
+
+                      <a href="tel:00000">
+                        00000
                       </a>
+
                     </span>
 
                   </div>
@@ -1112,6 +959,78 @@
 
               </section>
 
+
+              <section class="info-section">
+
+                <h3 class="info-title">
+                  Work
+                </h3>
+
+                <div class="info-list">
+
+                  <div class="info-row">
+
+                    <span class="info-label">
+                      Work At
+                    </span>
+
+                    <span class="info-value">
+                      00000
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </section>
+
+
+              <section class="info-section">
+
+                <h3 class="info-title">
+                  Hours
+                </h3>
+
+                <div class="info-list">
+
+                  <div class="info-row">
+                    <span class="info-label">Monday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Tuesday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Wednesday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Thursday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Friday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Saturday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Sunday</span>
+                    <span class="info-value">Closed</span>
+                  </div>
+
+                </div>
+
+              </section>
 
             </div>
 
@@ -1121,7 +1040,7 @@
 
 
         <!-- =================================================
-             SPECIALIST 2
+             DOCTOR 2
         ================================================== -->
 
         <article class="doctor-box">
@@ -1131,7 +1050,7 @@
             <header class="doctor-header">
 
               <h2 class="doctor-name">
-                Dr. Doctor Name 02
+                Dr. 00002
               </h2>
 
               <p class="doctor-specialty">
@@ -1143,93 +1062,7 @@
 
             <div class="doctor-details">
 
-
-              <section>
-
-                <h3 class="info-title">
-                  Practice
-                </h3>
-
-                <div class="info-list">
-
-                  <div class="info-row">
-
-                    <span class="info-label">
-                      Works at
-                    </span>
-
-                    <span class="info-value">
-                      Clinic / Hospital Name
-                    </span>
-
-                  </div>
-
-                  <div class="info-row">
-
-                    <span class="info-label">
-                      Location
-                    </span>
-
-                    <span class="info-value">
-                      Mauritius
-                    </span>
-
-                  </div>
-
-                </div>
-
-              </section>
-
-
-              <section>
-
-                <h3 class="info-title">
-                  Hours
-                </h3>
-
-                <div class="hours-list">
-
-                  <div class="hours-row">
-                    <span class="hours-day">Monday</span>
-                    <span class="hours-time">10:00 – 17:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Tuesday</span>
-                    <span class="hours-time">10:00 – 17:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Wednesday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Thursday</span>
-                    <span class="hours-time">10:00 – 17:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Friday</span>
-                    <span class="hours-time">10:00 – 17:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Saturday</span>
-                    <span class="hours-time">09:00 – 13:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Sunday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                </div>
-
-              </section>
-
-
-              <section>
+              <section class="info-section">
 
                 <h3 class="info-title">
                   Contact
@@ -1244,9 +1077,11 @@
                     </span>
 
                     <span class="info-value">
-                      <a href="tel:00000000">
-                        00000000
+
+                      <a href="tel:00000">
+                        00000
                       </a>
+
                     </span>
 
                   </div>
@@ -1255,6 +1090,78 @@
 
               </section>
 
+
+              <section class="info-section">
+
+                <h3 class="info-title">
+                  Work
+                </h3>
+
+                <div class="info-list">
+
+                  <div class="info-row">
+
+                    <span class="info-label">
+                      Work At
+                    </span>
+
+                    <span class="info-value">
+                      00000
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </section>
+
+
+              <section class="info-section">
+
+                <h3 class="info-title">
+                  Hours
+                </h3>
+
+                <div class="info-list">
+
+                  <div class="info-row">
+                    <span class="info-label">Monday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Tuesday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Wednesday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Thursday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Friday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Saturday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Sunday</span>
+                    <span class="info-value">Closed</span>
+                  </div>
+
+                </div>
+
+              </section>
 
             </div>
 
@@ -1264,7 +1171,7 @@
 
 
         <!-- =================================================
-             SPECIALIST 3
+             DOCTOR 3
         ================================================== -->
 
         <article class="doctor-box">
@@ -1274,7 +1181,7 @@
             <header class="doctor-header">
 
               <h2 class="doctor-name">
-                Dr. Doctor Name 03
+                Dr. 00003
               </h2>
 
               <p class="doctor-specialty">
@@ -1286,93 +1193,7 @@
 
             <div class="doctor-details">
 
-
-              <section>
-
-                <h3 class="info-title">
-                  Practice
-                </h3>
-
-                <div class="info-list">
-
-                  <div class="info-row">
-
-                    <span class="info-label">
-                      Works at
-                    </span>
-
-                    <span class="info-value">
-                      Clinic / Hospital Name
-                    </span>
-
-                  </div>
-
-                  <div class="info-row">
-
-                    <span class="info-label">
-                      Location
-                    </span>
-
-                    <span class="info-value">
-                      Mauritius
-                    </span>
-
-                  </div>
-
-                </div>
-
-              </section>
-
-
-              <section>
-
-                <h3 class="info-title">
-                  Hours
-                </h3>
-
-                <div class="hours-list">
-
-                  <div class="hours-row">
-                    <span class="hours-day">Monday</span>
-                    <span class="hours-time">08:30 – 15:30</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Tuesday</span>
-                    <span class="hours-time">08:30 – 15:30</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Wednesday</span>
-                    <span class="hours-time">08:30 – 15:30</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Thursday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Friday</span>
-                    <span class="hours-time">08:30 – 15:30</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Saturday</span>
-                    <span class="hours-time">09:00 – 12:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Sunday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                </div>
-
-              </section>
-
-
-              <section>
+              <section class="info-section">
 
                 <h3 class="info-title">
                   Contact
@@ -1387,9 +1208,11 @@
                     </span>
 
                     <span class="info-value">
-                      <a href="tel:00000000">
-                        00000000
+
+                      <a href="tel:00000">
+                        00000
                       </a>
+
                     </span>
 
                   </div>
@@ -1398,6 +1221,78 @@
 
               </section>
 
+
+              <section class="info-section">
+
+                <h3 class="info-title">
+                  Work
+                </h3>
+
+                <div class="info-list">
+
+                  <div class="info-row">
+
+                    <span class="info-label">
+                      Work At
+                    </span>
+
+                    <span class="info-value">
+                      00000
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </section>
+
+
+              <section class="info-section">
+
+                <h3 class="info-title">
+                  Hours
+                </h3>
+
+                <div class="info-list">
+
+                  <div class="info-row">
+                    <span class="info-label">Monday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Tuesday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Wednesday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Thursday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Friday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Saturday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Sunday</span>
+                    <span class="info-value">Closed</span>
+                  </div>
+
+                </div>
+
+              </section>
 
             </div>
 
@@ -1407,7 +1302,7 @@
 
 
         <!-- =================================================
-             SPECIALIST 4
+             DOCTOR 4
         ================================================== -->
 
         <article class="doctor-box">
@@ -1417,7 +1312,7 @@
             <header class="doctor-header">
 
               <h2 class="doctor-name">
-                Dr. Doctor Name 04
+                Dr. 00004
               </h2>
 
               <p class="doctor-specialty">
@@ -1429,93 +1324,7 @@
 
             <div class="doctor-details">
 
-
-              <section>
-
-                <h3 class="info-title">
-                  Practice
-                </h3>
-
-                <div class="info-list">
-
-                  <div class="info-row">
-
-                    <span class="info-label">
-                      Works at
-                    </span>
-
-                    <span class="info-value">
-                      Clinic / Hospital Name
-                    </span>
-
-                  </div>
-
-                  <div class="info-row">
-
-                    <span class="info-label">
-                      Location
-                    </span>
-
-                    <span class="info-value">
-                      Mauritius
-                    </span>
-
-                  </div>
-
-                </div>
-
-              </section>
-
-
-              <section>
-
-                <h3 class="info-title">
-                  Hours
-                </h3>
-
-                <div class="hours-list">
-
-                  <div class="hours-row">
-                    <span class="hours-day">Monday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Tuesday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Wednesday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Thursday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Friday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Saturday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Sunday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                </div>
-
-              </section>
-
-
-              <section>
+              <section class="info-section">
 
                 <h3 class="info-title">
                   Contact
@@ -1530,9 +1339,11 @@
                     </span>
 
                     <span class="info-value">
-                      <a href="tel:00000000">
-                        00000000
+
+                      <a href="tel:00000">
+                        00000
                       </a>
+
                     </span>
 
                   </div>
@@ -1541,6 +1352,78 @@
 
               </section>
 
+
+              <section class="info-section">
+
+                <h3 class="info-title">
+                  Work
+                </h3>
+
+                <div class="info-list">
+
+                  <div class="info-row">
+
+                    <span class="info-label">
+                      Work At
+                    </span>
+
+                    <span class="info-value">
+                      00000
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </section>
+
+
+              <section class="info-section">
+
+                <h3 class="info-title">
+                  Hours
+                </h3>
+
+                <div class="info-list">
+
+                  <div class="info-row">
+                    <span class="info-label">Monday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Tuesday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Wednesday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Thursday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Friday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Saturday</span>
+                    <span class="info-value">00:00 – 00:00</span>
+                  </div>
+
+                  <div class="info-row">
+                    <span class="info-label">Sunday</span>
+                    <span class="info-value">Closed</span>
+                  </div>
+
+                </div>
+
+              </section>
 
             </div>
 
