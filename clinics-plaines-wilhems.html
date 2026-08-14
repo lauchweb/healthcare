@@ -329,11 +329,13 @@
     /* =====================================================
        CLINIC HEADER
        
-       No fine line under clinic name.
+       Clinic name is red.
+       No extra data underneath.
+       No fine line.
     ====================================================== */
 
     .clinic-header {
-      padding-bottom: 4px;
+      padding-bottom: 0;
 
       margin-bottom: 22px;
 
@@ -355,6 +357,9 @@
 
     /* =====================================================
        SECTION TITLES
+       
+       Only the titles are red.
+       All actual data remains black.
     ====================================================== */
 
     .info-title {
@@ -403,7 +408,7 @@
 
       letter-spacing: 0.05em;
 
-      color: var(--red);
+      color: var(--black);
     }
 
     .hours-header span:nth-child(2),
@@ -437,11 +442,11 @@
 
       line-height: 1.4;
 
-      color: var(--red);
+      color: var(--black);
     }
 
     .hours-day {
-      color: var(--red);
+      color: var(--black);
 
       font-weight: 600;
 
@@ -449,7 +454,7 @@
     }
 
     .hours-time {
-      color: var(--red);
+      color: var(--black);
 
       text-align: right;
 
@@ -461,7 +466,7 @@
        PUBLIC HOLIDAY
        
        No fine separation line.
-       Text and hours are black.
+       Everything is black.
     ====================================================== */
 
     .holiday-row {
@@ -516,10 +521,12 @@
       font-size: 0.78rem;
 
       line-height: 1.5;
+
+      color: var(--black);
     }
 
     .info-label {
-      color: var(--red);
+      color: var(--black);
 
       font-weight: 600;
 
@@ -529,7 +536,7 @@
     .info-value {
       min-width: 0;
 
-      color: var(--red);
+      color: var(--black);
 
       text-align: right;
 
@@ -537,7 +544,7 @@
     }
 
     .info-value a {
-      color: var(--red);
+      color: var(--black);
 
       text-decoration: none;
 
@@ -545,7 +552,7 @@
     }
 
     .info-value a:hover {
-      color: #a91f29;
+      color: var(--red);
     }
 
 
@@ -794,7 +801,7 @@
       }
 
       .clinic-header {
-        padding-bottom: 3px;
+        padding-bottom: 0;
 
         margin-bottom: 20px;
       }
