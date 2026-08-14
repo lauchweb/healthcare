@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Dermatologists in Mauritius | Healthcare Mauritius</title>
+  <title>Dermatologists | Healthcare Mauritius</title>
 
   <meta
     name="description"
-    content="Find dermatologists in Mauritius, their workplaces, hours and contact information."
+    content="Find dermatologists, their phone numbers, workplaces and consultation hours."
   >
 
   <style>
@@ -33,6 +33,7 @@
 
     body {
       min-height: 100vh;
+
       color: var(--black);
 
       font-family:
@@ -268,7 +269,7 @@
 
 
     /* =====================================================
-       DOCTOR BOX
+       DOCTOR CARD
     ====================================================== */
 
     .doctor-box {
@@ -330,7 +331,7 @@
     ====================================================== */
 
     .doctor-header {
-      margin-bottom: 24px;
+      margin-bottom: 25px;
     }
 
     .doctor-name {
@@ -342,17 +343,19 @@
 
       letter-spacing: -0.035em;
 
-      margin-bottom: 7px;
+      margin-bottom: 6px;
     }
 
     .doctor-specialty {
       color: var(--black);
 
-      font-size: 0.80rem;
+      font-size: 0.78rem;
 
       font-weight: 600;
 
-      line-height: 1.55;
+      text-transform: uppercase;
+
+      letter-spacing: 0.055em;
     }
 
 
@@ -365,36 +368,14 @@
 
       flex-direction: column;
 
-      gap: 24px;
+      gap: 10px;
     }
 
-    .info-title {
-      color: var(--red);
-
-      font-size: 0.75rem;
-
-      font-weight: 700;
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.06em;
-
-      margin-bottom: 12px;
-    }
-
-    .info-list {
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 9px;
-    }
-
-    .info-row {
+    .doctor-row {
       display: grid;
 
       grid-template-columns:
-        115px
+        105px
         minmax(0, 1fr);
 
       align-items: start;
@@ -406,7 +387,7 @@
       line-height: 1.5;
     }
 
-    .info-label {
+    .doctor-label {
       display: flex;
 
       align-items: flex-start;
@@ -416,7 +397,7 @@
       font-weight: 600;
     }
 
-    .info-label::after {
+    .doctor-label::after {
       content: ":";
 
       margin-left: 3px;
@@ -424,7 +405,7 @@
       color: var(--black);
     }
 
-    .info-value {
+    .doctor-value {
       min-width: 0;
 
       color: var(--black);
@@ -432,7 +413,7 @@
       overflow-wrap: anywhere;
     }
 
-    .info-value a {
+    .doctor-value a {
       color: var(--black);
 
       text-decoration: none;
@@ -440,55 +421,8 @@
       transition: color 180ms ease;
     }
 
-    .info-value a:hover {
+    .doctor-value a:hover {
       color: var(--red);
-    }
-
-
-    /* =====================================================
-       HOURS
-    ====================================================== */
-
-    .hours-list {
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 0;
-    }
-
-    .hours-row {
-      display: grid;
-
-      grid-template-columns:
-        115px
-        minmax(0, 1fr);
-
-      align-items: center;
-
-      gap: 10px;
-
-      min-height: 27px;
-
-      color: var(--black);
-
-      font-size: 0.76rem;
-
-      line-height: 1.4;
-    }
-
-    .hours-day {
-      color: var(--black);
-
-      font-weight: 600;
-    }
-
-    .hours-time {
-      color: var(--black);
-
-      text-align: left;
-
-      white-space: nowrap;
     }
 
 
@@ -731,39 +665,17 @@
       }
 
       .doctor-specialty {
-        font-size: 0.78rem;
+        font-size: 0.72rem;
       }
 
-      .hours-row {
+      .doctor-row {
         grid-template-columns:
-          105px
+          95px
           minmax(0, 1fr);
 
         gap: 7px;
 
-        min-height: 29px;
-
-        font-size: 0.74rem;
-      }
-
-      .hours-time {
-        font-size: 0.73rem;
-
-        white-space: normal;
-      }
-
-      .info-row {
-        grid-template-columns:
-          105px
-          minmax(0, 1fr);
-
-        gap: 7px;
-
-        font-size: 0.77rem;
-      }
-
-      .doctor-details {
-        gap: 22px;
+        font-size: 0.76rem;
       }
 
       .back-home {
@@ -812,21 +724,9 @@
         padding: 28px 20px 30px;
       }
 
-      .hours-row {
+      .doctor-row {
         grid-template-columns:
-          96px
-          minmax(0, 1fr);
-
-        font-size: 0.70rem;
-      }
-
-      .hours-time {
-        font-size: 0.69rem;
-      }
-
-      .info-row {
-        grid-template-columns:
-          96px
+          88px
           minmax(0, 1fr);
 
         font-size: 0.70rem;
@@ -943,20 +843,15 @@
 
     <div class="page-container">
 
-
-      <!-- =================================================
-           PAGE HEADING
-      ================================================== -->
-
       <div class="page-heading">
 
         <h1 class="page-title">
-          Dermatologists
+          Dermatology
         </h1>
 
         <p class="page-description">
-          Find dermatologists in Mauritius, including where they
-          work, their consultation hours and contact information.
+          Find dermatologists, their contact information,
+          workplaces and consultation hours.
         </p>
 
       </div>
@@ -970,7 +865,7 @@
 
 
         <!-- =================================================
-             DOCTOR 1
+             DERMATOLOGIST 1
         ================================================== -->
 
         <article class="doctor-box">
@@ -980,7 +875,7 @@
             <header class="doctor-header">
 
               <h2 class="doctor-name">
-                Dr. Doctor Name 01
+                Dr. 00001
               </h2>
 
               <p class="doctor-specialty">
@@ -989,126 +884,45 @@
 
             </header>
 
-
             <div class="doctor-details">
 
+              <div class="doctor-row">
 
-              <!-- WORKPLACE -->
+                <span class="doctor-label">
+                  Phone
+                </span>
 
-              <section>
+                <span class="doctor-value">
+                  <a href="tel:00000">
+                    00000
+                  </a>
+                </span>
 
-                <h3 class="info-title">
-                  Practice
-                </h3>
+              </div>
 
-                <div class="info-list">
+              <div class="doctor-row">
 
-                  <div class="info-row">
+                <span class="doctor-label">
+                  Work at
+                </span>
 
-                    <span class="info-label">
-                      Works at
-                    </span>
+                <span class="doctor-value">
+                  00000
+                </span>
 
-                    <span class="info-value">
-                      Clinic / Hospital Name
-                    </span>
+              </div>
 
-                  </div>
+              <div class="doctor-row">
 
-                  <div class="info-row">
-
-                    <span class="info-label">
-                      Location
-                    </span>
-
-                    <span class="info-value">
-                      Mauritius
-                    </span>
-
-                  </div>
-
-                </div>
-
-              </section>
-
-
-              <!-- HOURS -->
-
-              <section>
-
-                <h3 class="info-title">
+                <span class="doctor-label">
                   Hours
-                </h3>
+                </span>
 
-                <div class="hours-list">
+                <span class="doctor-value">
+                  Monday – Friday, 00:00 – 00:00
+                </span>
 
-                  <div class="hours-row">
-                    <span class="hours-day">Monday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Tuesday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Wednesday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Thursday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Friday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Saturday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Sunday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                </div>
-
-              </section>
-
-
-              <!-- PHONE -->
-
-              <section>
-
-                <h3 class="info-title">
-                  Contact
-                </h3>
-
-                <div class="info-list">
-
-                  <div class="info-row">
-
-                    <span class="info-label">
-                      Phone
-                    </span>
-
-                    <span class="info-value">
-                      <a href="tel:00000000">
-                        00000000
-                      </a>
-                    </span>
-
-                  </div>
-
-                </div>
-
-              </section>
+              </div>
 
             </div>
 
@@ -1118,7 +932,7 @@
 
 
         <!-- =================================================
-             DOCTOR 2
+             DERMATOLOGIST 2
         ================================================== -->
 
         <article class="doctor-box">
@@ -1128,7 +942,7 @@
             <header class="doctor-header">
 
               <h2 class="doctor-name">
-                Dr. Doctor Name 02
+                Dr. 00002
               </h2>
 
               <p class="doctor-specialty">
@@ -1137,120 +951,45 @@
 
             </header>
 
-
             <div class="doctor-details">
 
+              <div class="doctor-row">
 
-              <section>
+                <span class="doctor-label">
+                  Phone
+                </span>
 
-                <h3 class="info-title">
-                  Practice
-                </h3>
+                <span class="doctor-value">
+                  <a href="tel:00000">
+                    00000
+                  </a>
+                </span>
 
-                <div class="info-list">
+              </div>
 
-                  <div class="info-row">
+              <div class="doctor-row">
 
-                    <span class="info-label">
-                      Works at
-                    </span>
+                <span class="doctor-label">
+                  Work at
+                </span>
 
-                    <span class="info-value">
-                      Clinic / Hospital Name
-                    </span>
+                <span class="doctor-value">
+                  00000
+                </span>
 
-                  </div>
+              </div>
 
-                  <div class="info-row">
+              <div class="doctor-row">
 
-                    <span class="info-label">
-                      Location
-                    </span>
-
-                    <span class="info-value">
-                      Mauritius
-                    </span>
-
-                  </div>
-
-                </div>
-
-              </section>
-
-
-              <section>
-
-                <h3 class="info-title">
+                <span class="doctor-label">
                   Hours
-                </h3>
+                </span>
 
-                <div class="hours-list">
+                <span class="doctor-value">
+                  Monday – Friday, 00:00 – 00:00
+                </span>
 
-                  <div class="hours-row">
-                    <span class="hours-day">Monday</span>
-                    <span class="hours-time">10:00 – 17:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Tuesday</span>
-                    <span class="hours-time">10:00 – 17:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Wednesday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Thursday</span>
-                    <span class="hours-time">10:00 – 17:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Friday</span>
-                    <span class="hours-time">10:00 – 17:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Saturday</span>
-                    <span class="hours-time">09:00 – 13:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Sunday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                </div>
-
-              </section>
-
-
-              <section>
-
-                <h3 class="info-title">
-                  Contact
-                </h3>
-
-                <div class="info-list">
-
-                  <div class="info-row">
-
-                    <span class="info-label">
-                      Phone
-                    </span>
-
-                    <span class="info-value">
-                      <a href="tel:00000000">
-                        00000000
-                      </a>
-                    </span>
-
-                  </div>
-
-                </div>
-
-              </section>
+              </div>
 
             </div>
 
@@ -1260,7 +999,7 @@
 
 
         <!-- =================================================
-             DOCTOR 3
+             DERMATOLOGIST 3
         ================================================== -->
 
         <article class="doctor-box">
@@ -1270,7 +1009,7 @@
             <header class="doctor-header">
 
               <h2 class="doctor-name">
-                Dr. Doctor Name 03
+                Dr. 00003
               </h2>
 
               <p class="doctor-specialty">
@@ -1279,120 +1018,45 @@
 
             </header>
 
-
             <div class="doctor-details">
 
+              <div class="doctor-row">
 
-              <section>
+                <span class="doctor-label">
+                  Phone
+                </span>
 
-                <h3 class="info-title">
-                  Practice
-                </h3>
+                <span class="doctor-value">
+                  <a href="tel:00000">
+                    00000
+                  </a>
+                </span>
 
-                <div class="info-list">
+              </div>
 
-                  <div class="info-row">
+              <div class="doctor-row">
 
-                    <span class="info-label">
-                      Works at
-                    </span>
+                <span class="doctor-label">
+                  Work at
+                </span>
 
-                    <span class="info-value">
-                      Clinic / Hospital Name
-                    </span>
+                <span class="doctor-value">
+                  00000
+                </span>
 
-                  </div>
+              </div>
 
-                  <div class="info-row">
+              <div class="doctor-row">
 
-                    <span class="info-label">
-                      Location
-                    </span>
-
-                    <span class="info-value">
-                      Mauritius
-                    </span>
-
-                  </div>
-
-                </div>
-
-              </section>
-
-
-              <section>
-
-                <h3 class="info-title">
+                <span class="doctor-label">
                   Hours
-                </h3>
+                </span>
 
-                <div class="hours-list">
+                <span class="doctor-value">
+                  Monday – Saturday, 00:00 – 00:00
+                </span>
 
-                  <div class="hours-row">
-                    <span class="hours-day">Monday</span>
-                    <span class="hours-time">08:30 – 15:30</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Tuesday</span>
-                    <span class="hours-time">08:30 – 15:30</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Wednesday</span>
-                    <span class="hours-time">08:30 – 15:30</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Thursday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Friday</span>
-                    <span class="hours-time">08:30 – 15:30</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Saturday</span>
-                    <span class="hours-time">09:00 – 12:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Sunday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                </div>
-
-              </section>
-
-
-              <section>
-
-                <h3 class="info-title">
-                  Contact
-                </h3>
-
-                <div class="info-list">
-
-                  <div class="info-row">
-
-                    <span class="info-label">
-                      Phone
-                    </span>
-
-                    <span class="info-value">
-                      <a href="tel:00000000">
-                        00000000
-                      </a>
-                    </span>
-
-                  </div>
-
-                </div>
-
-              </section>
+              </div>
 
             </div>
 
@@ -1402,7 +1066,7 @@
 
 
         <!-- =================================================
-             DOCTOR 4
+             DERMATOLOGIST 4
         ================================================== -->
 
         <article class="doctor-box">
@@ -1412,7 +1076,7 @@
             <header class="doctor-header">
 
               <h2 class="doctor-name">
-                Dr. Doctor Name 04
+                Dr. 00004
               </h2>
 
               <p class="doctor-specialty">
@@ -1421,120 +1085,179 @@
 
             </header>
 
+            <div class="doctor-details">
+
+              <div class="doctor-row">
+
+                <span class="doctor-label">
+                  Phone
+                </span>
+
+                <span class="doctor-value">
+                  <a href="tel:00000">
+                    00000
+                  </a>
+                </span>
+
+              </div>
+
+              <div class="doctor-row">
+
+                <span class="doctor-label">
+                  Work at
+                </span>
+
+                <span class="doctor-value">
+                  00000
+                </span>
+
+              </div>
+
+              <div class="doctor-row">
+
+                <span class="doctor-label">
+                  Hours
+                </span>
+
+                <span class="doctor-value">
+                  Monday – Friday, 00:00 – 00:00
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =================================================
+             DERMATOLOGIST 5
+        ================================================== -->
+
+        <article class="doctor-box">
+
+          <div class="doctor-content">
+
+            <header class="doctor-header">
+
+              <h2 class="doctor-name">
+                Dr. 00005
+              </h2>
+
+              <p class="doctor-specialty">
+                Dermatologist
+              </p>
+
+            </header>
 
             <div class="doctor-details">
 
+              <div class="doctor-row">
 
-              <section>
+                <span class="doctor-label">
+                  Phone
+                </span>
 
-                <h3 class="info-title">
-                  Practice
-                </h3>
+                <span class="doctor-value">
+                  <a href="tel:00000">
+                    00000
+                  </a>
+                </span>
 
-                <div class="info-list">
+              </div>
 
-                  <div class="info-row">
+              <div class="doctor-row">
 
-                    <span class="info-label">
-                      Works at
-                    </span>
+                <span class="doctor-label">
+                  Work at
+                </span>
 
-                    <span class="info-value">
-                      Clinic / Hospital Name
-                    </span>
+                <span class="doctor-value">
+                  00000
+                </span>
 
-                  </div>
+              </div>
 
-                  <div class="info-row">
+              <div class="doctor-row">
 
-                    <span class="info-label">
-                      Location
-                    </span>
-
-                    <span class="info-value">
-                      Mauritius
-                    </span>
-
-                  </div>
-
-                </div>
-
-              </section>
-
-
-              <section>
-
-                <h3 class="info-title">
+                <span class="doctor-label">
                   Hours
-                </h3>
+                </span>
 
-                <div class="hours-list">
+                <span class="doctor-value">
+                  Tuesday – Saturday, 00:00 – 00:00
+                </span>
 
-                  <div class="hours-row">
-                    <span class="hours-day">Monday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
+              </div>
 
-                  <div class="hours-row">
-                    <span class="hours-day">Tuesday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
+            </div>
 
-                  <div class="hours-row">
-                    <span class="hours-day">Wednesday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
+          </div>
 
-                  <div class="hours-row">
-                    <span class="hours-day">Thursday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Friday</span>
-                    <span class="hours-time">09:00 – 16:00</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Saturday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                  <div class="hours-row">
-                    <span class="hours-day">Sunday</span>
-                    <span class="hours-time">Closed</span>
-                  </div>
-
-                </div>
-
-              </section>
+        </article>
 
 
-              <section>
+        <!-- =================================================
+             DERMATOLOGIST 6
+        ================================================== -->
 
-                <h3 class="info-title">
-                  Contact
-                </h3>
+        <article class="doctor-box">
 
-                <div class="info-list">
+          <div class="doctor-content">
 
-                  <div class="info-row">
+            <header class="doctor-header">
 
-                    <span class="info-label">
-                      Phone
-                    </span>
+              <h2 class="doctor-name">
+                Dr. 00006
+              </h2>
 
-                    <span class="info-value">
-                      <a href="tel:00000000">
-                        00000000
-                      </a>
-                    </span>
+              <p class="doctor-specialty">
+                Dermatologist
+              </p>
 
-                  </div>
+            </header>
 
-                </div>
+            <div class="doctor-details">
 
-              </section>
+              <div class="doctor-row">
+
+                <span class="doctor-label">
+                  Phone
+                </span>
+
+                <span class="doctor-value">
+                  <a href="tel:00000">
+                    00000
+                  </a>
+                </span>
+
+              </div>
+
+              <div class="doctor-row">
+
+                <span class="doctor-label">
+                  Work at
+                </span>
+
+                <span class="doctor-value">
+                  00000
+                </span>
+
+              </div>
+
+              <div class="doctor-row">
+
+                <span class="doctor-label">
+                  Hours
+                </span>
+
+                <span class="doctor-value">
+                  Monday – Thursday, 00:00 – 00:00
+                </span>
+
+              </div>
 
             </div>
 
