@@ -185,8 +185,30 @@
       width: 100%;
     }
 
+    /* Header separator dots */
+
     .menu-dot {
       color: var(--black);
+
+      font-size: 0.95rem;
+
+      line-height: 1;
+
+      user-select: none;
+    }
+
+    /* Red dot before Safety */
+
+    .menu-dot-safety {
+      color: var(--red);
+    }
+
+    /* Separator before Login */
+
+    .menu-separator {
+      color: var(--black);
+
+      opacity: 0.7;
 
       font-size: 0.82rem;
 
@@ -195,9 +217,7 @@
       user-select: none;
     }
 
-    .menu-dot-safety {
-      color: var(--red);
-    }
+    /* Login */
 
     .menu-login a {
       color: var(--red);
@@ -206,7 +226,7 @@
     }
 
     .menu-login a:hover {
-      color: #b8222c;
+      color: var(--red);
     }
 
     /* =========================
@@ -698,6 +718,14 @@
       opacity: 0.7;
     }
 
+    /* Red separator immediately before Follow */
+
+    .footer-separator-follow {
+      color: var(--red);
+
+      opacity: 1;
+    }
+
     /* =========================
        TABLET
     ========================== */
@@ -851,18 +879,7 @@
 
       <ul class="menu">
 
-        <li>
-          <a href="info.html">
-            Info
-          </a>
-        </li>
-
-        <li
-          class="menu-dot"
-          aria-hidden="true"
-        >
-          ·
-        </li>
+        <!-- Info removed -->
 
         <li>
           <a href="about.html">
@@ -882,6 +899,8 @@
             Jobs
           </a>
         </li>
+
+        <!-- Red dot before Safety -->
 
         <li
           class="menu-dot menu-dot-safety"
@@ -917,12 +936,16 @@
           </a>
         </li>
 
+        <!-- Separator before Login -->
+
         <li
-          class="menu-dot"
+          class="menu-separator"
           aria-hidden="true"
         >
-          ·
+          |
         </li>
+
+        <!-- Login -->
 
         <li class="menu-login">
           <a href="login.html">
@@ -1147,14 +1170,16 @@
     <div class="footer-inner">
 
       <div class="copyright">
-        For your well-being © Healthcare Mauritius 2025-2026
+        Your well-being © Healthcare Mauritius 2025-2026
       </div>
 
       <div class="footer-right">
 
         <div class="footer-links">
 
-          <a href="terms-of-use.html">
+          <!-- Terms -->
+
+          <a href="terms.html">
             Terms
           </a>
 
@@ -1162,20 +1187,36 @@
             |
           </span>
 
-          <a
-            href="https://www.instagram.com/healthcaremauritius"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Follow
+          <!-- Privacy -->
+
+          <a href="privacy.html">
+            Privacy
           </a>
 
           <span class="footer-separator">
             |
           </span>
 
+          <!-- Contact -->
+
           <a href="mailto:info@healthcare.mu">
             Contact
+          </a>
+
+          <!-- Red separator before Follow -->
+
+          <span class="footer-separator footer-separator-follow">
+            |
+          </span>
+
+          <!-- Follow -->
+
+          <a
+            href="https://www.instagram.com/healthcaremauritius/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Follow
           </a>
 
         </div>
