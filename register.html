@@ -408,7 +408,7 @@
     }
 
     /* =========================
-       TERMS
+       ACCOUNT POLICY
     ========================== */
 
     .terms {
@@ -879,8 +879,6 @@
 
       <ul class="menu">
 
-        <!-- Info removed -->
-
         <li>
           <a href="about.html">
             About
@@ -899,8 +897,6 @@
             Jobs
           </a>
         </li>
-
-        <!-- Red dot before Safety -->
 
         <li
           class="menu-dot menu-dot-safety"
@@ -936,16 +932,12 @@
           </a>
         </li>
 
-        <!-- Separator before Login -->
-
         <li
           class="menu-separator"
           aria-hidden="true"
         >
           |
         </li>
-
-        <!-- Login -->
 
         <li class="menu-login">
           <a href="login.html">
@@ -1077,6 +1069,10 @@
             </div>
 
 
+            <!-- =========================
+                 ACCOUNT POLICY AGREEMENT
+            ========================== -->
+
             <div class="terms">
 
               <input
@@ -1088,14 +1084,11 @@
 
               <label for="terms">
 
-                I agree to the
+                I have read and agree to the
 
                 <a href="account-policy.html">
-                  Policy
-                </a>
-
-                and understand the terms of using
-                Healthcare Mauritius.
+                  Healthcare Mauritius Account Policy
+                </a>.
 
               </label>
 
@@ -1177,8 +1170,6 @@
 
         <div class="footer-links">
 
-          <!-- Terms -->
-
           <a href="terms-of-use.html">
             Terms
           </a>
@@ -1186,8 +1177,6 @@
           <span class="footer-separator">
             |
           </span>
-
-          <!-- Privacy -->
 
           <a href="privacy-policy.html">
             Privacy
@@ -1197,19 +1186,13 @@
             |
           </span>
 
-          <!-- Contact -->
-
           <a href="mailto:info@healthcare.mu">
             Contact
           </a>
 
-          <!-- Red separator before Follow -->
-
           <span class="footer-separator footer-separator-follow">
             |
           </span>
-
-          <!-- Follow -->
 
           <a
             href="https://www.instagram.com/healthcaremauritius/"
@@ -1247,8 +1230,7 @@
 
         POST /api/auth/register
 
-
-    When the backend is ready, this endpoint should:
+    The backend should:
 
       1. Receive:
            - full_name
@@ -1257,12 +1239,7 @@
 
       2. Validate all information.
 
-      3. Validate the password requirements:
-           - Minimum 8 characters
-           - Uppercase letter
-           - Lowercase letter
-           - Number
-           - Special character
+      3. Validate the password requirements.
 
       4. Check whether the email already exists.
 
@@ -1271,22 +1248,6 @@
       6. Create the user in the database.
 
       7. Return JSON.
-
-    Example successful response:
-
-      {
-        "success": true,
-        "message": "Account created successfully."
-      }
-
-
-    Example error response:
-
-      {
-        "success": false,
-        "message": "Email address already exists."
-      }
-
 
     IMPORTANT:
 
@@ -1343,15 +1304,6 @@
     /*
     ========================================================
        PASSWORD REQUIREMENTS
-    ========================================================
-
-       At least:
-       - 8 characters
-       - 1 lowercase
-       - 1 uppercase
-       - 1 number
-       - 1 special character
-
     ========================================================
     */
 
@@ -1476,14 +1428,14 @@
 
         /*
         ====================================================
-        TERMS
+        ACCOUNT POLICY
         ====================================================
         */
 
         if (!termsInput.checked) {
 
           showStatus(
-            "Please agree to the Policy before creating your account.",
+            "Please read and agree to the Healthcare Mauritius Account Policy before creating your account.",
             "error"
           );
 
@@ -1509,16 +1461,6 @@
         ====================================================
         PLACEHOLDER API CONNECTION
         ====================================================
-
-        DO NOT CHANGE THIS URL YET.
-
-        When your backend is ready, this:
-
-            /api/auth/register
-
-        will become the real registration endpoint.
-
-        ====================================================
         */
 
         const API_ENDPOINT =
@@ -1528,10 +1470,6 @@
         /*
         ====================================================
         TEMPORARY PLACEHOLDER
-
-        The real fetch() request is intentionally NOT
-        executed yet because the backend does not exist.
-
         ====================================================
         */
 
@@ -1553,17 +1491,6 @@
         /*
         ====================================================
         TEMPORARY DEVELOPMENT MESSAGE
-        ====================================================
-
-        This does NOT create an account.
-
-        It only confirms that:
-
-        - The form works
-        - Validation works
-        - Password requirements work
-        - The API connection point is ready
-
         ====================================================
         */
 
