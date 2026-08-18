@@ -7,11 +7,11 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Account Policy | Healthcare Mauritius</title>
+  <title>Account &amp; Service Policy | Healthcare Mauritius</title>
 
   <meta
     name="description"
-    content="Account policy for Healthcare Mauritius covering personal information, account registration, data use, security, retention, and account deletion."
+    content="Healthcare Mauritius account and service policy explaining account responsibilities, personal information, appointments, documents, insurance information and user-controlled sharing."
   >
 
   <style>
@@ -80,6 +80,7 @@
       display: flex;
       flex-direction: column;
     }
+
 
     /* =========================
        HEADER
@@ -183,30 +184,27 @@
     .menu-dot {
       color: var(--black);
 
-      font-size: 0.82rem;
+      /*
+       * Slightly larger than the original
+       * for the updated site-wide header style.
+       */
+      font-size: 0.92rem;
 
       line-height: 1;
 
       user-select: none;
     }
 
-    /* Red separator before Safety */
-
     .menu-dot-safety {
       color: var(--red);
     }
 
-    /* LOGIN */
+    .menu-login {
+      color: var(--red) !important;
 
-    .menu-login a {
-      color: var(--red);
-
-      font-weight: 600;
+      font-weight: 600 !important;
     }
 
-    .menu-login a:hover {
-      color: #b8222c;
-    }
 
     /* =========================
        MAIN
@@ -229,6 +227,7 @@
       width: min(900px, 100%);
     }
 
+
     /* =========================
        POLICY BOX
     ========================== */
@@ -238,7 +237,7 @@
 
       width: 100%;
 
-      padding: 48px 48px 46px;
+      padding: 48px 48px 44px;
 
       background-color: var(--card-white);
 
@@ -280,21 +279,13 @@
       pointer-events: none;
     }
 
-    .policy-inner {
+    .policy-text {
       position: relative;
 
       z-index: 1;
     }
 
-    /* =========================
-       HEADING
-    ========================== */
-
-    .policy-heading {
-      margin-bottom: 34px;
-    }
-
-    .policy-heading h1 {
+    .policy-text h1 {
       color: var(--red);
 
       font-size: clamp(2rem, 5vw, 3rem);
@@ -303,124 +294,78 @@
 
       letter-spacing: -0.045em;
 
-      margin-bottom: 12px;
-    }
-
-    .policy-heading p {
-      color: #444444;
-
-      font-size: 0.92rem;
-
-      line-height: 1.7;
-
-      max-width: 720px;
-    }
-
-    .policy-date {
-      margin-top: 12px;
-
-      color: #666666;
-
-      font-size: 0.76rem;
-
-      line-height: 1.5;
-    }
-
-    /* =========================
-       POLICY SECTIONS
-    ========================== */
-
-    .policy-section {
       margin-bottom: 28px;
     }
 
-    .policy-section:last-child {
-      margin-bottom: 0;
-    }
-
-    .policy-section h2 {
+    .policy-text h2 {
       color: var(--black);
 
-      font-size: 1.02rem;
+      font-size: 1.05rem;
 
       font-weight: 650;
 
-      letter-spacing: -0.01em;
-
-      margin-bottom: 9px;
-    }
-
-    .policy-section p {
-      color: #333333;
-
-      font-size: 0.89rem;
-
-      line-height: 1.75;
+      margin-top: 30px;
 
       margin-bottom: 10px;
     }
 
-    .policy-section p:last-child {
-      margin-bottom: 0;
+    .policy-text h2:first-of-type {
+      margin-top: 0;
     }
 
-    .policy-section ul {
-      margin-top: 8px;
-
-      padding-left: 20px;
-
+    .policy-text p {
       color: #333333;
+
+      font-size: 0.94rem;
+
+      line-height: 1.8;
+
+      max-width: 780px;
+
+      margin-bottom: 17px;
     }
 
-    .policy-section li {
+    .policy-text ul {
+      color: #333333;
+
+      padding-left: 22px;
+
+      margin-bottom: 18px;
+    }
+
+    .policy-text li {
+      font-size: 0.94rem;
+
+      line-height: 1.75;
+
       margin-bottom: 7px;
-
-      padding-left: 3px;
-
-      font-size: 0.88rem;
-
-      line-height: 1.65;
     }
 
-    .policy-section li:last-child {
-      margin-bottom: 0;
-    }
-
-    .policy-section a {
-      color: var(--red);
-
-      text-decoration: none;
-
-      font-weight: 600;
-    }
-
-    .policy-section a:hover {
-      text-decoration: underline;
-    }
 
     /* =========================
        CONTACT LINK
-       TEXT ONLY / MAIN BACKGROUND
     ========================== */
 
     .contact-link {
       color: var(--red);
 
-      text-decoration: none;
+      text-decoration: underline;
+
+      text-decoration-thickness: 1.5px;
+
+      text-underline-offset: 3px;
 
       font-weight: 600;
 
-      border-bottom: 1px solid var(--red);
-
       transition:
         color 180ms ease,
-        border-color 180ms ease;
+        text-decoration-color 180ms ease;
     }
 
     .contact-link:hover {
       color: #b8222c;
 
-      border-bottom-color: #b8222c;
+      text-decoration-thickness: 2px;
     }
 
     .contact-link:focus-visible {
@@ -431,23 +376,22 @@
       border-radius: 2px;
     }
 
+
     /* =========================
-       BACK TO REGISTER
+       BACK TO HOME
     ========================== */
 
-    .account-link {
+    .back-home {
+      width: min(900px, 100%);
+
       margin-top: 34px;
 
       display: flex;
 
       align-items: center;
-
-      gap: 12px;
-
-      flex-wrap: wrap;
     }
 
-    .account-link a {
+    .back-home-link {
       display: inline-flex;
 
       align-items: center;
@@ -475,7 +419,7 @@
         box-shadow 180ms ease;
     }
 
-    .account-link a:hover {
+    .back-home-link:hover {
       background: #b8222c;
 
       transform: translateY(-2px);
@@ -484,27 +428,12 @@
         0 7px 18px rgba(201, 40, 50, 0.20);
     }
 
-    .account-link a:focus-visible {
+    .back-home-link:focus-visible {
       outline: 3px solid rgba(201, 40, 50, 0.25);
 
       outline-offset: 4px;
     }
 
-    .account-link .secondary-link {
-      background: transparent;
-
-      color: var(--red);
-
-      border: 1px solid rgba(201, 40, 50, 0.35);
-
-      box-shadow: none;
-    }
-
-    .account-link .secondary-link:hover {
-      background: rgba(201, 40, 50, 0.06);
-
-      box-shadow: none;
-    }
 
     /* =========================
        FOOTER
@@ -524,6 +453,7 @@
       margin: 0 auto;
 
       display: flex;
+
       align-items: flex-end;
 
       justify-content: space-between;
@@ -575,6 +505,17 @@
       opacity: 0.7;
     }
 
+    /*
+     * The separator immediately before Follow
+     * uses the website red.
+     */
+    .footer-follow-separator {
+      color: var(--red);
+
+      opacity: 1;
+    }
+
+
     /* =========================
        TABLET
     ========================== */
@@ -613,10 +554,11 @@
         padding: 40px 36px;
       }
 
-      .account-link {
-        margin-top: 30px;
+      .back-home {
+        margin-top: 38px;
       }
     }
+
 
     /* =========================
        MOBILE
@@ -653,42 +595,28 @@
         border-radius: 8px;
       }
 
-      .policy-heading {
-        margin-bottom: 28px;
-      }
-
-      .policy-heading h1 {
-        margin-bottom: 10px;
-      }
-
-      .policy-heading p {
-        font-size: 0.88rem;
-
-        line-height: 1.65;
-      }
-
-      .policy-section {
+      .policy-text h1 {
         margin-bottom: 24px;
       }
 
-      .policy-section h2 {
-        font-size: 0.98rem;
+      .policy-text h2 {
+        font-size: 1rem;
+
+        margin-top: 26px;
       }
 
-      .policy-section p,
-      .policy-section li {
-        font-size: 0.86rem;
+      .policy-text p,
+      .policy-text li {
+        font-size: 0.91rem;
 
         line-height: 1.7;
       }
 
-      .account-link {
-        margin-top: 28px;
-
-        gap: 9px;
+      .back-home {
+        margin-top: 42px;
       }
 
-      .account-link a {
+      .back-home-link {
         border-radius: 8px;
       }
 
@@ -713,6 +641,7 @@
 
 <body>
 
+
   <!-- =========================
        HEADER
   ========================== -->
@@ -733,18 +662,7 @@
 
       <ul class="menu">
 
-        <li>
-          <a href="info.html">
-            Info
-          </a>
-        </li>
-
-        <li
-          class="menu-dot"
-          aria-hidden="true"
-        >
-          ·
-        </li>
+        <!-- Info intentionally removed -->
 
         <li>
           <a href="about.html">
@@ -803,11 +721,14 @@
           class="menu-dot"
           aria-hidden="true"
         >
-          ·
+          |
         </li>
 
-        <li class="menu-login">
-          <a href="login.html">
+        <li>
+          <a
+            href="login.html"
+            class="menu-login"
+          >
             Login
           </a>
         </li>
@@ -827,344 +748,312 @@
 
     <div class="policy-content">
 
-      <section class="policy-box">
-
-        <div class="policy-inner">
-
-          <div class="policy-heading">
-
-            <h1>Account Policy</h1>
-
-            <p>
-              This Account Policy explains how Healthcare Mauritius
-              handles information connected with personal accounts,
-              including account registration, personal information,
-              security, data use, retention and account deletion.
-            </p>
-
-            <p class="policy-date">
-              Last updated: 2026
-            </p>
-
-          </div>
-
-
-          <!-- 1 -->
-
-          <section class="policy-section">
-
-            <h2>
-              1. Account Information
-            </h2>
-
-            <p>
-              When you create a Healthcare Mauritius account, we may
-              collect information that you provide during registration,
-              such as your name, email address and account credentials.
-            </p>
-
-            <p>
-              You should provide information that is accurate and
-              keep your account information up to date where necessary.
-            </p>
-
-          </section>
-
-
-          <!-- 2 -->
-
-          <section class="policy-section">
-
-            <h2>
-              2. Use of Account Information
-            </h2>
-
-            <p>
-              Information associated with your account may be used to
-              create and maintain your account, provide account-related
-              functionality, communicate with you about your account,
-              and help maintain the security and reliability of the
-              service.
-            </p>
-
-            <p>
-              We do not require you to provide healthcare or medical
-              information merely to create a general Healthcare
-              Mauritius account.
-            </p>
-
-          </section>
-
-
-          <!-- 3 -->
-
-          <section class="policy-section">
-
-            <h2>
-              3. Personal Information
-            </h2>
-
-            <p>
-              Personal information should only be provided where it is
-              necessary for the relevant account feature or service.
-              You should avoid submitting sensitive personal or medical
-              information unless a feature specifically requests it
-              and appropriate safeguards are provided.
-            </p>
-
-          </section>
-
-
-          <!-- 4 -->
-
-          <section class="policy-section">
-
-            <h2>
-              4. Account Security
-            </h2>
-
-            <p>
-              You are responsible for keeping your login credentials
-              confidential and for taking reasonable steps to protect
-              access to your account.
-            </p>
-
-            <p>
-              If you believe that your account has been accessed
-              without your permission, you should contact Healthcare
-              Mauritius as soon as possible.
-            </p>
-
-          </section>
-
-
-          <!-- 5 -->
-
-          <section class="policy-section">
-
-            <h2>
-              5. Passwords
-            </h2>
-
-            <p>
-              Passwords should be unique and should not be shared with
-              other people. Healthcare Mauritius will not ask you to
-              disclose your account password through an unsolicited
-              email or message.
-            </p>
-
-          </section>
-
-
-          <!-- 6 -->
-
-          <section class="policy-section">
-
-            <h2>
-              6. Data Retention
-            </h2>
-
-            <p>
-              Account information may be retained for as long as
-              reasonably necessary to operate the account, provide
-              requested services, maintain security, comply with
-              applicable legal obligations, resolve disputes, and
-              enforce applicable agreements.
-            </p>
-
-            <p>
-              When information is no longer required for these
-              purposes, it may be deleted, anonymised or otherwise
-              securely disposed of, subject to applicable requirements.
-            </p>
-
-          </section>
-
-
-          <!-- 7 -->
-
-          <section class="policy-section">
-
-            <h2>
-              7. Account Deletion
-            </h2>
-
-            <p>
-              You may request deletion of your Healthcare Mauritius
-              account by contacting us using the contact details
-              provided on the website.
-            </p>
-
-            <p>
-              Deleting an account may remove or disable access to
-              account-related information and features. Some information
-              may need to be retained where required by law or where
-              reasonably necessary for legitimate administrative,
-              security or dispute-resolution purposes.
-            </p>
-
-          </section>
-
-
-          <!-- 8 -->
-
-          <section class="policy-section">
-
-            <h2>
-              8. Communications
-            </h2>
-
-            <p>
-              We may contact you regarding your account, including
-              account security, password recovery, important service
-              notices and changes affecting your account.
-            </p>
-
-            <p>
-              Account-related communications may still be sent when
-              necessary to operate or secure your account.
-            </p>
-
-          </section>
-
-
-          <!-- 9 -->
-
-          <section class="policy-section">
-
-            <h2>
-              9. Cookies and Technical Information
-            </h2>
-
-            <p>
-              Account functionality may require cookies, sessions or
-              similar technical mechanisms to keep you signed in,
-              protect your account and maintain the functionality of
-              the website.
-            </p>
-
-            <p>
-              Technical information may also be processed for security,
-              troubleshooting, performance and service reliability.
-            </p>
-
-          </section>
-
-
-          <!-- 10 -->
-
-          <section class="policy-section">
-
-            <h2>
-              10. Information Sharing
-            </h2>
-
-            <p>
-              Account information should only be shared where necessary
-              to provide the relevant service, operate the website,
-              maintain security, comply with applicable obligations, or
-              where you have otherwise authorised or requested it.
-            </p>
-
-          </section>
-
-
-          <!-- 11 -->
-
-          <section class="policy-section">
-
-            <h2>
-              11. Your Responsibilities
-            </h2>
-
-            <ul>
-
-              <li>
-                Provide accurate registration information.
-              </li>
-
-              <li>
-                Keep your login credentials secure.
-              </li>
-
-              <li>
-                Do not use another person's account without permission.
-              </li>
-
-              <li>
-                Notify us if you believe your account has been
-                compromised.
-              </li>
-
-              <li>
-                Avoid submitting unnecessary sensitive information.
-              </li>
-
-            </ul>
-
-          </section>
-
-
-          <!-- 12 -->
-
-          <section class="policy-section">
-
-            <h2>
-              12. Changes to This Account Policy
-            </h2>
-
-            <p>
-              This Account Policy may be updated when account
-              functionality, security practices or applicable
-              requirements change. The latest version published on this
-              page will apply to your use of the account.
-            </p>
-
-          </section>
-
-
-          <!-- 13 -->
-
-          <section class="policy-section">
-
-            <h2>
-              13. Contact
-            </h2>
-
-            <p>
-              If you have questions about your account, personal
-              information, data retention or account deletion, please
-              <a
-                href="mailto:account@healthcare.mu"
-                class="contact-link"
-              >
-                contact us
-              </a>.
-            </p>
-
-          </section>
-
-
-          <!-- LINKS -->
-
-          <div class="account-link">
-
-            <a href="register.html">
-              &larr;&nbsp; Back to Registration
-            </a>
-
+      <section
+        class="policy-box"
+        aria-labelledby="account-policy-title"
+      >
+
+        <div class="policy-text">
+
+          <h1 id="account-policy-title">
+            Account &amp; Service Policy
+          </h1>
+
+
+          <h2>Personal Account</h2>
+
+          <p>
+            A Healthcare Mauritius account is personal to the
+            individual who creates and uses it. Users are responsible
+            for providing accurate information and for keeping their
+            account details up to date where necessary.
+          </p>
+
+          <p>
+            Your account is intended for your own use and should not
+            be shared with another person. You are responsible for
+            keeping your login credentials, passwords and other
+            account access information confidential.
+          </p>
+
+
+          <h2>Account Security</h2>
+
+          <p>
+            You are responsible for taking reasonable steps to protect
+            access to your account. Do not share your password,
+            authentication information or account access with other
+            people.
+          </p>
+
+          <p>
+            If you believe that someone has accessed your account
+            without permission, you should change your password and
+            contact Healthcare Mauritius as soon as possible.
+          </p>
+
+
+          <h2>Personal and Healthcare Information</h2>
+
+          <p>
+            Depending on the services used, your account may contain
+            personal information and information relating to your
+            healthcare activities. This may include appointment
+            information, documents, insurance-related information,
+            contact details and other information that you choose to
+            provide through the platform.
+          </p>
+
+          <p>
+            Healthcare Mauritius does not assume responsibility for
+            the accuracy, completeness or medical significance of
+            information entered or uploaded by a user, healthcare
+            provider, insurer or other third party.
+          </p>
+
+          <p>
+            Users should only provide information that is necessary
+            for the service they are using and should take care when
+            uploading documents or other sensitive information.
+          </p>
+
+
+          <h2>Appointments and Healthcare Services</h2>
+
+          <p>
+            Healthcare Mauritius may allow users to request, manage
+            or otherwise interact with healthcare appointments and
+            services.
+          </p>
+
+          <p>
+            An appointment request, booking or other interaction
+            through the platform does not by itself guarantee that a
+            healthcare service will be provided. Availability,
+            scheduling, cancellations, changes and the provision of
+            medical care remain subject to the relevant healthcare
+            provider or organisation.
+          </p>
+
+          <p>
+            Healthcare Mauritius does not provide medical diagnosis,
+            treatment or clinical decisions through this account
+            service.
+          </p>
+
+
+          <h2>Insurance and Claims Information</h2>
+
+          <p>
+            Where available, users may be able to provide or manage
+            information relating to health insurance, claims,
+            supporting documents or reimbursement processes.
+          </p>
+
+          <p>
+            Healthcare Mauritius does not guarantee that an insurance
+            claim will be accepted, reimbursed or processed within a
+            particular period. Insurance decisions remain the
+            responsibility of the relevant insurer and are subject to
+            the applicable policy, documentation and requirements.
+          </p>
+
+          <p>
+            Users are responsible for ensuring that information and
+            documents submitted for an insurance-related purpose are
+            accurate and belong to them or that they have appropriate
+            permission to provide them.
+          </p>
+
+
+          <h2>Documents and Uploaded Information</h2>
+
+          <p>
+            Users may have the ability to upload, store or share
+            documents through their account, depending on the services
+            available.
+          </p>
+
+          <p>
+            Users are responsible for the documents and information
+            they choose to upload. This includes ensuring that they
+            have the right or permission to upload and share
+            information relating to another person.
+          </p>
+
+          <p>
+            Users should review documents and recipient information
+            carefully before sharing them.
+          </p>
+
+
+          <h2>Your Choice to Share Information</h2>
+
+          <p>
+            Your account is designed to give you control over the
+            information and documents that you choose to provide or
+            share through available services.
+          </p>
+
+          <p>
+            Where a sharing feature is provided, you are responsible
+            for selecting the intended recipient or organisation and
+            reviewing the information before confirming the share.
+          </p>
+
+          <p>
+            Do not share medical records, identification documents,
+            insurance information or other sensitive information with
+            a person or organisation unless you intend to provide that
+            information to them.
+          </p>
+
+
+          <h2>Healthcare Provider Information</h2>
+
+          <p>
+            Information associated with healthcare providers,
+            appointments, services and availability may be supplied or
+            updated by providers, organisations or other third
+            parties.
+          </p>
+
+          <p>
+            Information may become outdated or may contain errors.
+            Users should confirm important healthcare, appointment,
+            availability, pricing or contact information directly
+            with the relevant provider.
+          </p>
+
+
+          <h2>Not a Substitute for Medical Care</h2>
+
+          <p>
+            Your Healthcare Mauritius account is a service for
+            managing information and accessing available platform
+            features. It is not a replacement for professional
+            medical care.
+          </p>
+
+          <p>
+            Information displayed in your account should not be
+            interpreted as a diagnosis, medical recommendation or
+            emergency medical instruction.
+          </p>
+
+          <p>
+            For urgent or emergency situations, users should seek
+            appropriate emergency medical assistance rather than
+            relying on the Healthcare Mauritius platform.
+          </p>
+
+
+          <h2>User Responsibility</h2>
+
+          <p>
+            You are responsible for the information you submit, the
+            documents you upload, the appointments or services you
+            request and the people or organisations with whom you
+            choose to share information.
+          </p>
+
+          <p>
+            You must not use another person's account, impersonate
+            another person, deliberately submit false information or
+            use the platform in a way that could harm another person
+            or interfere with the operation of the service.
+          </p>
+
+
+          <h2>Service Availability</h2>
+
+          <p>
+            Healthcare Mauritius may modify, suspend, restrict or
+            discontinue features or services from time to time.
+            Certain services may also depend on third-party
+            healthcare providers, insurers, communication services or
+            other organisations.
+          </p>
+
+          <p>
+            Healthcare Mauritius does not guarantee that every
+            feature, appointment service, document service,
+            insurance-related service or third-party connection will
+            always be available or operate without interruption.
+          </p>
+
+
+          <h2>Account Suspension or Closure</h2>
+
+          <p>
+            Healthcare Mauritius may restrict or suspend an account
+            where reasonably necessary to protect users, the platform,
+            personal information or the operation of the service, or
+            where an account is being used in violation of applicable
+            terms or requirements.
+          </p>
+
+          <p>
+            Users may also request closure of their account subject to
+            any information that must be retained where required for
+            legitimate operational, legal or regulatory purposes.
+          </p>
+
+
+          <h2>Privacy</h2>
+
+          <p>
+            The handling of personal information through Healthcare
+            Mauritius is described in the
             <a
-              href="login.html"
-              class="secondary-link"
+              href="privacy.html"
+              class="contact-link"
             >
-              Login
-            </a>
+              Privacy Policy
+            </a>.
+          </p>
 
-          </div>
+          <p>
+            The Privacy Policy should be read together with this
+            Account &amp; Service Policy when using an account or
+            providing personal information through the platform.
+          </p>
+
+
+          <h2>Contact</h2>
+
+          <p>
+            If you have questions regarding your account, the services
+            available through the platform or this policy, you can
+            <a
+              href="mailto:info@healthcare.mu"
+              class="contact-link"
+              aria-label="Contact Healthcare Mauritius by email"
+            >
+              contact us
+            </a>.
+          </p>
 
         </div>
 
       </section>
+
+    </div>
+
+
+    <!-- =========================
+         BACK TO HOME
+    ========================== -->
+
+    <div class="back-home">
+
+      <a
+        href="index.html"
+        class="back-home-link"
+        aria-label="Back to Home"
+      >
+        &larr;&nbsp; Back to Home
+      </a>
 
     </div>
 
@@ -1187,13 +1076,30 @@
 
         <div class="footer-links">
 
-          <!-- General website policy -->
-
           <a href="terms-of-use.html">
             Terms
           </a>
 
           <span class="footer-separator">
+            |
+          </span>
+
+          <a href="privacy-policy.html">
+            Privacy
+          </a>
+
+          <span class="footer-separator">
+            |
+          </span>
+
+          <a href="mailto:info@healthcare.mu">
+            Contact
+          </a>
+
+          <span
+            class="footer-separator footer-follow-separator"
+            aria-hidden="true"
+          >
             |
           </span>
 
@@ -1203,14 +1109,6 @@
             rel="noopener noreferrer"
           >
             Follow
-          </a>
-
-          <span class="footer-separator">
-            |
-          </span>
-
-          <a href="mailto:info@healthcare.mu">
-            Contact
           </a>
 
         </div>
