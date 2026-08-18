@@ -81,6 +81,7 @@
       flex-direction: column;
     }
 
+
     /* =========================
        HEADER
     ========================== */
@@ -134,6 +135,12 @@
       letter-spacing: -0.045em;
     }
 
+    .logo:focus-visible {
+      outline: 3px solid rgba(201, 40, 50, 0.25);
+      outline-offset: 4px;
+      border-radius: 3px;
+    }
+
     .menu {
       display: flex;
       align-items: center;
@@ -180,10 +187,18 @@
       width: 100%;
     }
 
+    .menu a:focus-visible {
+      outline: 3px solid rgba(201, 40, 50, 0.25);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    /* Slightly larger header separators */
+
     .menu-dot {
       color: var(--black);
 
-      font-size: 0.82rem;
+      font-size: 0.95rem;
 
       line-height: 1;
 
@@ -206,6 +221,7 @@
       color: #b8222c;
     }
 
+
     /* =========================
        MAIN
     ========================== */
@@ -226,6 +242,7 @@
     .policy-content {
       width: min(900px, 100%);
     }
+
 
     /* =========================
        POLICY BOX
@@ -340,6 +357,7 @@
       margin-bottom: 7px;
     }
 
+
     /* =========================
        CONTACT US LINK
     ========================== */
@@ -373,6 +391,7 @@
 
       border-radius: 2px;
     }
+
 
     /* =========================
        BACK TO HOME
@@ -430,6 +449,7 @@
 
       outline-offset: 4px;
     }
+
 
     /* =========================
        FOOTER
@@ -495,21 +515,26 @@
       color: var(--red);
     }
 
+    .footer-links a:focus-visible {
+      outline: 3px solid rgba(201, 40, 50, 0.25);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
     .footer-separator {
       color: var(--black);
 
       opacity: 0.7;
     }
 
-    /* Follow is before Contact */
+    /* Separator immediately before Follow */
 
-    .footer-follow {
-      color: var(--black);
-    }
-
-    .footer-follow:hover {
+    .footer-follow-separator {
       color: var(--red);
+
+      opacity: 1;
     }
+
 
     /* =========================
        TABLET
@@ -553,6 +578,7 @@
         margin-top: 38px;
       }
     }
+
 
     /* =========================
        MOBILE
@@ -655,18 +681,7 @@
 
       <ul class="menu">
 
-        <li>
-          <a href="info.html">
-            Info
-          </a>
-        </li>
-
-        <li
-          class="menu-dot"
-          aria-hidden="true"
-        >
-          ·
-        </li>
+        <!-- Info removed -->
 
         <li>
           <a href="about.html">
@@ -749,11 +764,16 @@
 
     <div class="policy-content">
 
-      <section class="policy-box">
+      <section
+        class="policy-box"
+        aria-labelledby="terms-title"
+      >
 
         <div class="policy-text">
 
-          <h1>Terms of Use</h1>
+          <h1 id="terms-title">
+            Terms of Use
+          </h1>
 
           <h2>General Information</h2>
 
@@ -872,15 +892,56 @@
 
       <div class="footer-right">
 
-        <div class="footer-links">
+        <nav
+          class="footer-links"
+          aria-label="Footer navigation"
+        >
 
-          <a href="general-policy.html">
-            Policy
+          <!-- Terms -->
+
+          <a
+            href="terms-of-use.html"
+            aria-current="page"
+          >
+            Terms
           </a>
 
-          <span class="footer-separator">
+          <span
+            class="footer-separator"
+            aria-hidden="true"
+          >
             |
           </span>
+
+          <!-- Privacy -->
+
+          <a href="privacy.html">
+            Privacy
+          </a>
+
+          <span
+            class="footer-separator"
+            aria-hidden="true"
+          >
+            |
+          </span>
+
+          <!-- Contact -->
+
+          <a href="mailto:info@healthcare.mu">
+            Contact
+          </a>
+
+          <!-- Red separator immediately before Follow -->
+
+          <span
+            class="footer-separator footer-follow-separator"
+            aria-hidden="true"
+          >
+            |
+          </span>
+
+          <!-- Follow -->
 
           <a
             href="https://www.instagram.com/healthcaremauritius"
@@ -891,15 +952,7 @@
             Follow
           </a>
 
-          <span class="footer-separator">
-            |
-          </span>
-
-          <a href="mailto:info@healthcare.mu">
-            Contact
-          </a>
-
-        </div>
+        </nav>
 
       </div>
 
