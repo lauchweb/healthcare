@@ -390,6 +390,135 @@
     }
 
     /* =========================
+       AGREEMENT
+    ========================== */
+
+    .agreement-group {
+      margin-top: 0;
+
+      margin-bottom: 0;
+    }
+
+    .agreement-label {
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 9px;
+
+      cursor: pointer;
+
+      color: #555555;
+
+      font-size: 0.76rem;
+
+      line-height: 1.5;
+
+      user-select: none;
+    }
+
+    .agreement-checkbox {
+      appearance: none;
+
+      -webkit-appearance: none;
+
+      flex: 0 0 auto;
+
+      width: 17px;
+      height: 17px;
+
+      margin-top: 1px;
+
+      border: 1px solid rgba(17, 17, 17, 0.28);
+
+      border-radius: 4px;
+
+      background: #ffffff;
+
+      cursor: pointer;
+
+      position: relative;
+
+      transition:
+        border-color 180ms ease,
+        background-color 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+    .agreement-checkbox:hover {
+      border-color: var(--red);
+    }
+
+    .agreement-checkbox:focus-visible {
+      outline: 3px solid rgba(201, 40, 50, 0.15);
+
+      outline-offset: 2px;
+    }
+
+    .agreement-checkbox:checked {
+      background: var(--red);
+
+      border-color: var(--red);
+    }
+
+    .agreement-checkbox:checked::after {
+      content: "";
+
+      position: absolute;
+
+      left: 5px;
+      top: 2px;
+
+      width: 4px;
+      height: 8px;
+
+      border: solid #ffffff;
+
+      border-width: 0 2px 2px 0;
+
+      transform: rotate(45deg);
+    }
+
+    .agreement-checkbox.checkbox-error {
+      border-color: var(--red);
+
+      box-shadow:
+        0 0 0 3px rgba(201, 40, 50, 0.08);
+    }
+
+    .agreement-text {
+      flex: 1;
+    }
+
+    .agreement-text a {
+      color: var(--red);
+
+      font-weight: 600;
+
+      text-decoration: none;
+    }
+
+    .agreement-text a:hover {
+      text-decoration: underline;
+    }
+
+    .agreement-error {
+      display: none;
+
+      margin-top: 7px;
+
+      color: var(--red);
+
+      font-size: 0.73rem;
+
+      line-height: 1.4;
+    }
+
+    .agreement-error.show {
+      display: block;
+    }
+
+    /* =========================
        LOGIN BUTTON
     ========================== */
 
@@ -764,6 +893,10 @@
         height: 45px;
       }
 
+      .agreement-label {
+        font-size: 0.74rem;
+      }
+
       .login-links {
         flex-wrap: wrap;
       }
@@ -958,6 +1091,67 @@
                 autocomplete="current-password"
                 required
               >
+
+            </div>
+
+
+            <!-- =========================
+                 AGREEMENT
+            ========================== -->
+
+            <div class="agreement-group">
+
+              <label
+                class="agreement-label"
+                for="agree-policy"
+              >
+
+                <input
+                  class="agreement-checkbox"
+                  type="checkbox"
+                  id="agree-policy"
+                  name="agree_policy"
+                  required
+                >
+
+                <span class="agreement-text">
+
+                  I agree to the
+                  <a
+                    href="terms.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Terms
+                  </a>
+                  and
+                  <a
+                    href="privacy-policy.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Privacy Policy
+                  </a>
+                  and I have read and agree to the
+                  <a
+                    href="account-policy.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                   Account Policy
+                  </a>.
+
+                </span>
+
+              </label>
+
+              <div
+                id="agreementError"
+                class="agreement-error"
+                role="alert"
+              >
+                Please agree to the Terms, Privacy Policy and Healthcare Mauritius Account Policy before continuing.
+              </div>
 
             </div>
 
@@ -1170,6 +1364,16 @@
     const passwordInput =
       document.getElementById("password");
 
+    const agreementCheckbox =
+      document.getElementById(
+        "agree-policy"
+      );
+
+    const agreementError =
+      document.getElementById(
+        "agreementError"
+      );
+
 
     /*
     ========================================================
@@ -1202,6 +1406,56 @@
       passwordInput.classList.remove(
         "input-error"
       );
+    }
+
+
+    /*
+    ========================================================
+    CLEAR AGREEMENT ERROR
+    ========================================================
+    */
+
+    function clearAgreementError() {
+
+      agreementCheckbox.classList.remove(
+        "checkbox-error"
+      );
+
+      agreementError.classList.remove(
+        "show"
+      );
+
+    }
+
+
+    /*
+    ========================================================
+    CHECK AGREEMENT
+    ========================================================
+    */
+
+    function validateAgreement() {
+
+      if (
+        !agreementCheckbox.checked
+      ) {
+
+        agreementCheckbox.classList.add(
+          "checkbox-error"
+        );
+
+        agreementError.classList.add(
+          "show"
+        );
+
+        return false;
+
+      }
+
+      clearAgreementError();
+
+      return true;
+
     }
 
 
@@ -1288,6 +1542,26 @@
           passwordInput.focus();
 
           return;
+        }
+
+
+        /*
+        ====================================================
+        VALIDATE TERMS / PRIVACY / ACCOUNT POLICY
+        ====================================================
+        */
+
+        if (!validateAgreement()) {
+
+          showStatus(
+            "Please agree to the Terms, Privacy Policy and Healthcare Mauritius Account Policy before continuing.",
+            "error"
+          );
+
+          agreementCheckbox.focus();
+
+          return;
+
         }
 
 
@@ -1516,6 +1790,46 @@
         passwordInput.classList.remove(
           "input-error"
         );
+
+      }
+    );
+
+
+    /*
+    ========================================================
+    REMOVE AGREEMENT ERROR WHEN CHECKED
+    ========================================================
+    */
+
+    agreementCheckbox.addEventListener(
+      "change",
+      function() {
+
+        if (
+          agreementCheckbox.checked
+        ) {
+
+          clearAgreementError();
+
+          /*
+          Remove the general error message
+          if it was caused by the agreement.
+          */
+
+          if (
+            statusMessage.textContent ===
+            "Please agree to the Terms, Privacy Policy and Account Policy before continuing."
+          ) {
+
+            statusMessage.className =
+              "status-message";
+
+            statusMessage.textContent =
+              "";
+
+          }
+
+        }
 
       }
     );
