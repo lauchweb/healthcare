@@ -390,7 +390,7 @@
     }
 
     /* =========================
-       AGREEMENT
+       ACCOUNT POLICY AGREEMENT
     ========================== */
 
     .agreement-group {
@@ -889,12 +889,12 @@
         height: 45px;
       }
 
-      .login-button {
-        height: 45px;
-      }
-
       .agreement-label {
         font-size: 0.74rem;
+      }
+
+      .login-button {
+        height: 45px;
       }
 
       .login-links {
@@ -1096,7 +1096,7 @@
 
 
             <!-- =========================
-                 AGREEMENT
+                 ACCOUNT POLICY AGREEMENT
             ========================== -->
 
             <div class="agreement-group">
@@ -1115,32 +1115,14 @@
                 >
 
                 <span class="agreement-text">
-
-                  I agree to the
-                  <a
-                    href="terms.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Terms
-                  </a>
-                  and
-                  <a
-                    href="privacy-policy.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Privacy Policy
-                  </a>
-                  and I have read and agree to the
+                  I have read and agree to the
                   <a
                     href="account-policy.html"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                   Account Policy
+                    Account Policy
                   </a>.
-
                 </span>
 
               </label>
@@ -1150,7 +1132,7 @@
                 class="agreement-error"
                 role="alert"
               >
-                Please agree to the Terms, Privacy Policy and Healthcare Mauritius Account Policy before continuing.
+                Please read and agree to the Account Policy before continuing.
               </div>
 
             </div>
@@ -1365,14 +1347,10 @@
       document.getElementById("password");
 
     const agreementCheckbox =
-      document.getElementById(
-        "agree-policy"
-      );
+      document.getElementById("agree-policy");
 
     const agreementError =
-      document.getElementById(
-        "agreementError"
-      );
+      document.getElementById("agreementError");
 
 
     /*
@@ -1411,7 +1389,7 @@
 
     /*
     ========================================================
-    CLEAR AGREEMENT ERROR
+    CLEAR ACCOUNT POLICY ERROR
     ========================================================
     */
 
@@ -1430,7 +1408,7 @@
 
     /*
     ========================================================
-    CHECK AGREEMENT
+    CHECK ACCOUNT POLICY AGREEMENT
     ========================================================
     */
 
@@ -1547,21 +1525,20 @@
 
         /*
         ====================================================
-        VALIDATE TERMS / PRIVACY / ACCOUNT POLICY
+        VALIDATE ACCOUNT POLICY AGREEMENT
         ====================================================
         */
 
         if (!validateAgreement()) {
 
           showStatus(
-            "Please agree to the Terms, Privacy Policy and Healthcare Mauritius Account Policy before continuing.",
+            "Please read and agree to the Account Policy before continuing.",
             "error"
           );
 
           agreementCheckbox.focus();
 
           return;
-
         }
 
 
@@ -1797,7 +1774,7 @@
 
     /*
     ========================================================
-    REMOVE AGREEMENT ERROR WHEN CHECKED
+    REMOVE ACCOUNT POLICY ERROR WHEN CHECKED
     ========================================================
     */
 
@@ -1813,12 +1790,12 @@
 
           /*
           Remove the general error message
-          if it was caused by the agreement.
+          if it was caused by the Account Policy.
           */
 
           if (
             statusMessage.textContent ===
-            "Please agree to the Terms, Privacy Policy and Account Policy before continuing."
+            "Please read and agree to the Account Policy before continuing."
           ) {
 
             statusMessage.className =
